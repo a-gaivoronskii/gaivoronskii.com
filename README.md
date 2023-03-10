@@ -103,7 +103,7 @@ struct ContentView: View {
     @ViewBuilder private func locationView() -> some View {
         titleView(title: "Location:")
         Text("\(myCV.user.location.city), \(myCV.user.location.country)")
-        Spacer()
+            .padding(.bottom)
     }
 
     @ViewBuilder private func contactsView() -> some View {
@@ -116,7 +116,7 @@ struct ContentView: View {
             Image(systemName: "envelope.fill")
             Text(myCV.user.contacts.email)
         }
-        Spacer()
+        .padding(.bottom)
     }
 
     @ViewBuilder private func experienceView() -> some View {
