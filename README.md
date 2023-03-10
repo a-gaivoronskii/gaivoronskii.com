@@ -22,7 +22,7 @@ struct User {
         self.name = "Andrei Gaivoronskii"
         self.about = "Making  Apps. From Russia With ♥. Fitness Enthusiast."
 
-        self.contacts = .init(phone: "+7 (911) 100 01 05",
+        self.contacts = .init(phone: "+7 911 100 01 05",
                               email: "andrei@gaivoronskii.com")
 
         self.location = .init(city: "Saint-Petersburg",
