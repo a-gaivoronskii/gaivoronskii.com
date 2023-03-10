@@ -108,12 +108,10 @@ struct ContentView: View {
 
     @ViewBuilder private func contactsView() -> some View {
         titleView(title: "Contacts:")
-
         HStack {
             Image(systemName: "phone.fill")
             Text(myCV.user.contacts.phone)
         }
-
         HStack {
             Image(systemName: "envelope.fill")
             Text(myCV.user.contacts.email)
