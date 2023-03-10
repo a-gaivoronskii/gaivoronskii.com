@@ -51,14 +51,14 @@ struct MyCV {
         self.user = User()
         self.jobs = [
             .init(company: "Flow Health", startDate: "March 2022"),
-            .init(company: "Beshenya Sushka", startDate: "December 2016", endDate: "October 2020"),
+            .init(company: "#Beshenya Sushka", startDate: "December 2016", endDate: "October 2020"),
             .init(company: "Louis Vuitton", startDate: "September 2011", endDate: "January 2015"),
         ]
         self.apps = [
             .init(name: "RUN", link: "https://apps.apple.com/app/id1535400615"),
             .init(name: "Walker", link: "https://apps.apple.com/app/id1455639400"),
-            .init(name: "Wallet", link: "https://apps.apple.com/app/id1038175626"),
             .init(name: "#BS365", link: "https://apps.apple.com/app/id1381169094"),
+            .init(name: "Wallet", link: "https://apps.apple.com/app/id1038175626"),
             .init(name: "Fitness", link: "https://apps.apple.com/app/id1097500008"),
             .init(name: "QR Code", link: "https://apps.apple.com/app/id1604886331"),
             .init(name: "Activity", link: "https://apps.apple.com/app/id1427590589"),
@@ -82,20 +82,21 @@ struct ContentView: View {
         }
     }
 
-    @ViewBuilder func userView() -> some View {
+    @ViewBuilder private func userView() -> some View {
         Text(myCV.user.name)
             .font(.title)
             .fontWeight(.bold)
 
         Text(myCV.user.about)
             .padding(.vertical)
+            .foregroundColor(.secondary)
     }
 
     @ViewBuilder private func contactsView() -> some View {
         Divider()
         Text("Contacts:")
             .font(.headline)
-            
+        
         HStack {
             Image(systemName: "envelope.fill")
             Text(myCV.user.contacts.email)
@@ -111,13 +112,14 @@ struct ContentView: View {
         Divider()
         Text("Experience:")
             .font(.headline)
-            
+
         ForEach(myCV.jobs, id: \.company) { job in
             VStack(alignment: .leading, spacing: 8) {
                 Text(job.company)
-                    .font(.title)
+                    .font(.system(size: 20, weight: .semibold, design: .monospaced))
                 Text("\(job.startDate) - \(job.endDate ?? "Present")")
                     .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
             .padding(.bottom)
         }
@@ -127,12 +129,12 @@ struct ContentView: View {
         Divider()
         Text("Applications:")
             .font(.headline)
-            
+
         LazyVGrid(columns: columns, alignment: .leading, spacing: 12) {
             ForEach(myCV.apps, id: \.name) { app in
                 if let url = URL(string: app.link) {
                     Link(app.name, destination: url)
-                        .font(.title2)
+                        .font(.system(size: 20, weight: .semibold, design: .monospaced))
                 }
             }
         }
