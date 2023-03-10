@@ -9,8 +9,8 @@ struct User {
     }
 
     struct Location {
-        var country: String
         var city: String
+        var country: String
     }
 
     var name: String
@@ -25,8 +25,8 @@ struct User {
         self.contacts = .init(phone: "+7 (911) 100 01 05",
                               email: "andrei@gaivoronskii.com")
 
-        self.location = .init(country: "Russia",
-                              city: "Saint-Petersburg")
+        self.location = .init(city: "Saint-Petersburg",
+                              country: "Russia")
     }
 }
 
