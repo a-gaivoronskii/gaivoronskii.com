@@ -48,7 +48,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>Andrei Gaivoronskii</h1>
+            <h1 id="colorfulTitle"></h1>
             <p>I'm a programmer and fitness enthusiast.</p>
         </header>
 
@@ -62,15 +62,14 @@
             <p>GitHub: <a href="https://github.com/a-gaivoronskii">a-gaivoronskii</a></p>
             <p>Phone: <a href="tel:+79111000105">+7 911 100 01 05</a></p>
             <p>Email: <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a></p>
-
         </div>
 
         <div class="experience">
             <h2>Experience</h2>
             <ul>
-                <li><a href="https://flowhealth.com">Flow Health</a>, since March 2022 <i>(engaged in multi-app iOS development, focusing on diverse healthcare solutions)</i></li>
-                <li><a href="https://beshenayasushka.ru">Beshenaya Sushka</a>, December 2016 - October 2020 <i>(led the iOS app development, enhancing fitness and wellness experiences)</i></li>
-                <li><a href="https://eu.louisvuitton.com">Louis Vuitton</a>, September 2011 - January 2015 <i>(oversaw sales operations, contributing to market growth and customer engagement)</i></li>
+                <li><a href="https://flowhealth.com">Flow Health</a>, since March 2022 <i>(Engaged in multi-app iOS development, focusing on diverse healthcare solutions)</i></li>
+                <li><a href="https://beshenayasushka.ru">Beshenaya Sushka</a>, December 2016 - October 2020 <i>(Led the iOS app development, enhancing fitness and wellness experiences)</i></li>
+                <li><a href="https://eu.louisvuitton.com">Louis Vuitton</a>, September 2011 - January 2015 <i>(Oversaw sales operations, contributing to market growth and customer engagement)</i></li>
             </ul>
         </div>
 
@@ -91,5 +90,24 @@
             <p>From Russia with love. Since 1985.</p>
         </footer>
     </div>
+
+    <script>
+        function getRandomHueColor() {
+            const hue = Math.floor(Math.random() * 360);
+            const saturation = 59;
+            const lightness = 57; // Фиксированное значение светлости
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
+
+        function colorizeTitle(title) {
+            var coloredTitle = '';
+            for (var i = 0; i < title.length; i++) {
+                coloredTitle += '<span style="color: ' + getRandomHueColor() + ';">' + title[i] + '</span>';
+            }
+            return coloredTitle;
+        }
+
+        document.getElementById('colorfulTitle').innerHTML = colorizeTitle('Andrei Gaivoronskii');
+    </script>
 </body>
 </html>
