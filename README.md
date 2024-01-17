@@ -1,4 +1,5 @@
 ```swift
+
 import SwiftUI
 
 struct User {
