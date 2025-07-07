@@ -109,7 +109,7 @@
             var coloredTitle = '';
             var fonts = ['Roboto Mono', 'Lobster', 'Pacifico', 'Montserrat', 'Courier New', 'Georgia', 'Comic Sans MS'];
             for (var i = 0; i < title.length; i++) {
-                var font = fonts[i % fonts.length];
+                var font = fonts[Math.floor(Math.random() * fonts.length)];
                 coloredTitle += `<span style="color: ${getRandomHueColor()}; font-family: '${font}'">${title[i]}</span>`;
             }
             return coloredTitle;
