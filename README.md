@@ -1,101 +1,190 @@
-# Andrei Gaivoronskii — Portfolio Site
+# Andrei Gaivoronskii — Portfolio
 
-A minimal, fast-loading portfolio website showcasing iOS engineering work and personal projects.
+A clean, fast-loading portfolio website for iOS engineering work and personal projects. Built with vanilla web technologies and a brutalist design aesthetic.
 
 ## ✨ Features
 
-- **Pure HTML/CSS/JS** — No frameworks, fast loading
-- **Dark/Light Theme** — Automatic system detection with manual toggle
-- **Responsive Design** — Works seamlessly on mobile and desktop  
-- **Grid Background** — Subtle visual texture that adapts to theme
-- **Animated Marquees** — iOS dev tips and skills scrolling tapes
-- **App Store Integration** — Direct links to published iOS apps
-
-## 🛠 Tech Stack
-
-- Vanilla HTML5, CSS3, JavaScript
-- CSS Grid & Flexbox for layout
-- CSS Custom Properties for theming
-- Google Fonts: Space Grotesk & IBM Plex Mono
-- Local Storage for theme persistence
+- **Pure HTML/CSS/JS** — No frameworks, optimized for speed
+- **3-State Theme System** — Auto (system), Light, Dark with persistence
+- **Responsive Design** — Mobile-first approach with CSS Grid
+- **Accessible** — Keyboard navigation, ARIA labels, screen reader friendly
+- **Interactive Cards** — Clickable project cards with hover effects
+- **Animated Marquees** — Scrolling tapes with iOS development tips
+- **Clean Typography** — Space Grotesk + IBM Plex Mono combination
 
 ## 🎨 Design Philosophy
 
-- **Brutalist-inspired** — Bold typography, high contrast
-- **Grid system** — 24px baseline grid for consistent spacing
-- **Monospace accents** — Code-like elements for technical identity
-- **Tape aesthetics** — Yellow highlight boxes for key information
-- **Card hover effects** — Subtle 3D transformations
+**Brutalist-Inspired**
+- Bold typography with high contrast
+- Prominent borders and shadows
+- No unnecessary decorative elements
+- Function over form aesthetic
 
-## 📱 Projects Featured
+**Grid-Based Layout**
+- 24px baseline grid system
+- Consistent spacing throughout
+- 12-column responsive grid for projects
 
-### ADIA.AI
+**Color System**
+- Yellow tape highlights (`#fff48d`) with black text
+- Theme-aware color variables
+- High contrast for accessibility
+
+## 🛠 Tech Stack
+
+- **HTML5** — Semantic markup with proper ARIA
+- **CSS3** — Custom properties, Grid, Flexbox
+- **Vanilla JavaScript** — Modular ES6 classes
+- **Google Fonts** — Space Grotesk & IBM Plex Mono
+
+## 📱 Featured Projects
+
+### ADIA.AI Work
 - **Adia Copilot** — Healthcare professional tool
 
 ### Personal Apps
 - **Activity: Streak Recovery** — Apple Watch fitness companion
 - **RUN - Running Club** — Minimal running tracker
-- **Walker** — Step counter with advanced metrics
+- **Walker** — Advanced step counter
 - **365 Workouts** — Daily fitness routines
-- **Fitness** — Comprehensive fitness companion
+- **Fitness** — Comprehensive wellness app
 - **Wallet** — Digital card organizer
 - **QR Code** — Scanner and generator
 
-## 🔧 Local Development
+## 🚀 Quick Start
 
 ```bash
 # Clone the repository
 git clone [your-repo-url]
-cd portfolio-site
+cd portfolio
 
-# Serve locally (any static server works)
+# Serve locally (choose one)
 python -m http.server 8000
-# or
 npx serve .
-# or simply open index.html in browser
+# or open index.html directly
 ```
 
-## 🚀 Deployment
+Visit `http://localhost:8000`
 
-The site is a single HTML file with embedded CSS and JavaScript — deploy anywhere static hosting is supported:
-
-- **Vercel**: `vercel --prod`
-- **Netlify**: Drag & drop the file
-- **GitHub Pages**: Push to main branch
-- **Any CDN**: Upload index.html
-
-## 📂 File Structure
+## 📂 Project Structure
 
 ```
-portfolio-site/
-├── index.html          # Main site file
+portfolio/
+├── index.html          # Semantic HTML structure
+├── styles.css          # Organized CSS with custom properties
+├── script.js           # Modular JavaScript classes
 ├── favicon.png         # Site icon
-├── images/            # App screenshots
-│   ├── activity_rings.jpg
-│   ├── run.jpg
-│   ├── walker.jpg
-│   └── ...
 └── README.md          # This file
 ```
 
-## 🎯 Performance
+## 🎯 Key Features
+
+### Theme Management
+Three-state theme system (auto → light → dark → auto) with:
+- System preference detection
+- localStorage persistence
+- Real-time theme switching
+- Media query listening for system changes
+
+### Card Interactions
+- Click-to-open App Store links
+- Keyboard navigation support
+- Hover effects with CSS transforms
+- Accessible ARIA labels
+
+### Performance Optimizations
+- Respects `prefers-reduced-motion`
+- Throttled scroll event handling
+- Intersection Observer for animations
+- Font preloading and optimization
+
+## 💻 Code Architecture
+
+### CSS Organization
+```css
+/* Custom Properties */
+:root { --color-*, --font-*, --spacing-* }
+
+/* Sections */
+- Reset & Base Styles
+- Typography
+- Layout Components
+- UI Components (chips, tape, cards)
+- Responsive Design
+- Accessibility Features
+```
+
+### JavaScript Modules
+```javascript
+// Core Classes
+ThemeManager     // Theme switching logic
+CardManager      // Project card interactions
+URLUtils         // Safe URL handling
+
+// Enhancements
+ScrollAnimations // Intersection Observer
+ErrorHandler     // Global error management
+PerformanceOptimizer // Reduced motion, throttling
+```
+
+## 🔧 Customization
+
+### Colors
+Edit CSS custom properties in `:root`:
+```css
+--color-bg: #ffffff;
+--color-ink: #0b0d10;
+--color-accent: #ff3131;
+--color-tape: #fff48d;
+```
+
+### Typography
+Update font variables:
+```css
+--font-sans: "Space Grotesk", system-ui;
+--font-mono: "IBM Plex Mono", monospace;
+```
+
+### Grid System
+Modify grid size:
+```css
+--grid-size: 24px; /* Base grid unit */
+```
+
+## 🌐 Deployment
+
+**GitHub Pages** (recommended)
+1. Push to `main` branch
+2. Enable Pages in repository settings
+3. Site available at `username.github.io/repo-name`
+
+**Other Options**
+- Vercel: `vercel --prod`
+- Netlify: Drag & drop deployment
+- Any static hosting service
+
+## ♿ Accessibility
+
+- **Semantic HTML** — Proper heading hierarchy, landmarks
+- **ARIA Labels** — Descriptive labels for interactive elements
+- **Keyboard Navigation** — Tab navigation, Enter/Space activation
+- **Focus Management** — Visible focus indicators
+- **Color Contrast** — WCAG AA compliant contrasts
+- **Reduced Motion** — Respects user preferences
+
+## 📊 Performance
 
 - **No build process** — Direct browser execution
 - **Minimal dependencies** — Only Google Fonts
-- **Efficient CSS** — Custom properties for theming
-- **Optimized images** — Compressed app screenshots
-- **Fast loading** — Single request HTML file
+- **Optimized CSS** — Efficient selectors and properties
+- **Fast loading** — Single HTML file with embedded resources
+- **Mobile optimized** — Responsive design with touch targets
 
-## 🌟 Key Code Highlights
+## 🛡️ Browser Support
 
-### Theme System
-Three-state theme toggle (auto → light → dark → auto) that respects system preferences and persists user choice.
-
-### CSS Grid Layout
-12-column responsive grid that collapses to single column on mobile with automatic card reflow.
-
-### Animated Marquees
-Dual-speed scrolling tapes — one for general skills, another slower one for detailed iOS dev tips.
+- **Modern browsers** — Chrome, Firefox, Safari, Edge (last 2 versions)
+- **Progressive enhancement** — Graceful degradation for older browsers
+- **Mobile browsers** — iOS Safari, Chrome Mobile, Samsung Internet
 
 ## 📧 Contact
 
@@ -106,3 +195,7 @@ Dual-speed scrolling tapes — one for general skills, another slower one for de
 ---
 
 *Built between workouts, runs, and long walks.*
+
+## 📄 License
+
+MIT License - feel free to use this code for your own portfolio.
