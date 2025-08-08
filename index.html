@@ -6,7 +6,7 @@
 <title>Andrei Gaivoronskii — iOS Engineer</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<meta name="description" content="iOS engineer in Saint Petersburg. Swift/SwiftUI/watchOS. Building at ADIA.AI and on personal projects.">
+<meta name="description" content="iOS engineer in Saint Petersburg. Swift, Objective-C, SwiftUI, watchOS. Building AI products at ADIA.AI + personal apps.">
 <style>
 :root{
   --bg:#fff; --ink:#0b0d10; --link:#0b53ff; --hot:#ff3131;
@@ -15,9 +15,15 @@
   --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
   --sans:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
+/* System dark by default; JS can override via [data-theme] */
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b; --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08); --ink-on-tape:#0b0d10;}
+  :root{ --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b; --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08) }
+  :root{ --ink-on-tape:#0b0d10 }
 }
+/* Manual theme overrides */
+:root[data-theme="dark"]{ --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b; --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08); --ink-on-tape:#0b0d10 }
+:root[data-theme="light"]{ --bg:#ffffff; --ink:#0b0d10; --link:#0b53ff; --hot:#ff3131; --tape:#fff48d; --muted:#6a6f76; --grid:rgba(0,0,0,.06); --ink-on-tape:#0b0d10 }
+
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -35,26 +41,32 @@ a:hover{color:var(--hot)}
 .top{border-bottom:2px solid var(--ink);display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:end;padding:12px 0 8px}
 h1{font-size:clamp(32px,8vw,86px);letter-spacing:.02em;margin:0;line-height:1;font-weight:700}
 h1 .em{color:var(--hot)}
-.herochips{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 0}
-.chip{background:var(--tape);padding:3px 8px;border:2px solid var(--ink);border-radius:6px;font-family:var(--mono);color:var(--ink-on-tape)!important}
-.underline{background-image:linear-gradient(var(--tape),var(--tape));background-size:100% 9px;background-position:0 92%;background-repeat:no-repeat;padding-bottom:2px;color:var(--ink-on-tape)!important}
 
-/* info row */
+/* Hero bits */
+.herochips{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 0}
+.chip{background:var(--tape);padding:3px 8px;border:2px solid var(--ink);border-radius:6px;font-family:var(--mono);color:var(--ink-on-tape)!important;font-size:14px}
+button.chip{cursor:pointer; font: inherit} /* same size as neighbors */
+.hi{ /* readable highlight in dark: don't change text color */
+  background-image:linear-gradient(var(--tape), var(--tape));
+  background-size:100% 0.8em; background-position:0 88%; background-repeat:no-repeat;
+  padding-bottom:.05em; color:inherit !important; text-shadow:none;
+}
+
+/* links row */
 .info{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:10px 0;border-bottom:2px solid var(--ink)}
-.info .btn{cursor:pointer}
 
 /* section titles */
 h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding:8px 0;margin:24px 0 12px}
 
 /* projects grid */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-.card{grid-column:span 6;position:relative;border:2px solid var(--ink);background:#fff;color:#000;box-shadow:6px 6px 0 0 var(--ink);overflow:hidden;min-height:280px}
+.card{grid-column:span 6;position:relative;border:2px solid var(--ink);background:#fff;color:#000;box-shadow:6px 6px 0 0 var(--ink);overflow:hidden;min-height:220px} /* shorter */
 @media (prefers-color-scheme:dark){ .card{background:#0f1216;color:#e7edf4} }
-@media (max-width:860px){ .card{grid-column:span 12} }
+@media (max-width:860px){ .card{grid-column:span 12; min-height:180px} } /* shorter on mobile */
 .card .tag{position:absolute;top:8px;left:8px;background:var(--tape);border:2px solid var(--ink);padding:2px 6px;border-radius:6px;font-family:var(--mono);font-size:12px;color:var(--ink-on-tape)!important}
 .card .ct{position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));color:#fff;text-shadow:0 1px 0 #000}
-.card h3{margin:0 0 4px;font-size:28px;letter-spacing:.02em}
-.card p{margin:0;font-size:14px;opacity:.95}
+.card h3{margin:0 0 4px;font-size:24px;letter-spacing:.02em}
+.card p{margin:0;font-size:13px;opacity:.95}
 .card a.store{display:inline-block;margin-top:8px;background:#fff;color:#000!important;border:2px solid #000;padding:2px 6px;border-radius:6px;font-family:var(--mono);text-decoration:none}
 .card:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 0 var(--ink)}
 .card .img{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(105%) contrast(105%)}
@@ -73,10 +85,10 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
 /* footer */
 .foot{border-top:2px solid var(--ink);margin-top:28px;padding-top:10px;font-family:var(--mono);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
-/* tape / marquee */
-.tape,.tape *, .chip, .chip * { color: var(--ink-on-tape) !important; text-shadow:none !important }
+/* tape / marquees (kept slow) */
+.tape,.tape *{ color: var(--ink-on-tape) !important; text-shadow:none !important }
 .tape{margin:10px -18px 16px;padding:8px 0;background:var(--tape);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap;position:relative;font-family:var(--mono)}
-.marq{display:inline-block;padding-left:100%;animation:marq 28s linear infinite} /* slowed down */
+.marq{display:inline-block;padding-left:100%;animation:marq 32s linear infinite}
 .marq span{display:inline-block;padding:0 24px}
 @keyframes marq{to{transform:translateX(-100%)}}
 </style>
@@ -91,17 +103,16 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
       <div></div>
     </div>
 
-    <!-- Punchier hero line (visually highlighted bits) -->
+    <!-- Hero -->
     <div class="herochips">
       <span class="chip">📍 Saint&nbsp;Petersburg</span>
-      <span class="chip">ADIA.AI — iOS</span>
-      <span class="chip">Swift • SwiftUI • watchOS</span>
-      <button id="theme" class="chip btn">toggle_theme</button>
+      <a class="chip" href="https://adia.ai" target="_blank" rel="noreferrer">ADIA.AI — AI&nbsp;projects</a>
+      <span class="chip">Swift • Objective-C • SwiftUI</span>
+      <button id="theme" class="chip">toggle_theme</button>
     </div>
     <p style="margin:12px 0 0; max-width:72ch">
-      Building <span class="underline">production iOS apps</span>, obsessed with
-      <span class="underline">clean motion</span>, <span class="underline">accessibility</span>,
-      and <span class="underline">real fitness UX</span>. Also ship a few personal toys.
+      Building <span class="hi">production iOS apps</span> for <span class="hi">AI-powered products</span>. 
+      I like <span class="hi">tight performance</span>, <span class="hi">clear UI</span>, and shipping.
     </p>
 
     <!-- Quick links -->
@@ -109,13 +120,15 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
       <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a>
       <span>·</span>
       <a href="https://github.com/a-gaivoronskii" target="_blank" rel="noreferrer">GitHub</a>
+      <span>·</span>
+      <a href="https://flowhealth.com" target="_blank" rel="noreferrer">Flow&nbsp;Health</a>
     </div>
 
     <!-- Marquee -->
     <div class="tape" aria-hidden="true">
       <div class="marq">
-        <span>Swift • SwiftUI • watchOS • HealthKit</span>
-        <span>ADIA.AI — iOS engineering</span>
+        <span>Swift • Objective-C • SwiftUI • watchOS • HealthKit</span>
+        <span>ADIA.AI — AI projects on iOS</span>
         <span>Personal apps for runners & walkers</span>
       </div>
     </div>
@@ -123,7 +136,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
     <!-- Categories -->
     <h2>project_categories</h2>
     <div class="dl" style="margin-bottom:10px">
-      <div>• ADIA.AI</div><div class="small">current — healthcare iOS apps</div>
+      <div>• ADIA.AI</div><div class="small">current — iOS engineering on AI products</div>
       <div>• PERSONAL</div><div class="small">apps I ship for learning and fun</div>
     </div>
 
@@ -139,7 +152,6 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
           <a class="store" href="https://apps.apple.com/app/id1427590589" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
-
       <article class="card" data-fallback>
         <span class="tag">RUN</span>
         <a class="img" style="background-image:url('/images/run.jpg')"></a>
@@ -149,17 +161,15 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
           <a class="store" href="https://apps.apple.com/app/id1535400615" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
-
       <article class="card" data-fallback>
         <span class="tag">WALKER</span>
         <a class="img" style="background-image:url('/images/walker.jpg')"></a>
         <div class="ct">
           <h3>Walker</h3>
-          <p>Steps, but nice. Playful details, featherweight battery use.</p>
+          <p>Steps, but nice. Featherweight battery use.</p>
           <a class="store" href="https://apps.apple.com/app/id1455639400" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
-
       <article class="card" data-fallback>
         <span class="tag">365</span>
         <a class="img" style="background-image:url('/images/365.jpg')"></a>
@@ -169,7 +179,6 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
           <a class="store" href="https://apps.apple.com/app/id1381169094" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
-
       <article class="card" data-fallback>
         <span class="tag">FITNESS</span>
         <a class="img" style="background-image:url('/images/fitness.jpg')"></a>
@@ -179,7 +188,6 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
           <a class="store" href="https://apps.apple.com/app/id1097500008" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
-
       <article class="card" data-fallback>
         <span class="tag">WALLET</span>
         <a class="img" style="background-image:url('/images/wallet.jpg')"></a>
@@ -189,7 +197,6 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
           <a class="store" href="https://apps.apple.com/app/id1038175626" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
-
       <article class="card" data-fallback>
         <span class="tag">QR</span>
         <a class="img" style="background-image:url('/images/qrcode.jpg')"></a>
@@ -205,36 +212,38 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
     <h2>about_&_skills</h2>
     <div class="dl">
       <div>role</div><div>iOS engineer</div>
-      <div>stack</div><div>Swift, SwiftUI, UIKit, Combine, Core Motion, HealthKit, WorkoutKit</div>
-      <div>watch</div><div>watchOS apps, complications, background tasks</div>
+      <div>languages</div><div><b>Swift</b>, <b>Objective-C</b>, SwiftUI, UIKit, Combine</div>
+      <div>frameworks</div><div>Core Motion, HealthKit, WorkoutKit, MapKit</div>
       <div>infra</div><div>CloudKit, Firebase/Supabase, IAP, SPM, TestFlight</div>
-      <div>languages</div><div>English (learning), Russian (native)</div>
-      <div>current</div><div>ADIA.AI — iOS engineering</div>
+      <div>current</div><div><a href="https://adia.ai" target="_blank" rel="noreferrer">ADIA.AI</a> — iOS engineering on AI products</div>
     </div>
 
     <!-- Experience -->
     <h2>previously</h2>
     <div class="dl">
-      <div>FLOW HEALTH</div><div>Mar 2022 — Mar 2024 · multi-app iOS</div>
-      <div>#BESHENAYASUSHKA</div><div>Dec 2016 — Oct 2020 · fitness app lead</div>
-      <div>LOUIS VUITTON</div><div>Sep 2011 — Jan 2015 · sales ops</div>
+      <div><a href="https://flowhealth.com" target="_blank" rel="noreferrer">FLOW HEALTH</a></div><div>Mar 2022 — Mar 2024 · multi-app iOS</div>
+      <div><a href="https://beshenayasushka.ru" target="_blank" rel="noreferrer">#BESHENAYASUSHKA</a></div><div>Dec 2016 — Oct 2020 · fitness app lead</div>
+      <div><a href="https://eu.louisvuitton.com" target="_blank" rel="noreferrer">LOUIS VUITTON</a></div><div>Sep 2011 — Jan 2015 · sales ops</div>
     </div>
 
-    <!-- Tips Marquee (slower, at end) -->
-    <div class="tape" aria-label="useful_tips">
-      <div class="marq" style="animation-duration:32s">
-        <span>Tip: support Dynamic Type — happier users, fewer bug reports.</span>
-        <span>Tip: test workouts on Low Power Mode — battery is a feature.</span>
-        <span>Tip: localize the App Store page first — cheapest growth.</span>
-        <span>Tip: HealthKit writes? Ask permissions late, not early.</span>
-        <span>Tip: Instruments > Time Profiler — trust numbers, not vibes.</span>
+    <!-- iOS Dev Tips (slow marquee at end) -->
+    <div class="tape" aria-label="ios_dev_tips">
+      <div class="marq">
+        <span>Swift: prefer value types; keep structs small & copy-cheap.</span>
+        <span>Obj-C: nullability annotations kill a whole class of bugs.</span>
+        <span>SwiftUI: use @MainActor on models that touch UI timelines.</span>
+        <span>Performance: Instruments → Time Profiler before “optimizing”.</span>
+        <span>Startup: lazy load heavy singletons; defer HealthKit auth.</span>
+        <span>Combine: erase type with AnyPublisher before crossing layers.</span>
+        <span>Interop: expose small Obj-C shims for tricky C APIs.</span>
+        <span>Testing: run on Low Power Mode — battery is a feature.</span>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="foot">
       <div>© <span id="y"></span> Andrei Gaivoronskii</div>
-      <div class="small">Powered by Swift, stubbornness, and long walks.</div>
+      <div class="small">Built between coffee sips and commit messages.</div>
     </div>
   </div>
 
@@ -242,38 +251,14 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
 /* year */
 document.getElementById('y').textContent = new Date().getFullYear();
 
-/* dark/light toggle that doesn't break yellow text */
+/* dark/light toggle using [data-theme] */
+const root = document.documentElement;
 const btn = document.getElementById('theme');
-let forced = null; // null = follow system
+const next = { null:'dark', dark:'light', light:null };
 btn.addEventListener('click', ()=>{
-  forced = (forced === 'dark') ? 'light' : (forced === 'light' ? null : 'dark');
-  if(forced === 'dark'){
-    document.documentElement.style.colorScheme='dark';
-    document.body.style.setProperty('--bg','#121418');
-    document.body.style.setProperty('--ink','#e9eef2');
-    document.body.style.setProperty('--link','#7aa2ff');
-    document.body.style.setProperty('--hot','#ff6b6b');
-    document.body.style.setProperty('--tape','#fff07a');
-    document.body.style.setProperty('--muted','#a7adb4');
-    document.body.style.setProperty('--grid','rgba(255,255,255,.08)');
-    document.body.style.setProperty('--ink-on-tape','#0b0d10'); // keep readable
-  } else if(forced === 'light'){
-    document.documentElement.style.colorScheme='light';
-    document.body.style.setProperty('--bg','#ffffff');
-    document.body.style.setProperty('--ink','#0b0d10');
-    document.body.style.setProperty('--link','#0b53ff');
-    document.body.style.setProperty('--hot','#ff3131');
-    document.body.style.setProperty('--tape','#fff48d');
-    document.body.style.setProperty('--muted','#6a6f76');
-    document.body.style.setProperty('--grid','rgba(0,0,0,.06)');
-    document.body.style.setProperty('--ink-on-tape','#0b0d10');
-  } else {
-    // reset to system defaults by reloading variables from :root via removing overrides
-    document.documentElement.style.colorScheme='';
-    document.querySelectorAll('body').forEach(b=>{
-      b.style.cssText='';
-    });
-  }
+  const cur = root.getAttribute('data-theme') || null;
+  const val = next[cur];
+  if (val) root.setAttribute('data-theme', val); else root.removeAttribute('data-theme');
 });
 </script>
 </body>
