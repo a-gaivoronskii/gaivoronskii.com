@@ -25,7 +25,12 @@ class ThemeManager {
 
   bindEvents() {
     if (this.toggleButton) {
-      this.toggleButton.addEventListener('click', () => this.cycleTheme());
+      this.toggleButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.cycleTheme();
+        // Remove focus after click to prevent persistent focus on mobile
+        this.toggleButton.blur();
+      });
     }
     
     // Listen for system theme changes
@@ -38,10 +43,14 @@ class ThemeManager {
   }
 
   cycleTheme() {
-    const current = localStorage.getItem('theme');
+    const current = localStorage.getItem('theme') || 'auto';
+    console.log('Current theme:', current);
+    
     const currentIndex = this.themes.indexOf(current);
     const nextIndex = (currentIndex + 1) % this.themes.length;
     const nextTheme = this.themes[nextIndex];
+    
+    console.log('Switching to theme:', nextTheme);
     
     if (nextTheme === 'auto') {
       this.root.removeAttribute('data-theme');
