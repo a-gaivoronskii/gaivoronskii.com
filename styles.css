@@ -233,7 +233,7 @@ a:hover {
 
 .tape__content {
   display: inline-block;
-  padding-left: 30%;
+  padding-left: 10%;
   animation: scrollTape 200s linear infinite;
 }
 
