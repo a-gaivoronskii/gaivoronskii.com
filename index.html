@@ -111,7 +111,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
 @keyframes marq{to{transform:translateX(-100%)}}
 
 /* Slower animation for iOS dev tips tape */
-.tape[aria-label="ios_dev_tips"] .marq{animation:marq-slow 80s linear infinite}
+.tape[aria-label="ios_dev_tips"] .marq{animation:marq-slow 100s linear infinite}
 @keyframes marq-slow{to{transform:translateX(-100%)}}
 </style>
 </head>
@@ -156,7 +156,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
 
   <h2>apps_&_things</h2>
   <div class="grid">
-      <article class="card" data-fallback onclick="window.open('https://apps.apple.com/app/id6502835710','_blank')">
+     <article class="card" data-fallback onclick="window.open('https://apps.apple.com/app/id6502835710','_blank')">
       <span class="tag">ADIA</span>
       <div class="img" style="background-image:url('/images/activity_rings.jpg')"></div>
       <div class="ct">
@@ -256,6 +256,18 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
       <span>Combine: erase with AnyPublisher before crossing layers.</span>
       <span>Interop: tiny Obj-C shims for tricky C APIs.</span>
       <span>Debug: use os_signpost and points of interest in Instruments.</span>
+      <span>Memory: weak self in closures; avoid retain cycles.</span>
+      <span>SwiftUI: @StateObject for ownership; @ObservedObject for injection.</span>
+      <span>Testing: XCTAssertThrowsError for proper error validation.</span>
+      <span>Async: prefer async/await over completion handlers.</span>
+      <span>Core Data: use NSBatchUpdateRequest for bulk operations.</span>
+      <span>UIKit: prefer compositional layout over manual constraints.</span>
+      <span>Build: use .xcconfig files for environment-specific settings.</span>
+      <span>Networking: URLSession.shared is fine; custom sessions for specific needs.</span>
+      <span>SwiftUI: .task modifier beats .onAppear for async work.</span>
+      <span>Security: Keychain for tokens; UserDefaults for preferences only.</span>
+      <span>Architecture: MVVM + Combine scales better than MVC in SwiftUI.</span>
+      <span>Optimization: lazy var for expensive computed properties.</span>
     </div>
   </div>
 
