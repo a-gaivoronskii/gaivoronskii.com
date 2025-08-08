@@ -180,17 +180,11 @@ Modify grid size:
 - **Fast loading** — Single HTML file with embedded resources
 - **Mobile optimized** — Responsive design with touch targets
 
-## 🛡️ Browser Support
-
-- **Modern browsers** — Chrome, Firefox, Safari, Edge (last 2 versions)
-- **Progressive enhancement** — Graceful degradation for older browsers
-- **Mobile browsers** — iOS Safari, Chrome Mobile, Samsung Internet
-
 ## 📧 Contact
 
 - **Email**: andrei@gaivoronskii.com
 - **GitHub**: [@a-gaivoronskii](https://github.com/a-gaivoronskii)
-- **Location**: Saint Petersburg, Russia
+- **Location**: Saint Petersburg
 
 ---
 
