@@ -109,7 +109,17 @@ class CardManager {
             // Don't trigger if clicking on the store link
             if (!e.target.closest('.card__store-link')) {
               URLUtils.openSafely(url);
+              // Remove focus after click to prevent persistent focus on mobile
+              card.blur();
             }
+          });
+          
+          // Handle touch events to remove focus after touch
+          card.addEventListener('touchend', (e) => {
+            // Small delay to allow click to register first
+            setTimeout(() => {
+              card.blur();
+            }, 150);
           });
           
           // Handle keyboard events
