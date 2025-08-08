@@ -74,7 +74,7 @@ portfolio/
 ├── styles.css          # Organized CSS with custom properties
 ├── script.js           # Modular JavaScript classes
 ├── favicon.png         # Site icon
-└── README.md          # This file
+└── README.md           # This file
 ```
 
 ## 🎯 Key Features
