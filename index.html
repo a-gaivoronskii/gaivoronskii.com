@@ -3,27 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ANDREI_GAIVORONSKII // iOS_engineer</title>
+<title>Andrei Gaivoronskii — iOS Engineer</title>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
-<meta name="description" content="Andrei Gaivoronskii — iOS engineer. Swift/SwiftUI/watchOS. Fitness & HealthKit apps.">
+<meta name="description" content="iOS engineer in Saint Petersburg. Swift/SwiftUI/watchOS. Building at ADIA.AI and on personal projects.">
 <style>
-/* —————— VIBE —————— */
 :root{
-  --bg:#fff;
-  --ink:#0b0d10;
-  --link:#0b53ff;
-  --hot:#ff3131;
-  --tape:#fff48d;
-  --muted:#6a6f76;
-  --grid:rgba(0,0,0,.06);
-  --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --bg:#fff; --ink:#0b0d10; --link:#0b53ff; --hot:#ff3131;
+  --tape:#fff48d; --muted:#6a6f76; --grid:rgba(0,0,0,.06);
+  --ink-on-tape:#0b0d10;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
   --sans:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark){
-  :root{
-    --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b; --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08);
-  }
+  :root{ --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b; --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08); --ink-on-tape:#0b0d10;}
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -38,71 +31,30 @@ a{color:var(--link);text-decoration-thickness:2px;text-underline-offset:3px}
 a:hover{color:var(--hot)}
 .wrap{max-width:1200px;margin:0 auto;padding:18px 18px 64px}
 
-/* —————— HEADER BAR —————— */
-.top{
-  border-bottom:2px solid var(--ink);
-  display:grid;grid-template-columns: 1fr auto 1fr;gap:8px;align-items:end;
-  padding:12px 0 8px;
-}
-.top .l,.top .r{font-family:var(--mono);font-size:12px}
-.top .c{justify-self:center}
-h1{
-  font-size:clamp(28px,7vw,64px);
-  letter-spacing:.02em;margin:0;line-height:1;
-  font-weight:700;
-}
-h1 .em{color:var(--hot);text-shadow:1px 0 0 var(--ink)}
-.u{border-bottom:2px solid var(--ink)}
-.badge{background:var(--tape);padding:2px 6px;border:2px solid var(--ink);border-radius:6px;font-family:var(--mono);}
+/* Header */
+.top{border-bottom:2px solid var(--ink);display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:end;padding:12px 0 8px}
+h1{font-size:clamp(32px,8vw,80px);letter-spacing:.02em;margin:0;line-height:1;font-weight:700}
+.subtitle{margin:10px 0 0;color:var(--muted);max-width:60ch}
 
-/* —————— LINK STRIP / INFO —————— */
-.info{
-  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
-  padding:10px 0;border-bottom:2px solid var(--ink)
-}
-.info a{font-weight:700}
-.info .hand{font-size:18px}
+/* info row */
+.info{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:10px 0;border-bottom:2px solid var(--ink)}
+.badge{background:var(--tape);padding:2px 6px;border:2px solid var(--ink);border-radius:6px;font-family:var(--mono);color:var(--ink-on-tape)!important}
 
-/* —————— TAPE —————— */
-.tape{
-  margin:10px -18px 16px; padding:8px 0; background:var(--tape);
-  border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);
-  overflow:hidden; white-space:nowrap; position:relative; font-family:var(--mono);
-}
-.marq{display:inline-block; padding-left:100%; animation:marq 16s linear infinite}
-.marq span{display:inline-block; padding:0 24px}
-@keyframes marq{to{transform:translateX(-100%)}}
+/* section titles */
+h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding:8px 0;margin:24px 0 12px}
 
-/* —————— SECTION TITLES —————— */
-h2{
-  font-family:var(--mono); font-size:14px; letter-spacing:.18em; text-transform:uppercase;
-  border-bottom:2px solid var(--ink); padding:8px 0; margin:24px 0 12px
-}
-
-/* —————— PROJECTS GRID —————— */
+/* projects grid */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-.card{
-  grid-column:span 6; position:relative; border:2px solid var(--ink); background:#fff; color:#000;
-  box-shadow:6px 6px 0 0 var(--ink); overflow:hidden; min-height:280px;
-}
+.card{grid-column:span 6;position:relative;border:2px solid var(--ink);background:#fff;color:#000;box-shadow:6px 6px 0 0 var(--ink);overflow:hidden;min-height:280px}
 @media (prefers-color-scheme:dark){ .card{background:#0f1216;color:#e7edf4} }
 @media (max-width:860px){ .card{grid-column:span 12} }
-.card .tag{
-  position:absolute; top:8px; left:8px; background:var(--tape); border:2px solid var(--ink);
-  padding:2px 6px; border-radius:6px; font-family:var(--mono); font-size:12px
-}
-.card .ct{
-  position:absolute; bottom:0; left:0; right:0; padding:12px; background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
-  color:#fff; text-shadow:0 1px 0 #000;
-}
+.card .tag{position:absolute;top:8px;left:8px;background:var(--tape);border:2px solid var(--ink);padding:2px 6px;border-radius:6px;font-family:var(--mono);font-size:12px;color:var(--ink-on-tape)!important}
+.card .ct{position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));color:#fff;text-shadow:0 1px 0 #000}
 .card h3{margin:0 0 4px;font-size:28px;letter-spacing:.02em}
-.card p{margin:0;font-size:14px;opacity:.9}
-.card a.store{display:inline-block;margin-top:8px;background:#fff;color:#000;border:2px solid #000;padding:2px 6px;border-radius:6px;font-family:var(--mono);text-decoration:none}
+.card p{margin:0;font-size:14px;opacity:.95}
+.card a.store{display:inline-block;margin-top:8px;background:#fff;color:#000!important;border:2px solid #000;padding:2px 6px;border-radius:6px;font-family:var(--mono);text-decoration:none}
 .card:hover{transform:translate(-2px,-2px);box-shadow:10px 10px 0 0 var(--ink)}
-.card .img{
-  position:absolute; inset:0; background-size:cover; background-position:center;
-  filter:saturate(105%) contrast(105%);
-}
+.card .img{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(105%) contrast(105%)}
 .card[data-fallback] .img{
   background-image: radial-gradient(circle at 20% 10%, #ffb86b 0 20%, transparent 20%),
                     radial-gradient(circle at 80% 30%, #7aa2ff 0 22%, transparent 22%),
@@ -110,234 +62,164 @@ h2{
                     linear-gradient(135deg, rgba(0,0,0,.08), rgba(0,0,0,0));
 }
 
-/* —————— MINI TABLES —————— */
-.dl{display:grid;grid-template-columns:140px 1fr;gap:8px;font-family:var(--mono);font-size:13px}
+/* mini tables */
+.dl{display:grid;grid-template-columns:160px 1fr;gap:8px;font-family:var(--mono);font-size:13px}
 .dl div{padding:4px 0;border-bottom:1px dashed var(--grid)}
 .small{color:var(--muted);font-size:12px}
 
-/* —————— FOOT —————— */
-.foot{border-top:2px solid var(--ink); margin-top:28px; padding-top:10px; font-family:var(--mono); display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+/* footer */
+.foot{border-top:2px solid var(--ink);margin-top:28px;padding-top:10px;font-family:var(--mono);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
-/* —————— FUN —————— */
-a.underline{
-  background-image: linear-gradient(var(--tape), var(--tape));
-  background-position: 0 95%; background-size: 100% 9px; background-repeat:no-repeat; padding-bottom:2px;
-}
-kbd{border:2px solid var(--ink); padding:0 6px; border-radius:6px; background:#fff; color:#000; font-family:var(--mono)}
-.theme{cursor:pointer}
-
-/* keep things snappy */
-img{max-width:100%;height:auto}
-button{font-family:var(--mono)}
+/* keep tape text dark */
+.tape, .tape *, .badge, .badge * { color: var(--ink-on-tape) !important; text-shadow:none !important }
+.tape{margin:10px -18px 16px;padding:8px 0;background:var(--tape);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap;position:relative;font-family:var(--mono)}
+.marq{display:inline-block;padding-left:100%;animation:marq 16s linear infinite}
+.marq span{display:inline-block;padding:0 24px}
+@keyframes marq{to{transform:translateX(-100%)}}
 </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- TOP BAR -->
+    <!-- Header -->
     <div class="top">
-      <div class="l">NEIL_vibes ⇢ <span class="badge">playful_UI</span></div>
-      <div class="c"><h1>ANDREI<span class="em">_</span>GAIVORONSKII</h1></div>
-      <div class="r">iOS_dev • SwiftUI • watchOS</div>
+      <div></div>
+      <div><h1>Andrei&nbsp;Gaivoronskii</h1></div>
+      <div></div>
     </div>
+    <p class="subtitle">iOS engineer in Saint Petersburg. I build production apps with Swift/SwiftUI and watchOS. Currently shipping at <b>ADIA.AI</b> and tinkering on personal projects.</p>
 
-    <!-- QUICK INFO ROW -->
+    <!-- Quick info -->
     <div class="info">
-      <span>📍 <b>AMSTERDAM</b></span>
+      <span class="badge">Saint&nbsp;Petersburg</span>
       <span>·</span>
-      <a class="underline" href="mailto:andrei@gaivoronskii.com">email_me</a>
+      <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a>
       <span>·</span>
-      <a class="underline" href="https://github.com/a-gaivoronskii" target="_blank" rel="noreferrer">github</a>
+      <a href="https://github.com/a-gaivoronskii" target="_blank" rel="noreferrer">GitHub</a>
       <span>·</span>
-      <span class="hand">¯\\_(ツ)_/¯</span>
-      <span>·</span>
-      <span>currently: <span class="badge">freelance</span></span>
-      <span>·</span>
-      <button class="badge theme" id="theme">toggle_theme</button>
+      <span class="small">Not freelance</span>
     </div>
 
-    <!-- TAPE -->
+    <!-- Marquee -->
     <div class="tape" aria-hidden="true">
       <div class="marq">
-        <span>MORE_categories coming soon!</span>
-        <span>swift • swiftui • watchos • healthkit</span>
-        <span>clean_code + delightful_motion</span>
-        <span>client_work • personal_projects</span>
+        <span>Swift • SwiftUI • watchOS • HealthKit</span>
+        <span>ADIA.AI — iOS engineering</span>
+        <span>Personal apps for runners & walkers</span>
       </div>
     </div>
 
-    <!-- CATEGORIES -->
+    <!-- Categories -->
     <h2>project_categories</h2>
     <div class="dl" style="margin-bottom:10px">
-      <div>• CASH_APP_ERA</div><div class="small">health/fitness utils, commercial</div>
-      <div>• CLIENT_WORK</div><div class="small">tooling, swift packages, ui polish</div>
-      <div>• PERSONAL</div><div class="small">apps I ship for fun and pain relief</div>
+      <div>• ADIA.AI</div><div class="small">current work — healthcare iOS apps</div>
+      <div>• PERSONAL</div><div class="small">apps I ship for fun and learning</div>
     </div>
 
-    <!-- PROJECTS -->
+    <!-- Projects -->
     <h2>apps_&_things</h2>
     <div class="grid">
 
-      <!-- Activity: Streak Recovery -->
       <article class="card" data-fallback>
-        <span class="tag">2025-now</span>
+        <span class="tag">2025—now</span>
         <a class="img" style="background-image:url('/images/activity_rings.jpg')"></a>
         <div class="ct">
           <h3>Activity: Streak Recovery</h3>
-          <p>Close yesterday’s rings — keep your identity intact. HealthKit + SwiftUI + watchOS.</p>
-          <a class="store" href="https://apps.apple.com/app/id1427590589" target="_blank" rel="noreferrer">App Store ↗</a>
+          <p>Close yesterday’s rings. HealthKit + SwiftUI + watchOS.</p>
+          <a class="store" href="https://apps.apple.com/app/id1427590589" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
 
-      <!-- RUN -->
       <article class="card" data-fallback>
         <span class="tag">RUN</span>
         <a class="img" style="background-image:url('/images/run.jpg')"></a>
         <div class="ct">
           <h3>RUN</h3>
-          <p>Fast running tracker. Minimal UI, accurate stats, no drama.</p>
-          <a class="store" href="https://apps.apple.com/app/id1535400615" target="_blank" rel="noreferrer">App Store ↗</a>
+          <p>Fast running tracker. Minimal UI, accurate stats.</p>
+          <a class="store" href="https://apps.apple.com/app/id1535400615" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
 
-      <!-- Walker -->
       <article class="card" data-fallback>
         <span class="tag">WALKER</span>
         <a class="img" style="background-image:url('/images/walker.jpg')"></a>
         <div class="ct">
           <h3>Walker</h3>
           <p>Steps, but nice. Playful details, featherweight battery use.</p>
-          <a class="store" href="https://apps.apple.com/app/id1455639400" target="_blank" rel="noreferrer">App Store ↗</a>
+          <a class="store" href="https://apps.apple.com/app/id1455639400" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
 
-      <!-- 365 Workouts -->
       <article class="card" data-fallback>
         <span class="tag">365</span>
         <a class="img" style="background-image:url('/images/365.jpg')"></a>
         <div class="ct">
           <h3>365 Workouts</h3>
-          <p>Daily prompts. Habit-friendly nudges. Zero fluff.</p>
-          <a class="store" href="https://apps.apple.com/app/id1381169094" target="_blank" rel="noreferrer">App Store ↗</a>
+          <p>Daily prompts. Habit-friendly nudges.</p>
+          <a class="store" href="https://apps.apple.com/app/id1381169094" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
 
-      <!-- Fitness -->
       <article class="card" data-fallback>
         <span class="tag">FITNESS</span>
         <a class="img" style="background-image:url('/images/fitness.jpg')"></a>
         <div class="ct">
           <h3>Fitness</h3>
-          <p>Clean workout companion with useful signals over noise.</p>
-          <a class="store" href="https://apps.apple.com/app/id1097500008" target="_blank" rel="noreferrer">App Store ↗</a>
+          <p>Workout companion with clear feedback.</p>
+          <a class="store" href="https://apps.apple.com/app/id1097500008" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
 
-      <!-- Wallet -->
       <article class="card" data-fallback>
         <span class="tag">WALLET</span>
         <a class="img" style="background-image:url('/images/wallet.jpg')"></a>
         <div class="ct">
           <h3>Wallet</h3>
-          <p>Private, tidy utilities. Works fast, looks invisible.</p>
-          <a class="store" href="https://apps.apple.com/app/id1038175626" target="_blank" rel="noreferrer">App Store ↗</a>
+          <p>Private, tidy utilities.</p>
+          <a class="store" href="https://apps.apple.com/app/id1038175626" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
 
-      <!-- QR Code -->
       <article class="card" data-fallback>
         <span class="tag">QR</span>
         <a class="img" style="background-image:url('/images/qrcode.jpg')"></a>
         <div class="ct">
           <h3>QR Code</h3>
-          <p>Scan + create with no tracking. Small and polite.</p>
-          <a class="store" href="https://apps.apple.com/app/id1604886331" target="_blank" rel="noreferrer">App Store ↗</a>
+          <p>Scan & create with no tracking.</p>
+          <a class="store" href="https://apps.apple.com/app/id1604886331" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
 
     </div>
 
-    <!-- CV-ish -->
-    <h2>some_info_about_me</h2>
+    <!-- Skills / About -->
+    <h2>about_&_skills</h2>
     <div class="dl">
-      <div>role</div><div>iOS engineer / design-minded</div>
-      <div>stack</div><div>Swift, SwiftUI, UIKit, Combine, CoreMotion, HealthKit, WorkoutKit</div>
-      <div>watch</div><div>complications, background tasks, handoff</div>
-      <div>infra</div><div>CloudKit, Firebase/Supabase, IAP, TestFlight, SPM</div>
-      <div>languages</div><div>EN (learning), RU (native)</div>
-      <div>currently</div><div>freelance • open to collabs</div>
+      <div>role</div><div>iOS engineer</div>
+      <div>stack</div><div>Swift, SwiftUI, UIKit, Combine, Core Motion, HealthKit, WorkoutKit</div>
+      <div>watch</div><div>watchOS apps, complications, background tasks</div>
+      <div>infra</div><div>CloudKit, Firebase/Supabase, IAP, SPM, TestFlight</div>
+      <div>languages</div><div>English (learning), Russian (native)</div>
+      <div>current</div><div>ADIA.AI — iOS engineering</div>
     </div>
 
-    <!-- EXPERIENCE -->
-    <h2>previously_@</h2>
+    <!-- Experience -->
+    <h2>previously</h2>
     <div class="dl">
-      <div>ADIA.AI</div><div>Mar 2024—now · iOS for healthcare</div>
-      <div>FLOW HEALTH</div><div>Mar 2022—Mar 2024 · multi‑app iOS work</div>
-      <div>#BESHENAYASUSHKA</div><div>Dec 2016—Oct 2020 · fitness app lead</div>
-      <div>LOUIS VUITTON</div><div>Sep 2011—Jan 2015 · sales ops</div>
+      <div>FLOW HEALTH</div><div>Mar 2022 — Mar 2024 · multi-app iOS</div>
+      <div>#BESHENAYASUSHKA</div><div>Dec 2016 — Oct 2020 · fitness app lead</div>
+      <div>LOUIS VUITTON</div><div>Sep 2011 — Jan 2015 · sales ops</div>
     </div>
 
-    <!-- TAPE 2 -->
-    <div class="tape" aria-hidden="true">
-      <div class="marq">
-        <span>CREATIVE_CODING • SWIFTUI_MICRO-MOTIONS • ACCESSIBILITY • LOCALIZATION • WATCHOS</span>
-        <span>AVAILABLE_FOR: prototypes, redesigns, stubborn bugs</span>
-        <span>ping: andrei@gaivoronskii.com</span>
-      </div>
-    </div>
-
-    <!-- FOOT -->
+    <!-- Footer -->
     <div class="foot">
-      <div>© <span id="y"></span> ANDREI_GAIVORONSKII</div>
-      <div class="small">Born 1985 • site runs on GitHub Pages • fonts: Space Grotesk + Plex Mono</div>
+      <div>© <span id="y"></span> Andrei Gaivoronskii</div>
+      <div class="small">Powered by Swift, stubbornness, and long walks.</div>
     </div>
   </div>
 
 <script>
-/* year */
 document.getElementById('y').textContent = new Date().getFullYear();
-
-/* theme toggle (fake neon switch) */
-const btn = document.getElementById('theme');
-btn.addEventListener('click', ()=>{
-  const dark = document.documentElement.classList.toggle('dark-force');
-  if(dark){
-    document.documentElement.style.colorScheme='dark';
-    document.body.style.setProperty('--bg','#121418');
-    document.body.style.setProperty('--ink','#e9eef2');
-    document.body.style.setProperty('--link','#7aa2ff');
-    document.body.style.setProperty('--hot','#ff6b6b');
-    document.body.style.setProperty('--tape','#fff07a');
-    document.body.style.setProperty('--muted','#a7adb4');
-    document.body.style.setProperty('--grid','rgba(255,255,255,.08)');
-  }else{
-    document.documentElement.style.colorScheme='light';
-    document.body.style.setProperty('--bg','#fff');
-    document.body.style.setProperty('--ink','#0b0d10');
-    document.body.style.setProperty('--link','#0b53ff');
-    document.body.style.setProperty('--hot','#ff3131');
-    document.body.style.setProperty('--tape','#fff48d');
-    document.body.style.setProperty('--muted','#6a6f76');
-    document.body.style.setProperty('--grid','rgba(0,0,0,.06)');
-  }
-});
-
-/* hold-to-wiggle cards (tiny spice, no libs) */
-const cards = document.querySelectorAll('.card');
-cards.forEach(c=>{
-  c.addEventListener('pointermove', e=>{
-    const r = c.getBoundingClientRect();
-    const dx = (e.clientX - (r.left+r.width/2)) / r.width;
-    const dy = (e.clientY - (r.top+r.height/2)) / r.height;
-    c.style.transform = `rotateX(${dy*-3}deg) rotateY(${dx*3}deg) translate(-2px,-2px)`;
-  });
-  c.addEventListener('pointerleave', ()=> c.style.transform = '');
-});
-
-/* accessibility: reduce-motion users get static cards */
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  cards.forEach(c=> c.onpointermove = null);
-}
 </script>
 </body>
 </html>
