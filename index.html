@@ -1,121 +1,424 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrei Gaivoronskii</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto Mono', monospace;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-        header, footer {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .about, .contact, .experience, .apps {
-            margin-bottom: 40px;
-        }
-        h2 {
-            color: #555;
-        }
-        ul li {
-            margin-bottom: 15px;
-        }
-        a, a:visited {
-            color: #5599ff;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                color: #ccc;
-                background-color: #222;
-            }
-            h2 {
-                color: #ddd;
-            }
-            a, a:visited {
-                color: #5599ff;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrei Gaivoronskii — iOS Engineer</title>
+  <meta name="description" content="iOS engineer (Swift, SwiftUI, watchOS). Fitness, HealthKit, clean design."/>
+  <link rel="icon" type="image/png" href="/favicon.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0b; --fg:#e8e8e8; --muted:#9aa0a6; --acc:#9b7bff; --ring:rgba(255,255,255,.12);
+      --mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --sans:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      --pad: clamp(16px, 4vw, 40px);
+      --max: 1200px;
+    }
+    @media (prefers-color-scheme:light){
+      :root{ --bg:#ffffff; --fg:#121212; --muted:#5d6166; --ring:rgba(0,0,0,.12); --acc:#5b7cff; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans); line-height:1.6}
+    a{color:var(--fg); text-underline-offset:3px}
+    a:hover{color:var(--acc)}
+    /* Full-bleed gradient backdrop */
+    .bg{
+      position:fixed; inset:0; z-index:-1;
+      background:
+        radial-gradient(1200px 700px at 80% -10%, rgba(155,123,255,.25), transparent 60%),
+        radial-gradient(900px 600px at 0% 100%, rgba(87,227,180,.18), transparent 60%),
+        radial-gradient(600px 400px at 100% 100%, rgba(255,184,107,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.2));
+      filter: saturate(110%);
+    }
+    /* Wrapper */
+    .wrap{max-width:var(--max); margin:0 auto; padding:var(--pad)}
+    /* Header (hero) */
+    header{padding-top:calc(var(--pad) * 1.2); padding-bottom:calc(var(--pad) * 1.2)}
+    .title{
+      font-size:clamp(40px, 9vw, 120px); line-height:.92; font-weight:800; letter-spacing:-.03em; margin:0 0 14px;
+    }
+    .subtitle{font-size:clamp(16px, 2.6vw, 22px); color:var(--muted); max-width:48ch}
+    .chips{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .chip{padding:6px 12px; border:1px solid var(--ring); border-radius:999px; font-family:var(--mono); font-size:12px}
+    nav{position:sticky; top:0; backdrop-filter:saturate(180%) blur(10px); background:rgba(11,11,11,.35); border-bottom:1px solid var(--ring); z-index:5}
+    @media (prefers-color-scheme:light){ nav{background:rgba(255,255,255,.6)} }
+    .navin{max-width:var(--max); margin:0 auto; padding:10px var(--pad); display:flex; gap:16px; overflow:auto}
+    .navin a{white-space:nowrap; opacity:.9}
+    /* Sections */
+    section{scroll-margin-top:60px}
+    .section-title{font-family:var(--mono); font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 10px}
+    /* Work grid */
+    .work{display:grid; grid-template-columns:repeat(12, 1fr); gap:14px}
+    .card{
+      grid-column: span 4; min-height:120px; padding:18px; border:1px solid var(--ring); border-radius:16px;
+      background:rgba(0,0,0,.14); transition:transform .15s ease, border-color .15s ease;
+    }
+    @media (prefers-color-scheme:light){ .card{background:rgba(255,255,255,.6)} }
+    .card:hover{transform:translateY(-2px); border-color:rgba(255,255,255,.28)}
+    .card h3{margin:0 0 8px; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+    @media (max-width:980px){ .card{grid-column: span 6} }
+    @media (max-width:640px){ .card{grid-column: span 12} }
+    /* Experience list */
+    .xp{display:grid; gap:14px}
+    .xp li{list-style:none; padding:16px; border:1px solid var(--ring); border-radius:12px; background:rgba(0,0,0,.10)}
+    @media (prefers-color-scheme:light){ .xp li{background:rgba(255,255,255,.6)} }
+    .xp small{color:var(--muted)}
+    /* Full-bleed Game section */
+    .game-section{
+      position:relative; width:100%; margin:8vh 0; aspect-ratio: 16 / 9;
+      /* on tall phones, we’ll let it get taller than the fold */
+    }
+    @media (max-width:900px){
+      .game-section{ aspect-ratio: auto; height: 60vh; }
+    }
+    .game-canvas{position:absolute; inset:0; width:100%; height:100%; display:block}
+    .hud{
+      position:absolute; inset:auto var(--pad) var(--pad) var(--pad);
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap
+    }
+    .pill{padding:8px 12px; border:1px solid var(--ring); border-radius:999px; background:rgba(0,0,0,.35); font-family:var(--mono); font-size:13px}
+    @media (prefers-color-scheme:light){ .pill{background:rgba(255,255,255,.55)} }
+    .btn{cursor:pointer; border:1px solid var(--ring); background:rgba(0,0,0,.35); border-radius:10px; padding:8px 12px; font-weight:600}
+    @media (prefers-color-scheme:light){ .btn{background:rgba(255,255,255,.55)} }
+    /* Leaderboard */
+    .leader{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width:700px){ .leader{grid-template-columns:1fr} }
+    .leader ol{margin:0; padding-left:18px}
+    /* Contact */
+    footer{padding:60px var(--pad); color:var(--muted); text-align:center}
+    /* Dialog */
+    dialog{
+      border:1px solid var(--ring); border-radius:14px; padding:18px; background:rgba(0,0,0,.85); color:var(--fg);
+      max-width:420px; width:calc(100% - 40px)
+    }
+    dialog::backdrop{background:rgba(0,0,0,.5)}
+    input[type="text"]{
+      width:100%; padding:10px 12px; border:1px solid var(--ring); border-radius:10px; background:transparent; color:var(--fg);
+      font-family:var(--mono)
+    }
+    /* Reduced motion: kill parallax/animations */
+    @media (prefers-reduced-motion:reduce){ .bg{background-attachment:initial} }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1 id="colorfulTitle"></h1>
-            <p>I'm a programmer and fitness enthusiast</p>
-        </header>
+  <div class="bg" aria-hidden="true"></div>
 
-        <div class="about">
-            <h2>About</h2>
-            <p>Coding non-stop in Objective C and Swift since 2015, I present here my personal passion projects. Each reflects my journey and zeal in mobile app development. Feel free to explore and connect with any inquiries.</p>
-        </div>
-
-        <div class="contacts">
-            <h2>Contacts</h2>
-            <p>GitHub: <a href="https://github.com/a-gaivoronskii">a-gaivoronskii</a></p>
-            <p>Email: <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a></p>
-        </div>
-
-        <div class="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li><a href="https://adia.ai">ADIA.AI</a>, since March 2024 <i>(Developing iOS applications for innovative healthcare solutions)</i></li>
-                <li><a href="https://flowhealth.com">FLOW HEALTH</a>, March 2022 - March 2024 <i>(Engaged in multi-app iOS development, focusing on diverse healthcare solutions)</i></li>
-                <li><a href="https://beshenayasushka.ru">#BESHENAYASUSHKA</a>, December 2016 - October 2020 <i>(Led the iOS app development, enhancing fitness and wellness experiences)</i></li>
-                <li><a href="https://eu.louisvuitton.com">LOUIS VUITTON</a>, September 2011 - January 2015 <i>(Oversaw sales operations, contributing to market growth and customer engagement)</i></li>
-            </ul>
-        </div>
-
-        <div class="apps">
-            <h2>Applications</h2>
-            <ul>
-                <li><a href="https://apps.apple.com/app/id1535400615">RUN</a></li>
-                <li><a href="https://apps.apple.com/app/id1455639400">Walker</a></li>
-                <li><a href="https://apps.apple.com/app/id1038175626">Wallet</a></li>
-                <li><a href="https://apps.apple.com/app/id1097500008">Fitness</a></li>
-                <li><a href="https://apps.apple.com/app/id1604886331">QR Code</a></li>
-                <li><a href="https://apps.apple.com/app/id1427590589">Activity</a></li>
-                <li><a href="https://apps.apple.com/app/id1381169094">365 Workouts</a></li>
-            </ul>
-        </div>
-
-        <footer>
-            <p>Born in 1985</p>
-        </footer>
+  <nav>
+    <div class="navin">
+      <a href="#top">Home</a>
+      <a href="#work">Work</a>
+      <a href="#game">Play</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </div>
+  </nav>
 
-    <script>
-        function getRandomHueColor() {
-            const hue = Math.floor(Math.random() * 360);
-            const saturation = 59;
-            const lightness = 57;
-            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-        }
+  <header id="top" class="wrap">
+    <h1 class="title">Andrei<br/>Gaivoronskii</h1>
+    <p class="subtitle">iOS engineer focused on Swift/SwiftUI, watchOS, and HealthKit. I design and ship fast, clean apps with obsessive attention to motion, accessibility, and real-world fitness UX.</p>
+    <div class="chips">
+      <span class="chip">Amsterdam</span>
+      <span class="chip">Swift • SwiftUI • Obj-C</span>
+      <span class="chip">HealthKit • WorkoutKit</span>
+      <span class="chip">watchOS</span>
+      <span class="chip"><a href="https://github.com/a-gaivoronskii" target="_blank" rel="noreferrer">GitHub</a></span>
+      <span class="chip"><a href="mailto:andrei@gaivoronskii.com">Email</a></span>
+    </div>
+  </header>
 
-        function colorizeTitle(title) {
-            var coloredTitle = '';
-            var fonts = ['Roboto Mono', 'Lobster', 'Pacifico', 'Montserrat', 'Courier New', 'Georgia', 'Comic Sans MS'];
-            for (var i = 0; i < title.length; i++) {
-                var font = fonts[Math.floor(Math.random() * fonts.length)];
-                coloredTitle += `<span style="color: ${getRandomHueColor()}; font-family: '${font}'">${title[i]}</span>`;
-            }
-            return coloredTitle;
-        }
+  <main class="wrap">
+    <!-- Work -->
+    <section id="work" aria-labelledby="work-title" style="margin-top:36px; margin-bottom:18px">
+      <h2 id="work-title" class="section-title">Selected Work</h2>
+      <div class="work">
+        <a class="card" href="https://apps.apple.com/app/id1427590589" target="_blank" rel="noreferrer">
+          <h3>Activity: Streak Recovery</h3><p>Recover Apple Watch rings for previous days. HealthKit, SwiftUI, watchOS.</p>
+        </a>
+        <a class="card" href="https://apps.apple.com/app/id1535400615" target="_blank" rel="noreferrer">
+          <h3>RUN</h3><p>Fast running tracker with clean stats and minimal UI.</p>
+        </a>
+        <a class="card" href="https://apps.apple.com/app/id1455639400" target="_blank" rel="noreferrer">
+          <h3>Walker</h3><p>Lightweight pedometer with playful details.</p>
+        </a>
+        <a class="card" href="https://apps.apple.com/app/id1038175626" target="_blank" rel="noreferrer">
+          <h3>Wallet</h3><p>Secure, tidy wallet utilities.</p>
+        </a>
+        <a class="card" href="https://apps.apple.com/app/id1097500008" target="_blank" rel="noreferrer">
+          <h3>Fitness</h3><p>Workout companion with clear feedback.</p>
+        </a>
+        <a class="card" href="https://apps.apple.com/app/id1604886331" target="_blank" rel="noreferrer">
+          <h3>QR Code</h3><p>Quick scan & create, privacy-minded.</p>
+        </a>
+        <a class="card" href="https://apps.apple.com/app/id1381169094" target="_blank" rel="noreferrer">
+          <h3>365 Workouts</h3><p>Daily workout ideas and habit tracking.</p>
+        </a>
+      </div>
+    </section>
+  </main>
 
-        document.getElementById('colorfulTitle').innerHTML = colorizeTitle('Andrei Gaivoronskii');
-    </script>
+  <!-- Full-bleed game between sections (no borders) -->
+  <section id="game" class="game-section" aria-label="Infinite inline game">
+    <canvas id="gameCanvas" class="game-canvas"></canvas>
+    <div class="hud">
+      <span id="score" class="pill">Score: 0</span>
+      <button id="start" class="btn">Start / Jump</button>
+      <button id="reset" class="btn" title="Clear local leaderboard">Reset Scores</button>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <!-- Leaderboard + About game -->
+    <section aria-labelledby="lb-title" style="margin-top:10px; margin-bottom:40px">
+      <h2 id="lb-title" class="section-title">Leaderboard</h2>
+      <div class="leader">
+        <div>
+          <ol id="board" class="mono"></ol>
+        </div>
+        <div>
+          <p class="subtitle" style="margin-top:0">Tiny endless runner integrated directly into the page. No borders, no distractions. Tap/click/space to jump. Scores save locally (top-10). Built with a crisp high-DPI canvas, tuned for phones, and pauses when off-screen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" aria-labelledby="xp-title" style="margin-bottom:20px">
+      <h2 id="xp-title" class="section-title">Experience</h2>
+      <ul class="xp">
+        <li>
+          <a href="https://adia.ai" target="_blank" rel="noreferrer"><b>ADIA.AI</b></a> — since Mar 2024<br/>
+          <small>iOS apps for innovative healthcare solutions.</small>
+        </li>
+        <li>
+          <a href="https://flowhealth.com" target="_blank" rel="noreferrer"><b>FLOW HEALTH</b></a> — Mar 2022 · Mar 2024<br/>
+          <small>Multi-app iOS development across healthcare products.</small>
+        </li>
+        <li>
+          <a href="https://beshenayasushka.ru" target="_blank" rel="noreferrer"><b>#BESHENAYASUSHKA</b></a> — Dec 2016 · Oct 2020<br/>
+          <small>Lead iOS developer for fitness & wellness experiences.</small>
+        </li>
+        <li>
+          <a href="https://eu.louisvuitton.com" target="_blank" rel="noreferrer"><b>LOUIS VUITTON</b></a> — Sep 2011 · Jan 2015<br/>
+          <small>Sales operations, market growth & customer engagement.</small>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title" style="margin-bottom:30px">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <p>Say hi: <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a> · <a href="https://github.com/a-gaivoronskii" target="_blank" rel="noreferrer">GitHub</a></p>
+      <p class="subtitle">Born in 1985. Always shipping.</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Andrei Gaivoronskii
+  </footer>
+
+  <!-- Minimal save dialog -->
+  <dialog id="saveDlg">
+    <form method="dialog" id="saveForm">
+      <h3 style="margin:0 0 8px">Game Over</h3>
+      <p id="final" style="margin:0 0 10px">Score: 0</p>
+      <input id="name" type="text" placeholder="Your name" maxlength="20" />
+      <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:12px">
+        <button class="btn" value="cancel">Cancel</button>
+        <button class="btn" value="default" id="saveBtn">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script>
+    // ---------- Utilities ----------
+    const $ = s => document.querySelector(s);
+    const clamp = (n,a,b)=>Math.max(a,Math.min(b,n));
+    $("#y").textContent = new Date().getFullYear();
+
+    // ---------- Leaderboard (local) ----------
+    const LB_KEY = "ag_inline_game_v1";
+    const loadLB = () => { try { return JSON.parse(localStorage.getItem(LB_KEY)) || []; } catch { return []; } }
+    const saveLB = list => localStorage.setItem(LB_KEY, JSON.stringify(list.slice(0,10)));
+    const renderLB = () => {
+      const list = loadLB();
+      $("#board").innerHTML = list.length
+        ? list.map((x,i)=>`<li>#${i+1} ${x.name} — ${x.score}</li>`).join("")
+        : "<li>No scores yet. Be first.</li>";
+    };
+
+    // ---------- Game (full-bleed in-section) ----------
+    const canvas = $("#gameCanvas");
+    const ctx = canvas.getContext("2d", { alpha: true, desynchronized: true });
+    let DPR = 1, running=false, raf=0, last=0, score=0;
+    const state = {
+      w: 1280, h: 720,
+      ground: 0.82,
+      speed: 240,
+      player: { x: 140, y:0, vy:0, s:28, jump: 640, g: 2000 },
+      spawn: 0,
+      obstacles: [],
+      hue: 205
+    };
+
+    function fit(){
+      const r = canvas.getBoundingClientRect();
+      DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+      state.w = Math.floor(r.width);
+      state.h = Math.floor(r.height);
+      canvas.width = Math.floor(state.w * DPR);
+      canvas.height = Math.floor(state.h * DPR);
+      ctx.setTransform(DPR,0,0,DPR,0,0);
+      state.player.y = state.h * state.ground - state.player.s;
+      if(!running) drawStart();
+    }
+    addEventListener("resize", fit, { passive:true });
+
+    function reset(){
+      state.obstacles.length = 0;
+      state.speed = 240;
+      score = 0;
+      state.spawn = 0;
+      state.player.vy = 0;
+      state.player.y = state.h * state.ground - state.player.s;
+      state.hue = 180 + Math.random()*120;
+      $("#score").textContent = "Score: 0";
+    }
+
+    function start(){
+      if(running) { jump(); return; }
+      running = true; last = performance.now();
+      reset();
+      raf = requestAnimationFrame(loop);
+    }
+    function stop(){
+      running = false;
+      cancelAnimationFrame(raf);
+      openSave(score);
+    }
+
+    function loop(now){
+      const dt = (now - last)/1000; last = now;
+      update(dt); draw();
+      if(running) raf = requestAnimationFrame(loop);
+    }
+
+    function update(dt){
+      state.speed += dt * 8; // ramp difficulty
+      // player physics
+      const p = state.player;
+      p.vy += p.g * dt;
+      p.y = Math.min(p.y + p.vy * dt, state.h*state.ground - p.s);
+      // spawn
+      state.spawn -= dt;
+      if(state.spawn<=0){
+        const size = 18 + Math.random()*26;
+        const gap = 160 + Math.random()*140;
+        state.obstacles.push({ x: state.w + 40, y: state.h*state.ground - size, s: size });
+        state.spawn = clamp(gap/(state.speed+60), .65, 1.35);
+      }
+      // move & collide
+      for(let i=state.obstacles.length-1;i>=0;i--){
+        const o = state.obstacles[i];
+        o.x -= state.speed*dt;
+        if(o.x + o.s < 0) state.obstacles.splice(i,1);
+      }
+      // AABB collisions
+      for(const o of state.obstacles){
+        if (p.x < o.x+o.s && p.x+p.s > o.x && p.y < o.y+o.s && p.y+p.s > o.y) return stop();
+      }
+      // score
+      score += Math.floor(dt*100);
+      $("#score").textContent = "Score: " + score;
+    }
+
+    function draw(){
+      // clear with subtle gradient, no borders — it sits directly on the page
+      const g1 = ctx.createLinearGradient(0,0,0,state.h);
+      g1.addColorStop(0, "rgba(255,255,255,0.02)");
+      g1.addColorStop(1, "rgba(0,0,0,0.18)");
+      ctx.fillStyle = g1; ctx.fillRect(0,0,state.w,state.h);
+
+      drawGround();
+      drawObstacles();
+      drawPlayer();
+    }
+    function drawStart(){
+      // light hint at the play area without a frame
+      draw();
+      ctx.fillStyle = "rgba(255,255,255,.7)";
+      ctx.font = "600 18px Inter, system-ui, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("Tap / click / Space to start", state.w/2, state.h*0.45);
+    }
+    function drawGround(){
+      const y = Math.floor(state.h*state.ground)+.5;
+      ctx.strokeStyle = "rgba(255,255,255,.08)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(state.w,y); ctx.stroke();
+      // parallax hash marks (moving)
+      const k = (performance.now()/28) % 48;
+      ctx.strokeStyle = "rgba(255,255,255,.05)";
+      for(let x=-k; x<state.w; x+=48){ ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x+14, y+12); ctx.stroke(); }
+    }
+    function drawPlayer(){
+      const h = `hsl(${state.hue},80%,62%)`;
+      ctx.fillStyle = h;
+      rr(ctx, state.player.x, state.player.y, state.player.s, state.player.s, 7); ctx.fill();
+    }
+    function drawObstacles(){
+      ctx.fillStyle = "rgba(255,255,255,.92)";
+      for(const o of state.obstacles){ rr(ctx, o.x, o.y, o.s, o.s, 4); ctx.fill(); }
+    }
+    function rr(c,x,y,w,h,r){
+      c.beginPath();
+      c.moveTo(x+r,y);
+      c.arcTo(x+w,y, x+w,y+h, r);
+      c.arcTo(x+w,y+h, x,y+h, r);
+      c.arcTo(x,y+h, x,y, r);
+      c.arcTo(x,y, x+w,y, r);
+      c.closePath();
+    }
+
+    function jump(){
+      const p = state.player;
+      if (Math.abs(p.y - (state.h*state.ground - p.s)) < 1){
+        p.vy = -p.jump;
+      }
+    }
+
+    // controls
+    $("#start").addEventListener("click", start);
+    $("#reset").addEventListener("click", ()=>{ localStorage.removeItem(LB_KEY); renderLB(); });
+    canvas.addEventListener("pointerdown", ()=> running ? jump() : start(), { passive:true });
+    addEventListener("keydown", e=>{
+      if(e.code === "Space"){ e.preventDefault(); running ? jump() : start(); }
+    }, { passive:false });
+
+    // pause when off-screen (saves battery)
+    const io = new IntersectionObserver(([entry])=>{
+      if(!entry) return;
+      if(!entry.isIntersecting && running){ cancelAnimationFrame(raf); running=false; }
+    }, { threshold: 0.01 });
+    io.observe(canvas);
+
+    // ---------- Save dialog ----------
+    const dlg = $("#saveDlg");
+    function openSave(final){
+      $("#final").textContent = "Score: " + final;
+      $("#name").value = "";
+      dlg.showModal();
+    }
+    $("#saveForm").addEventListener("submit", e=>{
+      e.preventDefault();
+      const name = ($("#name").value || "Player").trim().slice(0,20);
+      const list = loadLB(); list.push({name, score}); list.sort((a,b)=>b.score-a.score); saveLB(list);
+      renderLB(); dlg.close(); drawStart();
+    });
+
+    // init
+    fit(); renderLB(); drawStart();
+  </script>
 </body>
 </html>
