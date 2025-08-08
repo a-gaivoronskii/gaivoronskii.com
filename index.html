@@ -12,17 +12,33 @@
   --bg:#fff; --ink:#0b0d10; --link:#0b53ff; --hot:#ff3131;
   --tape:#fff48d; --muted:#6a6f76; --grid:rgba(0,0,0,.06);
   --ink-on-tape:#0b0d10;
+  --surface:#ffffff;       /* cards / panels */
+  --surface-ink:#000000;
   --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
   --sans:"Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
-/* System dark by default; JS can override via [data-theme] */
+/* System dark; JS can override via [data-theme] */
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b; --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08) }
-  :root{ --ink-on-tape:#0b0d10 }
+  :root{
+    --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b;
+    --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08);
+    --ink-on-tape:#0b0d10;
+    --surface:#0f1216; --surface-ink:#e7edf4;
+  }
 }
-/* Manual theme overrides */
-:root[data-theme="dark"]{ --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b; --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08); --ink-on-tape:#0b0d10 }
-:root[data-theme="light"]{ --bg:#ffffff; --ink:#0b0d10; --link:#0b53ff; --hot:#ff3131; --tape:#fff48d; --muted:#6a6f76; --grid:rgba(0,0,0,.06); --ink-on-tape:#0b0d10 }
+/* Manual toggle */
+:root[data-theme="dark"]{
+  --bg:#121418; --ink:#e9eef2; --link:#7aa2ff; --hot:#ff6b6b;
+  --tape:#fff07a; --muted:#a7adb4; --grid:rgba(255,255,255,.08);
+  --ink-on-tape:#0b0d10;
+  --surface:#0f1216; --surface-ink:#e7edf4;
+}
+:root[data-theme="light"]{
+  --bg:#ffffff; --ink:#0b0d10; --link:#0b53ff; --hot:#ff3131;
+  --tape:#fff48d; --muted:#6a6f76; --grid:rgba(0,0,0,.06);
+  --ink-on-tape:#0b0d10;
+  --surface:#ffffff; --surface-ink:#000000;
+}
 
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -42,27 +58,32 @@ a:hover{color:var(--hot)}
 h1{font-size:clamp(32px,8vw,86px);letter-spacing:.02em;margin:0;line-height:1;font-weight:700}
 h1 .em{color:var(--hot)}
 
-/* Hero bits */
+/* Hero */
 .herochips{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 0}
 .chip{background:var(--tape);padding:3px 8px;border:2px solid var(--ink);border-radius:6px;font-family:var(--mono);color:var(--ink-on-tape)!important;font-size:14px}
-button.chip{cursor:pointer; font: inherit} /* same size as neighbors */
-.hi{ /* readable highlight in dark: don't change text color */
-  background-image:linear-gradient(var(--tape), var(--tape));
-  background-size:100% 0.8em; background-position:0 88%; background-repeat:no-repeat;
-  padding-bottom:.05em; color:inherit !important; text-shadow:none;
+button.chip{cursor:pointer; font: inherit}
+.hi{
+  position:relative; color:var(--ink-on-tape)!important; /* dark text on yellow */
+  background:linear-gradient(var(--tape),var(--tape));
+  background-size:100% 0.9em; background-position:0 88%; background-repeat:no-repeat;
+  padding:0 .05em .05em;
+  box-decoration-break:clone;
 }
 
-/* links row */
+/* Links row */
 .info{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:10px 0;border-bottom:2px solid var(--ink)}
 
-/* section titles */
+/* Section titles */
 h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;border-bottom:2px solid var(--ink);padding:8px 0;margin:24px 0 12px}
 
-/* projects grid */
+/* Projects */
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-.card{grid-column:span 6;position:relative;border:2px solid var(--ink);background:#fff;color:#000;box-shadow:6px 6px 0 0 var(--ink);overflow:hidden;min-height:220px} /* shorter */
-@media (prefers-color-scheme:dark){ .card{background:#0f1216;color:#e7edf4} }
-@media (max-width:860px){ .card{grid-column:span 12; min-height:180px} } /* shorter on mobile */
+.card{
+  grid-column:span 6;position:relative;border:2px solid var(--ink);
+  background:var(--surface); color:var(--surface-ink);
+  box-shadow:6px 6px 0 0 var(--ink); overflow:hidden; min-height:220px;
+}
+@media (max-width:860px){ .card{grid-column:span 12; min-height:180px} }
 .card .tag{position:absolute;top:8px;left:8px;background:var(--tape);border:2px solid var(--ink);padding:2px 6px;border-radius:6px;font-family:var(--mono);font-size:12px;color:var(--ink-on-tape)!important}
 .card .ct{position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));color:#fff;text-shadow:0 1px 0 #000}
 .card h3{margin:0 0 4px;font-size:24px;letter-spacing:.02em}
@@ -77,26 +98,32 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
                     linear-gradient(135deg, rgba(0,0,0,.08), rgba(0,0,0,0));
 }
 
-/* mini tables */
+/* Definition lists */
 .dl{display:grid;grid-template-columns:160px 1fr;gap:8px;font-family:var(--mono);font-size:13px}
 .dl div{padding:4px 0;border-bottom:1px dashed var(--grid)}
 .small{color:var(--muted);font-size:12px}
 
-/* footer */
+/* Footer */
 .foot{border-top:2px solid var(--ink);margin-top:28px;padding-top:10px;font-family:var(--mono);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
-/* tape / marquees (kept slow) */
+/* Ticker — aligned with container, slower */
 .tape,.tape *{ color: var(--ink-on-tape) !important; text-shadow:none !important }
-.tape{margin:10px -18px 16px;padding:8px 0;background:var(--tape);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);overflow:hidden;white-space:nowrap;position:relative;font-family:var(--mono)}
-.marq{display:inline-block;padding-left:100%;animation:marq 32s linear infinite}
-.marq span{display:inline-block;padding:0 24px}
+.tape{
+  margin:12px 0 16px;        /* aligned with wrap — no negative margins */
+  padding:8px 12px;          /* same side breathing room as other chips */
+  background:var(--tape);
+  border:2px solid var(--ink);
+  overflow:hidden; white-space:nowrap; position:relative; font-family:var(--mono)
+}
+.marq{display:inline-block; padding-left:100%; animation:marq 32s linear infinite}
+.marq span{display:inline-block; padding:0 24px}
 @keyframes marq{to{transform:translateX(-100%)}}
 </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- Header with red underscore -->
+    <!-- Header -->
     <div class="top">
       <div></div>
       <div><h1>ANDREI<span class="em">_</span>GAIVORONSKII</h1></div>
@@ -111,7 +138,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
       <button id="theme" class="chip">toggle_theme</button>
     </div>
     <p style="margin:12px 0 0; max-width:72ch">
-      Building <span class="hi">production iOS apps</span> for <span class="hi">AI-powered products</span>. 
+      Building <span class="hi">production iOS apps</span> for <span class="hi">AI-powered products</span>.
       I like <span class="hi">tight performance</span>, <span class="hi">clear UI</span>, and shipping.
     </p>
 
@@ -124,7 +151,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
       <a href="https://flowhealth.com" target="_blank" rel="noreferrer">Flow&nbsp;Health</a>
     </div>
 
-    <!-- Marquee -->
+    <!-- Ticker -->
     <div class="tape" aria-hidden="true">
       <div class="marq">
         <span>Swift • Objective-C • SwiftUI • watchOS • HealthKit</span>
@@ -226,29 +253,28 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
       <div><a href="https://eu.louisvuitton.com" target="_blank" rel="noreferrer">LOUIS VUITTON</a></div><div>Sep 2011 — Jan 2015 · sales ops</div>
     </div>
 
-    <!-- iOS Dev Tips (slow marquee at end) -->
+    <!-- iOS Dev Tips -->
     <div class="tape" aria-label="ios_dev_tips">
       <div class="marq">
         <span>Swift: prefer value types; keep structs small & copy-cheap.</span>
-        <span>Obj-C: nullability annotations kill a whole class of bugs.</span>
-        <span>SwiftUI: use @MainActor on models that touch UI timelines.</span>
+        <span>Obj-C: add nullability and NS_SWIFT_NAME for nicer bridging.</span>
+        <span>SwiftUI: @MainActor on models touching UI timelines.</span>
         <span>Performance: Instruments → Time Profiler before “optimizing”.</span>
-        <span>Startup: lazy load heavy singletons; defer HealthKit auth.</span>
-        <span>Combine: erase type with AnyPublisher before crossing layers.</span>
-        <span>Interop: expose small Obj-C shims for tricky C APIs.</span>
-        <span>Testing: run on Low Power Mode — battery is a feature.</span>
+        <span>Startup: lazy heavy singletons; defer HealthKit auth.</span>
+        <span>Combine: erase with AnyPublisher before crossing layers.</span>
+        <span>Interop: tiny Obj-C shims for tricky C APIs.</span>
+        <span>Debug: use os_signpost and points of interest in Instruments.</span>
       </div>
     </div>
 
     <!-- Footer -->
     <div class="foot">
       <div>© <span id="y"></span> Andrei Gaivoronskii</div>
-      <div class="small">Built between coffee sips and commit messages.</div>
+      <div class="small">Built between workouts, runs, and long walks.</div>
     </div>
   </div>
 
 <script>
-/* year */
 document.getElementById('y').textContent = new Date().getFullYear();
 
 /* dark/light toggle using [data-theme] */
