@@ -1,483 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Andrei Gaivoronskii — iOS Engineer</title>
-  <meta name="description" content="iOS engineer focused on Swift/SwiftUI, HealthKit, and high-quality mobile experiences." />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrei Gaivoronskii</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header, footer {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .about, .contact, .experience, .apps {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #555;
+        }
+        ul li {
+            margin-bottom: 15px;
+        }
+        a, a:visited {
+            color: #5599ff;
+        }
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Andrei Gaivoronskii — iOS Engineer" />
-  <meta property="og:description" content="Swift/SwiftUI, HealthKit, WatchOS. Clean apps, thoughtful design." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og.png" />
-  <meta name="theme-color" content="#0b0b0b" />
-
-  <style>
-    :root{
-      --bg:#0b0b0b;
-      --fg:#e7e7e7;
-      --muted:#9aa0a6;
-      --card:#121212;
-      --acc:#6ea8ff;
-      --ring:#2a2a2a;
-      --grid: rgba(255,255,255,0.06);
-      --shadow: 0 10px 50px rgba(0,0,0,.5);
-      --radius: 14px;
-      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-      --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#ffffff; --fg:#111; --muted:#5b5f63; --card:#f6f7f9; --ring:#e9eaee; --grid:rgba(0,0,0,.06); --shadow:0 6px 30px rgba(0,0,0,.08); }
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans); line-height:1.6;
-      /* subtle designer grid */
-      background-image:
-        radial-gradient(circle at 0 0, var(--grid) 1px, transparent 0),
-        radial-gradient(circle at 16px 16px, var(--grid) 1px, transparent 0);
-      background-size:32px 32px;
-    }
-    a{color:var(--acc); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1050px; margin:0 auto; padding:24px}
-    header{display:grid; gap:24px; align-items:center; margin-top:12px}
-    .nav{display:flex; gap:14px; flex-wrap:wrap}
-    .chip{padding:8px 12px; border:1px solid var(--ring); border-radius:999px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); }
-    .chip:hover{border-color:var(--acc)}
-    .hero{
-      display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; margin-top:6px;
-    }
-    .title{
-      font-size:clamp(32px, 6.2vw, 72px); line-height:1.05; font-weight:800; letter-spacing:-.02em;
-      background: conic-gradient(from 0deg at 50% 50%, #6ea8ff, #9b7bff, #57e3b4, #ffb86b, #6ea8ff);
-      -webkit-background-clip:text; background-clip:text; color:transparent;
-      filter: drop-shadow(0 8px 40px rgba(110,168,255,.25));
-    }
-    .sub{color:var(--muted); font-size:clamp(14px,2.4vw,18px)}
-    .card{
-      background:var(--card); border:1px solid var(--ring); border-radius:var(--radius); box-shadow:var(--shadow);
-    }
-    .panel{padding:20px}
-    .grid{display:grid; gap:16px}
-    .work{grid-template-columns: repeat(auto-fill, minmax(260px,1fr))}
-    .work a.card{display:block; transition:transform .15s ease}
-    .work a.card:hover{transform:translateY(-2px)}
-    .badge{font-family:var(--mono); font-size:12px; color:var(--muted); border:1px solid var(--ring); padding:4px 8px; border-radius:999px}
-    .badges{display:flex; gap:8px; flex-wrap:wrap}
-    .section-title{font-size:18px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted)}
-    .cols{display:grid; grid-template-columns:1fr 1fr; gap:16px}
-    .mono{font-family:var(--mono)}
-    .center{display:flex; align-items:center; justify-content:center}
-    .game-wrap{display:grid; gap:12px}
-    canvas#game{width:100%; height:54vh; min-height:320px; border-radius:var(--radius); background:#0d0f14; border:1px solid var(--ring)}
-    .game-ui{display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap}
-    .btn{border:1px solid var(--ring); background:var(--card); border-radius:10px; padding:10px 14px; cursor:pointer; font-weight:600}
-    .btn:hover{border-color:var(--acc)}
-    .leaderboard ol{margin:0; padding-left:18px}
-    footer{margin:36px 0; color:var(--muted)}
-    .pill{display:inline-block; padding:6px 10px; border:1px solid var(--ring); border-radius:999px; background:var(--card)}
-    dialog{
-      border:1px solid var(--ring); background:var(--card); color:var(--fg); border-radius:12px; padding:18px; max-width:400px;
-      box-shadow:var(--shadow);
-    }
-    dialog::backdrop{background:rgba(0,0,0,.5)}
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr; }
-      .cols{grid-template-columns:1fr}
-      canvas#game{height:48vh}
-    }
-    @media (prefers-reduced-motion: reduce){
-      .title{background: none; color:var(--fg); filter:none}
-    }
-  </style>
+        @media (prefers-color-scheme: dark) {
+            body {
+                color: #ccc;
+                background-color: #222;
+            }
+            h2 {
+                color: #ddd;
+            }
+            a, a:visited {
+                color: #5599ff;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <nav class="nav">
-        <a class="chip" href="#work">Work</a>
-        <a class="chip" href="#skills">Skills</a>
-        <a class="chip" href="#game">Play</a>
-        <a class="chip" href="#contact">Contact</a>
-      </nav>
+    <div class="container">
+        <header>
+            <h1 id="colorfulTitle"></h1>
+            <p>I'm a programmer and fitness enthusiast</p>
+        </header>
 
-      <section class="hero">
-        <div>
-          <h1 class="title">Andrei Gaivoronskii</h1>
-          <p class="sub">iOS engineer building clean, performant apps in <b>Swift</b>/<b>SwiftUI</b> &amp; <b>watchOS</b>. Fitness, HealthKit, delightful UX. Shipping since 2015.</p>
-          <div class="badges" style="margin-top:10px">
-            <span class="badge">Amsterdam</span>
-            <span class="badge">Open to collabs</span>
-            <span class="badge">Design-minded</span>
-          </div>
+        <div class="about">
+            <h2>About</h2>
+            <p>Coding non-stop in Objective C and Swift since 2015, I present here my personal passion projects. Each reflects my journey and zeal in mobile app development. Feel free to explore and connect with any inquiries.</p>
         </div>
-        <div class="card panel">
-          <div class="section-title mono">About</div>
-          <p>Coding non-stop in Objective-C and Swift since 2015. I care about small details, readable code, and interfaces that feel obvious. Health & fitness are my niche; thoughtful tooling and animation are my hobbies.</p>
-          <p class="mono">GitHub: <a href="https://github.com/a-gaivoronskii">a-gaivoronskii</a><br/>Email: <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a></p>
+
+        <div class="contacts">
+            <h2>Contacts</h2>
+            <p>GitHub: <a href="https://github.com/a-gaivoronskii">a-gaivoronskii</a></p>
+            <p>Email: <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a></p>
         </div>
-      </section>
-    </header>
 
-    <main class="grid" style="margin-top:20px">
-      <!-- Work -->
-      <section id="work" class="grid">
-        <div class="section-title mono">Selected Work</div>
-        <div class="grid work">
-          <a class="card panel" href="https://apps.apple.com/app/id1427590589" target="_blank" rel="noreferrer">
-            <h3>Activity: Streak Recovery</h3>
-            <p class="sub">Recover rings and keep your streak sane. HealthKit, watchOS, SwiftUI.</p>
-          </a>
-          <a class="card panel" href="https://apps.apple.com/app/id1535400615" target="_blank" rel="noreferrer">
-            <h3>RUN</h3>
-            <p class="sub">Fast, focused running tracker with clean UI and subtle stats.</p>
-          </a>
-          <a class="card panel" href="https://apps.apple.com/app/id1455639400" target="_blank" rel="noreferrer">
-            <h3>Walker</h3>
-            <p class="sub">Steps done right. Lightweight pedometer with playful details.</p>
-          </a>
-          <a class="card panel" href="https://apps.apple.com/app/id1381169094" target="_blank" rel="noreferrer">
-            <h3>365 Workouts</h3>
-            <p class="sub">Daily workout ideas, simple tracking, and friendly nudges.</p>
-          </a>
+        <div class="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li><a href="https://adia.ai">ADIA.AI</a>, since March 2024 <i>(Developing iOS applications for innovative healthcare solutions)</i></li>
+                <li><a href="https://flowhealth.com">FLOW HEALTH</a>, March 2022 - March 2024 <i>(Engaged in multi-app iOS development, focusing on diverse healthcare solutions)</i></li>
+                <li><a href="https://beshenayasushka.ru">#BESHENAYASUSHKA</a>, December 2016 - October 2020 <i>(Led the iOS app development, enhancing fitness and wellness experiences)</i></li>
+                <li><a href="https://eu.louisvuitton.com">LOUIS VUITTON</a>, September 2011 - January 2015 <i>(Oversaw sales operations, contributing to market growth and customer engagement)</i></li>
+            </ul>
         </div>
-      </section>
 
-      <!-- Skills -->
-      <section id="skills" class="grid card panel">
-        <div class="section-title mono">Skills</div>
-        <div class="cols">
-          <div>
-            <p><b>iOS</b>: Swift, SwiftUI, UIKit, Combine, SwiftData/Core Data, Objective-C</p>
-            <p><b>Sensors</b>: HealthKit, Core Motion, WorkoutKit (iOS 18+), GPS</p>
-            <p><b>Watch</b>: watchOS, complications, background tasks</p>
-          </div>
-          <div>
-            <p><b>Infra</b>: Firebase/Supabase, CloudKit, in-app purchases, TestFlight</p>
-            <p><b>Design</b>: Motion, micro-interactions, accessibility, localization</p>
-            <p><b>Tooling</b>: Xcode, Instruments, Swift Package Manager, Fastlane</p>
-          </div>
+        <div class="apps">
+            <h2>Applications</h2>
+            <ul>
+                <li><a href="https://apps.apple.com/app/id1535400615">RUN</a></li>
+                <li><a href="https://apps.apple.com/app/id1455639400">Walker</a></li>
+                <li><a href="https://apps.apple.com/app/id1038175626">Wallet</a></li>
+                <li><a href="https://apps.apple.com/app/id1097500008">Fitness</a></li>
+                <li><a href="https://apps.apple.com/app/id1604886331">QR Code</a></li>
+                <li><a href="https://apps.apple.com/app/id1427590589">Activity</a></li>
+                <li><a href="https://apps.apple.com/app/id1381169094">365 Workouts</a></li>
+            </ul>
         </div>
-      </section>
 
-      <!-- Game -->
-      <section id="game" class="grid card panel">
-        <div class="section-title mono">Play — Infinite Dash</div>
-        <div class="game-wrap">
-          <div class="game-ui">
-            <div class="badges">
-              <span class="badge">Tap / Space = Jump</span>
-              <span class="badge">Avoid blocks</span>
-              <span class="badge">Score = time alive</span>
-            </div>
-            <div class="badges">
-              <span id="score" class="pill mono">Score: 0</span>
-              <button id="startBtn" class="btn">Start</button>
-              <button id="resetLb" class="btn" title="Clear local leaderboard">Reset Scores</button>
-            </div>
-          </div>
-          <canvas id="game" aria-label="A minimalist endless runner"></canvas>
+        <footer>
+            <p>Born in 1985</p>
+        </footer>
+    </div>
 
-          <div class="cols">
-            <div class="leaderboard">
-              <h3 style="margin:10px 0 6px">Leaderboard (Local)</h3>
-              <ol id="localBoard" class="mono"></ol>
-            </div>
-            <div>
-              <h3 style="margin:10px 0 6px">How it’s built</h3>
-              <p class="sub">Tiny canvas runner with physics tuned for mobile. Stores top 10 locally. You can also enable a cloud leaderboard with Supabase—see inline config in the source.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <script>
+        function getRandomHueColor() {
+            const hue = Math.floor(Math.random() * 360);
+            const saturation = 59;
+            const lightness = 57;
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
 
-      <!-- Contact -->
-      <section id="contact" class="grid card panel">
-        <div class="section-title mono">Contact</div>
-        <p>Want to ship something great? <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a> • <a href="https://github.com/a-gaivoronskii" target="_blank" rel="noreferrer">GitHub</a></p>
-      </section>
-    </main>
+        function colorizeTitle(title) {
+            var coloredTitle = '';
+            var fonts = ['Roboto Mono', 'Lobster', 'Pacifico', 'Montserrat', 'Courier New', 'Georgia', 'Comic Sans MS'];
+            for (var i = 0; i < title.length; i++) {
+                var font = fonts[Math.floor(Math.random() * fonts.length)];
+                coloredTitle += `<span style="color: ${getRandomHueColor()}; font-family: '${font}'">${title[i]}</span>`;
+            }
+            return coloredTitle;
+        }
 
-    <footer class="center">
-      <p class="sub">© <span id="year"></span> Andrei Gaivoronskii • Built with HTML/CSS/JS on GitHub Pages</p>
-    </footer>
-  </div>
-
-  <!-- Minimal modal for saving score -->
-  <dialog id="saveDialog">
-    <form method="dialog" id="saveForm" class="grid">
-      <h3 style="margin:0">Game Over</h3>
-      <p class="sub" id="finalScore">Score: 0</p>
-      <input id="playerName" class="mono" placeholder="Your name" maxlength="20" style="padding:10px;border:1px solid var(--ring);border-radius:8px;background:var(--card);color:var(--fg)" />
-      <div style="display:flex; gap:8px; justify-content:flex-end">
-        <button class="btn" value="cancel">Cancel</button>
-        <button id="saveBtn" class="btn" value="default">Save</button>
-      </div>
-    </form>
-  </dialog>
-
-  <script>
-  // ---------- Config (optional Supabase) ----------
-  const SUPABASE = {
-    enabled: false, // set to true after you configure below
-    url: "https://YOUR-PROJECT.supabase.co",
-    anonKey: "YOUR_PUBLIC_ANON_KEY",
-    table: "scores" // { name: text, score: int4, created_at: timestamptz default now() }
-  };
-  // RLS example (in Supabase SQL editor):
-  // create policy "insert_scores_public" on public.scores
-  // for insert to anon using (true) with check (score >= 0 and char_length(name) between 1 and 20);
-  // create policy "read_scores_public" on public.scores for select to anon using (true);
-
-  // ---------- Utilities ----------
-  const $ = sel => document.querySelector(sel);
-  const clamp = (n,min,max)=>Math.max(min,Math.min(max,n));
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // ---------- Leaderboard (Local) ----------
-  const LB_KEY = "aw_highscores_v1";
-  function loadLocal() {
-    try { return JSON.parse(localStorage.getItem(LB_KEY)) || []; } catch { return []; }
-  }
-  function saveLocal(list) {
-    localStorage.setItem(LB_KEY, JSON.stringify(list.slice(0,10)));
-  }
-  function addScoreLocal(name, score){
-    const list = loadLocal();
-    list.push({name, score});
-    list.sort((a,b)=>b.score - a.score);
-    saveLocal(list);
-    renderLocal();
-  }
-  function renderLocal(){
-    const list = loadLocal();
-    const el = $("#localBoard");
-    el.innerHTML = list.map((x,i)=>`<li>#${i+1} ${x.name} — ${x.score}</li>`).join("") || "<li>No scores yet. Be first!</li>";
-  }
-
-  // ---------- Optional: Supabase (very small fetch) ----------
-  async function addScoreRemote(name, score){
-    if(!SUPABASE.enabled) return;
-    try{
-      await fetch(`${SUPABASE.url}/rest/v1/${SUPABASE.table}`,{
-        method:"POST",
-        headers:{
-          apikey: SUPABASE.anonKey,
-          Authorization: `Bearer ${SUPABASE.anonKey}`,
-          "Content-Type":"application/json",
-          Prefer:"return=representation"
-        },
-        body: JSON.stringify([{name, score}])
-      });
-    }catch(e){ console.warn("Supabase insert failed", e); }
-  }
-
-  // ---------- Game ----------
-  const canvas = $("#game");
-  const ctx = canvas.getContext('2d');
-  let DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1)); // cap DPR for perf
-  let running = false, raf=0, t0=0, score=0, best=0;
-
-  const G = { // game state
-    w: 800, h: 450,
-    ground: 0.84, // % height where the ground sits
-    player: { x: 100, y:0, vy:0, size: 26, jump: 640, gravity: 2000, maxY:0 },
-    speed: 240, // px/s base
-    spawn: 0, // time accumulator for obstacles
-    obstacles: [],
-    hue: 210
-  };
-
-  function resize(){
-    const rect = canvas.getBoundingClientRect();
-    G.w = Math.floor(rect.width);
-    G.h = Math.floor(rect.height);
-    canvas.width = Math.floor(G.w * DPR);
-    canvas.height = Math.floor(G.h * DPR);
-    ctx.setTransform(DPR,0,0,DPR,0,0);
-    G.player.maxY = G.h*G.ground - G.player.size;
-    if(!running) drawStart();
-  }
-  window.addEventListener('resize', resize);
-
-  function reset(){
-    G.obstacles.length = 0;
-    score = 0;
-    G.speed = 240;
-    G.spawn = 0;
-    G.player.y = G.player.maxY;
-    G.player.vy = 0;
-    G.hue = 180 + Math.random()*120;
-    $("#score").textContent = "Score: 0";
-  }
-
-  function start(){
-    running = true;
-    t0 = performance.now();
-    reset();
-    loop(t0);
-  }
-
-  function end(){
-    running = false;
-    cancelAnimationFrame(raf);
-    openSaveDialog(score);
-  }
-
-  function loop(now){
-    const dt = (now - t0)/1000;
-    t0 = now;
-    update(dt);
-    draw(dt);
-    if(running) raf = requestAnimationFrame(loop);
-  }
-
-  function update(dt){
-    // difficulty
-    G.speed += dt*6; // accelerates slowly
-    // player physics
-    G.player.vy += G.player.gravity * dt;
-    G.player.y = Math.min(G.player.y + G.player.vy*dt, G.player.maxY);
-    // basic spawn
-    G.spawn -= dt;
-    if(G.spawn <= 0){
-      const size = 18 + Math.random()*24;
-      const gap = 160 + Math.random()*120;
-      const y = G.player.maxY;
-      G.obstacles.push({x: G.w + 40, y, size});
-      G.spawn = clamp((gap / (G.speed+80)), 0.7, 1.4);
-    }
-    // move & collide
-    for(let i=G.obstacles.length-1;i>=0;i--){
-      const o = G.obstacles[i];
-      o.x -= G.speed * dt;
-      if(o.x + o.size < 0) G.obstacles.splice(i,1);
-    }
-    // collisions (AABB)
-    const p = {x:G.player.x, y:G.player.y, s:G.player.size};
-    for(const o of G.obstacles){
-      if (p.x < o.x+o.size && p.x+p.s > o.x && p.y < o.y+o.size && p.y+p.s > o.y){
-        return end();
-      }
-    }
-    // score
-    score += Math.floor(dt*100);
-    $("#score").textContent = "Score: " + score;
-  }
-
-  function drawStart(){
-    clear();
-    drawGround();
-    drawPlayer();
-    titleText("Tap or press Space to start");
-  }
-
-  function draw(){
-    clear();
-    drawGround();
-    drawObstacles();
-    drawPlayer();
-  }
-
-  function clear(){
-    ctx.fillStyle = "#0d0f14";
-    ctx.fillRect(0,0,G.w,G.h);
-    // vignette
-    const grad = ctx.createLinearGradient(0,0,0,G.h);
-    grad.addColorStop(0, "rgba(255,255,255,0.02)");
-    grad.addColorStop(1, "rgba(0,0,0,0.2)");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0,0,G.w,G.h);
-  }
-
-  function drawGround(){
-    const y = Math.floor(G.h * G.ground)+0.5;
-    ctx.strokeStyle = "rgba(255,255,255,.08)";
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(G.w,y); ctx.stroke();
-    // moving parallax lines
-    const offset = (performance.now()/30) % 40;
-    ctx.strokeStyle = "rgba(255,255,255,.04)";
-    for(let x=-offset; x<G.w; x+=40){
-      ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x+12, y+12); ctx.stroke();
-    }
-  }
-
-  function drawPlayer(){
-    const h = `hsl(${G.hue},80%,60%)`;
-    ctx.fillStyle = h;
-    // rounded square
-    const r = 6; const x=G.player.x, y=G.player.y, s=G.player.size;
-    roundRect(ctx, x, y, s, s, r); ctx.fill();
-  }
-
-  function drawObstacles(){
-    ctx.fillStyle = "rgba(255,255,255,.9)";
-    for(const o of G.obstacles){
-      roundRect(ctx, o.x, o.y, o.size, o.size, 4); ctx.fill();
-    }
-  }
-
-  function roundRect(ctx, x, y, w, h, r){
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.arcTo(x+w, y, x+w, y+h, r);
-    ctx.arcTo(x+w, y+h, x, y+h, r);
-    ctx.arcTo(x, y+h, x, y, r);
-    ctx.arcTo(x, y, x+w, y, r);
-    ctx.closePath();
-  }
-
-  // Controls
-  function jump(){
-    // jump only if on ground
-    if (Math.abs(G.player.y - G.player.maxY) < 1){
-      G.player.vy = -G.player.jump;
-    }
-  }
-  window.addEventListener('keydown', (e)=>{
-    if(e.code === 'Space'){ e.preventDefault(); if(!running){ start(); } else { jump(); } }
-  }, {passive:false});
-  canvas.addEventListener('pointerdown', ()=> running ? jump() : start(), {passive:true});
-  $("#startBtn").addEventListener('click', ()=> running ? jump() : start());
-  $("#resetLb").addEventListener('click', ()=>{ localStorage.removeItem(LB_KEY); renderLocal(); });
-
-  // Save dialog
-  const dlg = $("#saveDialog");
-  function openSaveDialog(final){
-    $("#finalScore").textContent = "Score: " + final;
-    $("#playerName").value = "";
-    dlg.showModal();
-  }
-  $("#saveForm").addEventListener('submit', async (e)=>{
-    e.preventDefault();
-    const name = ($("#playerName").value || "Player").trim().slice(0,20);
-    addScoreLocal(name, score);
-    await addScoreRemote(name, score);
-    dlg.close();
-    drawStart();
-  });
-
-  // helpers
-  function titleText(t){
-    ctx.fillStyle = "rgba(255,255,255,.7)";
-    ctx.font = "600 18px Inter, sans-serif";
-    ctx.textAlign = "center";
-    ctx.fillText(t, G.w/2, G.h*0.45);
-  }
-
-  // init
-  (function init(){
-    $("#year").textContent = new Date().getFullYear();
-    resize();
-    reset();
-    renderLocal();
-  })();
-  </script>
+        document.getElementById('colorfulTitle').innerHTML = colorizeTitle('Andrei Gaivoronskii');
+    </script>
 </body>
 </html>
