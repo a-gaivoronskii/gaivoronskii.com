@@ -81,7 +81,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
 .card{
   grid-column:span 6;position:relative;border:2px solid var(--ink);
   background:var(--surface); color:var(--surface-ink);
-  box-shadow:6px 6px 0 0 var(--ink); overflow:hidden; min-height:220px;
+  box-shadow:6px 6px 0 0 var(--ink); overflow:hidden; min-height:190px;
 }
 @media (max-width:860px){ .card{grid-column:span 12; min-height:180px} }
 .card .tag{position:absolute;top:8px;left:8px;background:var(--tape);border:2px solid var(--ink);padding:2px 6px;border-radius:6px;font-family:var(--mono);font-size:12px;color:var(--ink-on-tape)!important}
@@ -115,7 +115,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
   border:2px solid var(--ink);
   overflow:hidden; white-space:nowrap; position:relative; font-family:var(--mono)
 }
-.marq{display:inline-block; padding-left:100%; animation:marq 32s linear infinite}
+.marq{display:inline-block; padding-left:100%; animation:marq 40s linear infinite}
 .marq span{display:inline-block; padding:0 24px}
 @keyframes marq{to{transform:translateX(-100%)}}
 </style>
@@ -132,8 +132,8 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
 
     <!-- Hero -->
     <div class="herochips">
-      <span class="chip">📍 Saint&nbsp;Petersburg</span>
-      <a class="chip" href="https://adia.ai" target="_blank" rel="noreferrer">ADIA.AI — AI&nbsp;projects</a>
+      <span class="chip">📍 Saint_Petersburg</span>
+      <a class="chip" href="https://adia.ai" target="_blank" rel="noreferrer">ADIA.AI</a>
       <span class="chip">Swift • Objective-C • SwiftUI</span>
       <button id="theme" class="chip">toggle_theme</button>
     </div>
@@ -147,8 +147,6 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
       <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a>
       <span>·</span>
       <a href="https://github.com/a-gaivoronskii" target="_blank" rel="noreferrer">GitHub</a>
-      <span>·</span>
-      <a href="https://flowhealth.com" target="_blank" rel="noreferrer">Flow&nbsp;Health</a>
     </div>
 
     <!-- Ticker -->
@@ -171,11 +169,11 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
     <h2>apps_&_things</h2>
     <div class="grid">
       <article class="card" data-fallback>
-        <span class="tag">2025—now</span>
+        <span class="tag">ACTIVITY</span>
         <a class="img" style="background-image:url('/images/activity_rings.jpg')"></a>
         <div class="ct">
           <h3>Activity: Streak Recovery</h3>
-          <p>Close yesterday’s rings. HealthKit + SwiftUI + watchOS.</p>
+          <p>Never lose your move streak.</p>
           <a class="store" href="https://apps.apple.com/app/id1427590589" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
@@ -183,8 +181,8 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
         <span class="tag">RUN</span>
         <a class="img" style="background-image:url('/images/run.jpg')"></a>
         <div class="ct">
-          <h3>RUN</h3>
-          <p>Fast running tracker. Minimal UI, accurate stats.</p>
+          <h3>RUN - Running Club</h3>
+          <p>Running tracker. Minimal UI, accurate stats.</p>
           <a class="store" href="https://apps.apple.com/app/id1535400615" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
@@ -193,7 +191,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
         <a class="img" style="background-image:url('/images/walker.jpg')"></a>
         <div class="ct">
           <h3>Walker</h3>
-          <p>Steps, but nice. Featherweight battery use.</p>
+          <p>Steps, and a lot more...</p>
           <a class="store" href="https://apps.apple.com/app/id1455639400" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
@@ -202,7 +200,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
         <a class="img" style="background-image:url('/images/365.jpg')"></a>
         <div class="ct">
           <h3>365 Workouts</h3>
-          <p>Daily prompts. Habit-friendly nudges.</p>
+          <p>New workout every day.</p>
           <a class="store" href="https://apps.apple.com/app/id1381169094" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
@@ -211,7 +209,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
         <a class="img" style="background-image:url('/images/fitness.jpg')"></a>
         <div class="ct">
           <h3>Fitness</h3>
-          <p>Workout companion with clear feedback.</p>
+          <p>Your fitness companion.</p>
           <a class="store" href="https://apps.apple.com/app/id1097500008" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
@@ -220,7 +218,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
         <a class="img" style="background-image:url('/images/wallet.jpg')"></a>
         <div class="ct">
           <h3>Wallet</h3>
-          <p>Private, tidy utilities.</p>
+          <p>Store all your cards in one place.</p>
           <a class="store" href="https://apps.apple.com/app/id1038175626" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
@@ -229,7 +227,7 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
         <a class="img" style="background-image:url('/images/qrcode.jpg')"></a>
         <div class="ct">
           <h3>QR Code</h3>
-          <p>Scan & create with no tracking.</p>
+          <p>Scan, create, store all your QRs.</p>
           <a class="store" href="https://apps.apple.com/app/id1604886331" target="_blank" rel="noreferrer">App Store ↗</a>
         </div>
       </article>
@@ -239,18 +237,18 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
     <h2>about_&_skills</h2>
     <div class="dl">
       <div>role</div><div>iOS engineer</div>
-      <div>languages</div><div><b>Swift</b>, <b>Objective-C</b>, SwiftUI, UIKit, Combine</div>
-      <div>frameworks</div><div>Core Motion, HealthKit, WorkoutKit, MapKit</div>
-      <div>infra</div><div>CloudKit, Firebase/Supabase, IAP, SPM, TestFlight</div>
+      <div>languages</div><div><b>Swift</b>, <b>Objective-C</b></div>
+      <div>frameworks</div><div>SwiftUI, UIKit, Combine, Core Motion, HealthKit</div>
+      <div>speaking</div><div>Russian, English</div>
       <div>current</div><div><a href="https://adia.ai" target="_blank" rel="noreferrer">ADIA.AI</a> — iOS engineering on AI products</div>
     </div>
 
     <!-- Experience -->
     <h2>previously</h2>
     <div class="dl">
-      <div><a href="https://flowhealth.com" target="_blank" rel="noreferrer">FLOW HEALTH</a></div><div>Mar 2022 — Mar 2024 · multi-app iOS</div>
-      <div><a href="https://beshenayasushka.ru" target="_blank" rel="noreferrer">#BESHENAYASUSHKA</a></div><div>Dec 2016 — Oct 2020 · fitness app lead</div>
-      <div><a href="https://eu.louisvuitton.com" target="_blank" rel="noreferrer">LOUIS VUITTON</a></div><div>Sep 2011 — Jan 2015 · sales ops</div>
+      <div><a href="https://flowhealth.com" target="_blank" rel="noreferrer">FLOW HEALTH</a></div><div>Mar 2022 — Mar 2024 · Engaged in multi-app iOS development, focusing on diverse healthcare solutions</div>
+      <div><a href="https://beshenayasushka.ru" target="_blank" rel="noreferrer">#BESHENAYASUSHKA</a></div><div>Dec 2016 — Oct 2020 · Led the iOS app development, enhancing fitness and wellness experiences</div>
+      <div><a href="https://eu.louisvuitton.com" target="_blank" rel="noreferrer">LOUIS VUITTON</a></div><div>Sep 2011 — Jan 2015 · Oversaw sales operations, contributing to market growth and customer engagement</div>
     </div>
 
     <!-- iOS Dev Tips -->
