@@ -5,7 +5,6 @@ class ThemeManager {
   constructor() {
     this.root = document.documentElement;
     this.toggleButton = document.getElementById('themeToggle');
-    this.themes = ['auto', 'light', 'dark'];
     this.init();
   }
 
@@ -27,7 +26,7 @@ class ThemeManager {
     if (this.toggleButton) {
       this.toggleButton.addEventListener('click', (e) => {
         e.preventDefault();
-        this.cycleTheme();
+        this.toggleTheme();
         // Remove focus after click to prevent persistent focus on mobile
         this.toggleButton.blur();
       });
@@ -42,23 +41,36 @@ class ThemeManager {
     });
   }
 
-  cycleTheme() {
+  toggleTheme() {
     const current = localStorage.getItem('theme') || 'auto';
-    console.log('Current theme:', current);
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    const currentIndex = this.themes.indexOf(current);
-    const nextIndex = (currentIndex + 1) % this.themes.length;
-    const nextTheme = this.themes[nextIndex];
+    console.log('Current theme:', current, 'System dark:', systemDark);
     
-    console.log('Switching to theme:', nextTheme);
+    let nextTheme;
     
-    if (nextTheme === 'auto') {
-      this.root.removeAttribute('data-theme');
+    // Simple toggle: if currently showing dark, go to light, and vice versa
+    if (this.isCurrentlyDark()) {
+      nextTheme = 'light';
+      this.root.setAttribute('data-theme', 'light');
     } else {
-      this.root.setAttribute('data-theme', nextTheme);
+      nextTheme = 'dark';
+      this.root.setAttribute('data-theme', 'dark');
     }
     
+    console.log('Switching to theme:', nextTheme);
     localStorage.setItem('theme', nextTheme);
+  }
+
+  isCurrentlyDark() {
+    const current = localStorage.getItem('theme') || 'auto';
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (current === 'dark') return true;
+    if (current === 'light') return false;
+    if (current === 'auto') return systemDark;
+    
+    return systemDark;
   }
 
   updateYear() {
