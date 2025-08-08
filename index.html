@@ -277,12 +277,51 @@ h2{font-family:var(--mono);font-size:14px;letter-spacing:.18em;text-transform:up
 
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
+
 const root = document.documentElement;
-document.getElementById('theme').addEventListener('click', ()=>{
-  const cur = root.getAttribute('data-theme') || null;
-  const val = cur === 'dark' ? 'light' : (cur === 'light' ? null : 'dark');
-  if (val) root.setAttribute('data-theme', val); else root.removeAttribute('data-theme');
+const btn = document.getElementById('theme');
+
+// Auto-detect system theme on load
+function setInitialTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    if (savedTheme !== 'auto') root.setAttribute('data-theme', savedTheme);
+  } else {
+    // Default to auto (system preference)
+    localStorage.setItem('theme', 'auto');
+  }
+}
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  const currentTheme = localStorage.getItem('theme');
+  if (currentTheme === 'auto') {
+    // Remove data-theme to follow system preference
+    root.removeAttribute('data-theme');
+  }
 });
+
+// Theme toggle: auto -> light -> dark -> auto
+btn.addEventListener('click', () => {
+  const current = localStorage.getItem('theme') || 'auto';
+  let next;
+  
+  if (current === 'auto') {
+    next = 'light';
+    root.setAttribute('data-theme', 'light');
+  } else if (current === 'light') {
+    next = 'dark';
+    root.setAttribute('data-theme', 'dark');
+  } else {
+    next = 'auto';
+    root.removeAttribute('data-theme');
+  }
+  
+  localStorage.setItem('theme', next);
+});
+
+// Initialize theme
+setInitialTheme();
 </script>
 </body>
 </html>
