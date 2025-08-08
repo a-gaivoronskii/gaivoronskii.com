@@ -181,11 +181,11 @@ a:hover {
 /* Chips */
 .chip {
   background: var(--color-tape);
-  padding: 3px 8px;
+  padding: 6px 12px;
   border: var(--border-width) solid var(--color-ink);
   border-radius: var(--border-radius);
   font-family: var(--font-mono);
-  color: var(--color-ink);
+  color: #0b0d10;
   font-size: 14px;
   text-decoration: none;
   transition: transform var(--transition-fast);
@@ -195,6 +195,7 @@ a:hover {
   cursor: pointer;
   font: inherit;
   background: var(--color-tape);
+  color: #0b0d10;
 }
 
 .chip:hover {
@@ -225,7 +226,7 @@ a:hover {
 
 .tape,
 .tape * {
-  color: var(--color-ink);
+  color: #0b0d10;
   text-shadow: none;
 }
 
@@ -332,31 +333,33 @@ a:hover {
   border-radius: var(--border-radius);
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--color-ink);
+  color: #0b0d10;
   z-index: 10;
 }
 
 .card__content {
-  padding: 32px 12px 12px;
+  padding: 40px 16px 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 12px;
 }
 
 .card__title {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 20px;
   letter-spacing: 0.02em;
   line-height: 1.2;
 }
 
 .card__description {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 14px;
   opacity: 0.8;
   color: var(--color-muted);
   flex: 1;
+  line-height: 1.4;
 }
 
 .card__store-link {
