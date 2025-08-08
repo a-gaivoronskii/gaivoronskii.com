@@ -284,7 +284,6 @@ a:hover {
 .definition-list__term,
 .definition-list__description {
   padding: 4px 0;
-  border-bottom: 1px dashed var(--color-grid);
 }
 
 .definition-list__description {
