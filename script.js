@@ -24,7 +24,9 @@ class ThemeManager {
   }
 
   bindEvents() {
-    this.toggleButton?.addEventListener('click', () => this.cycleTheme());
+    if (this.toggleButton) {
+      this.toggleButton.addEventListener('click', () => this.cycleTheme());
+    }
     
     // Listen for system theme changes
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -81,6 +83,55 @@ class URLUtils {
 }
 
 // ===================================
+// CARD INTERACTIONS
+// ===================================
+class CardManager {
+  constructor() {
+    this.setupCardInteractions();
+  }
+
+  setupCardInteractions() {
+    document.querySelectorAll('.card').forEach(card => {
+      // Make cards focusable
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      
+      // Get the app URL from onclick attribute
+      const onclickAttr = card.getAttribute('onclick');
+      if (onclickAttr) {
+        const urlMatch = onclickAttr.match(/openApp\('([^']+)'\)/);
+        if (urlMatch) {
+          const url = urlMatch[1];
+          card.setAttribute('aria-label', this.getCardLabel(card, url));
+          
+          // Handle click events
+          card.addEventListener('click', (e) => {
+            // Don't trigger if clicking on the store link
+            if (!e.target.closest('.card__store-link')) {
+              URLUtils.openSafely(url);
+            }
+          });
+          
+          // Handle keyboard events
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              URLUtils.openSafely(url);
+            }
+          });
+        }
+      }
+    });
+  }
+
+  getCardLabel(card, url) {
+    const title = card.querySelector('.card__title')?.textContent || '';
+    const description = card.querySelector('.card__description')?.textContent || '';
+    return `${title}. ${description}. Press Enter to open in App Store.`;
+  }
+}
+
+// ===================================
 // INTERSECTION OBSERVER
 // ===================================
 class ScrollAnimations {
@@ -110,58 +161,6 @@ class ScrollAnimations {
 }
 
 // ===================================
-// ACCESSIBILITY ENHANCEMENTS
-// ===================================
-class AccessibilityEnhancer {
-  constructor() {
-    this.setupKeyboardNavigation();
-    this.setupFocusManagement();
-  }
-
-  setupKeyboardNavigation() {
-    document.querySelectorAll('.card').forEach(card => {
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', this.getCardLabel(card));
-      
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.handleCardActivation(card);
-        }
-      });
-    });
-  }
-
-  setupFocusManagement() {
-    // Ensure proper focus visibility
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Tab') {
-        document.body.classList.add('using-keyboard');
-      }
-    });
-
-    document.addEventListener('mousedown', () => {
-      document.body.classList.remove('using-keyboard');
-    });
-  }
-
-  getCardLabel(card) {
-    const title = card.querySelector('.card__title')?.textContent || '';
-    const description = card.querySelector('.card__description')?.textContent || '';
-    return `${title}. ${description}. Press Enter to open in App Store.`;
-  }
-
-  handleCardActivation(card) {
-    const link = card.querySelector('.card__store-link');
-    if (link) {
-      const url = link.getAttribute('href');
-      URLUtils.openSafely(url);
-    }
-  }
-}
-
-// ===================================
 // ERROR HANDLING
 // ===================================
 class ErrorHandler {
@@ -172,142 +171,11 @@ class ErrorHandler {
   setupGlobalHandlers() {
     window.addEventListener('error', (event) => {
       console.error('Script error:', {
-        message: event// Theme Management
-class ThemeManager {
-  constructor() {
-    this.root = document.documentElement;
-    this.themeToggle = document.getElementById('themeToggle');
-    this.init();
-  }
-
-  init() {
-    this.setInitialTheme();
-    this.bindEvents();
-    this.updateCurrentYear();
-  }
-
-  setInitialTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme && savedTheme !== 'auto') {
-      this.root.setAttribute('data-theme', savedTheme);
-    } else {
-      // Default to auto (system preference)
-      localStorage.setItem('theme', 'auto');
-    }
-  }
-
-  bindEvents() {
-    // Theme toggle button
-    this.themeToggle.addEventListener('click', () => this.cycleTheme());
-    
-    // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      const currentTheme = localStorage.getItem('theme');
-      if (currentTheme === 'auto') {
-        // Remove data-theme to follow system preference
-        this.root.removeAttribute('data-theme');
-      }
-    });
-  }
-
-  cycleTheme() {
-    const current = localStorage.getItem('theme') || 'auto';
-    let next;
-    
-    switch (current) {
-      case 'auto':
-        next = 'light';
-        this.root.setAttribute('data-theme', 'light');
-        break;
-      case 'light':
-        next = 'dark';
-        this.root.setAttribute('data-theme', 'dark');
-        break;
-      default:
-        next = 'auto';
-        this.root.removeAttribute('data-theme');
-        break;
-    }
-    
-    localStorage.setItem('theme', next);
-  }
-
-  updateCurrentYear() {
-    const yearElement = document.getElementById('currentYear');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  }
-}
-
-// App Management
-class AppManager {
-  static openApp(url) {
-    if (url && this.isValidUrl(url)) {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
-  }
-
-  static isValidUrl(string) {
-    try {
-      new URL(string);
-      return true;
-    } catch (_) {
-      return false;
-    }
-  }
-}
-
-// Performance optimizations
-class PerformanceOptimizer {
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    this.optimizeAnimations();
-    this.setupIntersectionObserver();
-  }
-
-  optimizeAnimations() {
-    // Respect user's preference for reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.style.setProperty('--animation-duration', '0.01ms');
-    }
-  }
-
-  setupIntersectionObserver() {
-    // Observer for scroll animations or other effects
-    const cards = document.querySelectorAll('.card');
-    const cardObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '50px'
-      }
-    );
-
-    cards.forEach(card => cardObserver.observe(card));
-  }
-}
-
-
-
-// Error handling
-class ErrorHandler {
-  constructor() {
-    this.setupGlobalErrorHandling();
-  }
-
-  setupGlobalErrorHandling() {
-    window.addEventListener('error', (event) => {
-      console.error('Global error:', event.error);
+        message: event.message,
+        filename: event.filename,
+        lineno: event.lineno,
+        colno: event.colno
+      });
     });
 
     window.addEventListener('unhandledrejection', (event) => {
@@ -316,55 +184,114 @@ class ErrorHandler {
   }
 }
 
-// Global function for opening apps (used in HTML onclick)
-function openApp(url) {
-  AppManager.openApp(url);
+// ===================================
+// PERFORMANCE OPTIMIZER
+// ===================================
+class PerformanceOptimizer {
+  constructor() {
+    this.respectReducedMotion();
+    this.optimizeScrolling();
+  }
+
+  respectReducedMotion() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
+    if (prefersReducedMotion.matches) {
+      document.documentElement.style.setProperty('--animation-duration', '0.01ms');
+    }
+  }
+
+  optimizeScrolling() {
+    // Throttle scroll events if needed
+    let scrollTimer = null;
+    window.addEventListener('scroll', () => {
+      if (scrollTimer) return;
+      
+      scrollTimer = setTimeout(() => {
+        // Handle scroll-based animations here if needed
+        scrollTimer = null;
+      }, 16); // ~60fps
+    }, { passive: true });
+  }
 }
 
-// Initialize everything when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize all managers
-  new ThemeManager();
-  new PerformanceOptimizer();
-  new ErrorHandler();
-  
-  // Add smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
+// ===================================
+// SMOOTH SCROLLING
+// ===================================
+class SmoothScrolling {
+  constructor() {
+    this.setupSmoothScrolling();
+  }
 
-  // Add keyboard navigation for cards
-  document.querySelectorAll('.card').forEach(card => {
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
+  setupSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault();
-        card.click();
-      }
+        const target = document.querySelector(anchor.getAttribute('href'));
+        
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     });
-  });
+  }
+}
+
+// ===================================
+// GLOBAL FUNCTIONS
+// ===================================
+
+/**
+ * Opens an app URL safely
+ * Used by onclick handlers in HTML (fallback)
+ */
+function openApp(url) {
+  URLUtils.openSafely(url);
+}
+
+// ===================================
+// INITIALIZATION
+// ===================================
+class PortfolioApp {
+  constructor() {
+    this.initializeComponents();
+  }
+
+  initializeComponents() {
+    // Core functionality
+    new ThemeManager();
+    new CardManager();
+    new ErrorHandler();
+    new PerformanceOptimizer();
+    
+    // Enhancements
+    new ScrollAnimations();
+    new SmoothScrolling();
+    
+    console.log('Portfolio initialized successfully');
+  }
+}
+
+// ===================================
+// DOM READY
+// ===================================
+document.addEventListener('DOMContentLoaded', () => {
+  new PortfolioApp();
 });
 
-// Service Worker registration (for offline capability)
-if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(registration => {
-        console.log('SW registered: ', registration);
-      })
-      .catch(registrationError => {
-        console.log('SW registration failed: ', registrationError);
-      });
+// ===================================
+// SERVICE WORKER (for future use)
+// ===================================
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', async () => {
+    try {
+      const registration = await navigator.serviceWorker.register('/sw.js');
+      console.log('Service Worker registered:', registration.scope);
+    } catch (error) {
+      console.log('Service Worker registration failed:', error);
+    }
   });
 }
