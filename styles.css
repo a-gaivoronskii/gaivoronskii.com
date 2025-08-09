@@ -221,6 +221,39 @@ a:hover {
   padding: 0 0.2em;
   border-radius: 2px;
   box-decoration-break: clone;
+  transition: all var(--transition-fast);
+  animation: highlightPulse 4s ease-in-out infinite;
+}
+
+.highlight:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.highlight:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.highlight:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.highlight:nth-child(4) {
+  animation-delay: 3s;
+}
+
+@keyframes highlightPulse {
+  0%, 90% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
+  5% {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 49, 49, 0.3);
+  }
+  10%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+  }
 }
 
 /* Tape */
