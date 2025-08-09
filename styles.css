@@ -277,11 +277,11 @@ a:hover {
 .section__title--highlighted {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .section__title-text {
-  flex: 1;
+  /* Remove flex: 1 to keep natural width */
 }
 
 .section__arrows {
