@@ -243,7 +243,6 @@ a:hover {
 
 .tape__content {
   display: inline-block;
-  padding-left: 0%;
   animation: scrollTape 200s linear infinite;
 }
 
@@ -285,17 +284,17 @@ a:hover {
 .section__arrows {
   font-family: var(--font-mono);
   font-size: 16px;
-  color: var(--color-accent);
+  color: #ff3131 !important;
   user-select: none;
   display: inline-block;
 }
 
 .section__arrows--left {
-  animation: arrowFadeLeft 3s ease-in-out infinite;
+  animation: arrowFadeLeft 3s ease-in-out infinite !important;
 }
 
 .section__arrows--right {
-  animation: arrowFadeRight 3s ease-in-out infinite;
+  animation: arrowFadeRight 3s ease-in-out infinite !important;
 }
 
 @keyframes arrowFadeLeft {
@@ -308,25 +307,19 @@ a:hover {
   40% {
     opacity: 0;
   }
-  100% {
+  60%, 100% {
     opacity: 0;
   }
 }
 
 @keyframes arrowFadeRight {
-  0% {
-    opacity: 0;
-  }
-  50% {
+  0%, 50% {
     opacity: 0;
   }
   70% {
     opacity: 1;
   }
-  90% {
-    opacity: 0;
-  }
-  100% {
+  90%, 100% {
     opacity: 0;
   }
 }
