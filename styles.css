@@ -273,6 +273,40 @@ a:hover {
   border-bottom: var(--border-width) solid var(--color-ink);
   padding: 8px 0;
   margin: 24px 0 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-tape);
+  padding: 8px 12px;
+  color: #0b0d10 !important;
+}
+
+.section__arrows {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--color-accent);
+  animation: arrowPulse 2s ease-in-out infinite;
+  user-select: none;
+}
+
+.section__arrows--left {
+  animation-delay: 0s;
+}
+
+.section__arrows--right {
+  animation-delay: 0.3s;
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(2px);
+  }
 }
 
 /* ===================================
