@@ -272,6 +272,9 @@ a:hover {
   border-bottom: var(--border-width) solid var(--color-ink);
   padding: 8px 0;
   margin: 24px 0 12px;
+}
+
+.section__title--highlighted {
   position: relative;
   display: flex;
   align-items: center;
@@ -279,6 +282,7 @@ a:hover {
   background: var(--color-tape);
   padding: 8px 12px;
   color: #0b0d10 !important;
+  border: var(--border-width) solid var(--color-ink);
 }
 
 .section__arrows {
