@@ -286,7 +286,7 @@ a:hover {
 
 .section__arrows {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 20px;
   color: #ff3131 !important;
   user-select: none;
   display: inline-block;
