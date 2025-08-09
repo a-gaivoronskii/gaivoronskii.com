@@ -286,43 +286,46 @@ a:hover {
 
 .section__arrows {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 16px;
   color: #ff3131 !important;
   user-select: none;
   display: inline-block;
 }
 
 .section__arrows--left {
-  animation: arrowFadeLeft 3s ease-in-out infinite !important;
+  animation: arrowFadeLeft 2s ease-in-out infinite !important;
 }
 
 .section__arrows--right {
-  animation: arrowFadeRight 3s ease-in-out infinite !important;
+  animation: arrowFadeRight 2s ease-in-out infinite !important;
 }
 
 @keyframes arrowFadeLeft {
   0% {
-    opacity: 0;
-  }
-  20% {
     opacity: 1;
   }
-  40% {
+  30% {
     opacity: 0;
   }
-  60%, 100% {
+  70% {
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes arrowFadeRight {
-  0%, 50% {
+  0% {
     opacity: 0;
   }
-  70% {
+  30% {
     opacity: 1;
   }
-  90%, 100% {
+  70% {
+    opacity: 0;
+  }
+  100% {
     opacity: 0;
   }
 }
