@@ -178,7 +178,16 @@ a:hover {
    UI COMPONENTS
    =================================== */
 
-/* Chips */
+/* Chip Spacers */
+.chip-spacer {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  user-select: none;
+  pointer-events: none;
+}
 .chip {
   background: var(--color-tape);
   padding: 6px 12px;
