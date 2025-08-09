@@ -243,7 +243,7 @@ a:hover {
 
 .tape__content {
   display: inline-block;
-  padding-left: 10%;
+  padding-left: 0%;
   animation: scrollTape 200s linear infinite;
 }
 
@@ -286,26 +286,48 @@ a:hover {
   font-family: var(--font-mono);
   font-size: 16px;
   color: var(--color-accent);
-  animation: arrowPulse 2s ease-in-out infinite;
   user-select: none;
+  display: inline-block;
 }
 
 .section__arrows--left {
-  animation-delay: 0s;
+  animation: arrowFadeLeft 3s ease-in-out infinite;
 }
 
 .section__arrows--right {
-  animation-delay: 0.3s;
+  animation: arrowFadeRight 3s ease-in-out infinite;
 }
 
-@keyframes arrowPulse {
-  0%, 100% {
-    opacity: 0.3;
-    transform: translateY(0);
+@keyframes arrowFadeLeft {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes arrowFadeRight {
+  0% {
+    opacity: 0;
   }
   50% {
+    opacity: 0;
+  }
+  70% {
     opacity: 1;
-    transform: translateY(2px);
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
