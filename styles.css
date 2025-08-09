@@ -275,14 +275,9 @@ a:hover {
 }
 
 .section__title--highlighted {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--color-tape);
-  padding: 8px 12px;
-  color: #0b0d10 !important;
-  border: var(--border-width) solid var(--color-ink);
 }
 
 .section__arrows {
