@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QRoo — QR code scanner, generator, and widget for iPhone, iPad, and Apple Watch. Scan, create, save, and sync QR codes across all your devices.">
+
+  <title>QRoo — QR Code Scanner & Generator</title>
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ===================================
+         HEADER
+         =================================== -->
+    <header class="header">
+      <div class="header__spacer"></div>
+      <div class="header__title">
+        <h1><span class="header__accent">QR</span>oo</h1>
+      </div>
+      <div class="header__spacer"></div>
+    </header>
+
+    <!-- ===================================
+         HERO SECTION
+         =================================== -->
+    <section class="hero">
+      <div class="hero__chips">
+        <span class="chip" aria-label="Platform">iOS_iPadOS_watchOS</span>
+        <span class="chip" aria-label="Category">Utilities</span>
+        <span class="chip-spacer"> 🦘 </span>
+        <button id="themeToggle" class="chip chip--button" aria-label="Toggle between light and dark themes">
+          Toggle_Theme
+        </button>
+      </div>
+
+      <p class="hero__description">
+        <span class="highlight">Scan</span> and
+        <span class="highlight">generate</span> QR codes.
+        Add them to <span class="highlight">Apple Wallet</span>,
+        put <span class="highlight">widgets</span> on your home screen, and
+        <span class="highlight">sync across devices</span> via iCloud.
+      </p>
+
+      <div class="hero__cta">
+        <a class="cta-button"
+           href="https://apps.apple.com/app/id1604886331"
+           target="_blank"
+           rel="noopener"
+           aria-label="Download QRoo from the App Store">
+          Download on the App Store ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================================
+         FEATURES TAPE
+         =================================== -->
+    <div class="tape" role="marquee" aria-label="App features">
+      <div class="tape__content">
+        <span>QR Scanner • QR Generator • Home Screen Widgets • Apple Wallet • Control Center • iCloud Sync • Expiration Dates • Beautiful Designs • Apple Watch • iPhone • iPad • Dark Mode • Fast & Lightweight • Privacy First • No Ads • Offline Support • Share QR Codes • History • Favorites • QR Scanner • QR Generator • Home Screen Widgets • Apple Wallet • Control Center • iCloud Sync • Expiration Dates • Beautiful Designs • Apple Watch • iPhone • iPad • Dark Mode • Fast & Lightweight • Privacy First • No Ads • Offline Support • Share QR Codes • History • Favorites</span>
+      </div>
+    </div>
+
+    <!-- ===================================
+         FEATURES
+         =================================== -->
+    <section class="section">
+      <h2 class="section__title section__title--highlighted">
+        <span class="section__title-text">features</span>
+        <span class="section__arrows section__arrows--right">↓ ↓ ↓</span>
+      </h2>
+      <dl class="definition-list">
+        <dt class="definition-list__term">scan</dt>
+        <dd class="definition-list__description">Point your camera at any QR code and instantly read it</dd>
+        <dt class="definition-list__term">generate</dt>
+        <dd class="definition-list__description">Create your own QR codes from any text or URL</dd>
+        <dt class="definition-list__term">widgets</dt>
+        <dd class="definition-list__description">Add your QR codes to the home screen for quick access</dd>
+        <dt class="definition-list__term">customize</dt>
+        <dd class="definition-list__description">Give your QR codes unique look with beautiful designs and gradients</dd>
+        <dt class="definition-list__term">wallet</dt>
+        <dd class="definition-list__description">Add QR codes to Apple Wallet for instant access</dd>
+        <dt class="definition-list__term">sync</dt>
+        <dd class="definition-list__description">All your QR codes synced between devices via iCloud</dd>
+        <dt class="definition-list__term">watch</dt>
+        <dd class="definition-list__description">Access your saved QR codes right from your Apple Watch</dd>
+        <dt class="definition-list__term">expiration</dt>
+        <dd class="definition-list__description">Set expiration dates on your QR codes</dd>
+        <dt class="definition-list__term">control center</dt>
+        <dd class="definition-list__description">Quick access from iOS 18 Control Center</dd>
+      </dl>
+    </section>
+
+    <!-- ===================================
+         APP DETAILS
+         =================================== -->
+    <section class="section">
+      <h2 class="section__title">details</h2>
+      <dl class="definition-list">
+        <dt class="definition-list__term">price</dt>
+        <dd class="definition-list__description">Free</dd>
+        <dt class="definition-list__term">size</dt>
+        <dd class="definition-list__description">6.8 MB</dd>
+        <dt class="definition-list__term">requires</dt>
+        <dd class="definition-list__description">iOS 15.0+ · iPadOS 15.0+ · watchOS 7.0+</dd>
+        <dt class="definition-list__term">languages</dt>
+        <dd class="definition-list__description">English, Russian</dd>
+        <dt class="definition-list__term">rating</dt>
+        <dd class="definition-list__description">4.4 ★ on the App Store</dd>
+      </dl>
+    </section>
+
+    <!-- ===================================
+         DOWNLOAD CTA
+         =================================== -->
+    <section class="section section--cta">
+      <div class="cta-card">
+        <h2 class="cta-card__title">Get QRoo</h2>
+        <p class="cta-card__description">Free on iPhone, iPad, and Apple Watch.</p>
+        <a class="cta-button"
+           href="https://apps.apple.com/app/id1604886331"
+           target="_blank"
+           rel="noopener"
+           aria-label="Download QRoo from the App Store">
+          App Store ↗
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================================
+         FOOTER
+         =================================== -->
+    <footer class="footer">
+      <div class="footer__copyright">
+        &copy; <span id="currentYear">2025</span>
+        <a href="/" aria-label="Visit developer portfolio">Andrei Gaivoronskii</a>
+      </div>
+      <div class="footer__tagline">
+        Scan Instantly.
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
