@@ -27,14 +27,11 @@ class ThemeManager {
       this.toggleButton.addEventListener('click', (e) => {
         e.preventDefault();
         this.toggleTheme();
-        // Remove focus after click to prevent persistent focus on mobile
         this.toggleButton.blur();
       });
     }
-    
-    // Listen for system theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', () => {
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
       if (localStorage.getItem('theme') === 'auto') {
         this.root.removeAttribute('data-theme');
       }
@@ -42,35 +39,16 @@ class ThemeManager {
   }
 
   toggleTheme() {
-    const current = localStorage.getItem('theme') || 'auto';
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    console.log('Current theme:', current, 'System dark:', systemDark);
-    
-    let nextTheme;
-    
-    // Simple toggle: if currently showing dark, go to light, and vice versa
-    if (this.isCurrentlyDark()) {
-      nextTheme = 'light';
-      this.root.setAttribute('data-theme', 'light');
-    } else {
-      nextTheme = 'dark';
-      this.root.setAttribute('data-theme', 'dark');
-    }
-    
-    console.log('Switching to theme:', nextTheme);
+    const nextTheme = this.isCurrentlyDark() ? 'light' : 'dark';
+    this.root.setAttribute('data-theme', nextTheme);
     localStorage.setItem('theme', nextTheme);
   }
 
   isCurrentlyDark() {
     const current = localStorage.getItem('theme') || 'auto';
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
     if (current === 'dark') return true;
     if (current === 'light') return false;
-    if (current === 'auto') return systemDark;
-    
-    return systemDark;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
 
   updateYear() {
@@ -82,247 +60,73 @@ class ThemeManager {
 }
 
 // ===================================
-// URL UTILITIES
-// ===================================
-class URLUtils {
-  static isValid(url) {
-    try {
-      new URL(url);
-      return true;
-    } catch {
-      return false;
-    }
-  }
-
-  static openSafely(url, target = '_blank') {
-    if (this.isValid(url)) {
-      window.open(url, target, 'noopener,noreferrer');
-    } else {
-      console.warn('Invalid URL:', url);
-    }
-  }
-}
-
-// ===================================
 // CARD INTERACTIONS
 // ===================================
 class CardManager {
   constructor() {
-    this.setupCardInteractions();
+    this.setupCards();
   }
 
-  setupCardInteractions() {
-    document.querySelectorAll('.card').forEach(card => {
-      // Make cards focusable
+  setupCards() {
+    document.querySelectorAll('.card[data-url]').forEach(card => {
+      const url = card.dataset.url;
+
       card.setAttribute('tabindex', '0');
       card.setAttribute('role', 'button');
-      
-      // Get the app URL from onclick attribute
-      const onclickAttr = card.getAttribute('onclick');
-      if (onclickAttr) {
-        const urlMatch = onclickAttr.match(/openApp\('([^']+)'\)/);
-        if (urlMatch) {
-          const url = urlMatch[1];
-          card.setAttribute('aria-label', this.getCardLabel(card, url));
-          
-          // Handle click events
-          card.addEventListener('click', (e) => {
-            // Don't trigger if clicking on the store link
-            if (!e.target.closest('.card__store-link')) {
-              URLUtils.openSafely(url);
-              // Remove focus after click to prevent persistent focus on mobile
-              card.blur();
-            }
-          });
-          
-          // Handle touch events to remove focus after touch
-          card.addEventListener('touchend', (e) => {
-            // Small delay to allow click to register first
-            setTimeout(() => {
-              card.blur();
-            }, 150);
-          });
-          
-          // Handle keyboard events
-          card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              URLUtils.openSafely(url);
-            }
-          });
+      card.setAttribute('aria-label', this.getCardLabel(card));
+
+      card.addEventListener('click', (e) => {
+        if (!e.target.closest('.card__store-link')) {
+          window.open(new URL(url, window.location.href).toString(), '_blank', 'noopener,noreferrer');
+          card.blur();
         }
-      }
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.open(new URL(url, window.location.href).toString(), '_blank', 'noopener,noreferrer');
+        }
+      });
     });
   }
 
-  getCardLabel(card, url) {
+  getCardLabel(card) {
     const title = card.querySelector('.card__title')?.textContent || '';
     const description = card.querySelector('.card__description')?.textContent || '';
-    return `${title}. ${description}. Press Enter to open in App Store.`;
+    return `${title}. ${description}. Press Enter to open.`;
   }
 }
 
 // ===================================
-// INTERSECTION OBSERVER
+// SCROLL ANIMATIONS
 // ===================================
 class ScrollAnimations {
   constructor() {
-    this.setupObserver();
-  }
-
-  setupObserver() {
-    const options = {
-      threshold: 0.1,
-      rootMargin: '50px'
-    };
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
         }
       });
-    }, options);
+    }, { threshold: 0.1, rootMargin: '50px' });
 
-    // Observe cards for potential animations
-    document.querySelectorAll('.card').forEach(card => {
-      observer.observe(card);
-    });
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
   }
 }
 
 // ===================================
-// ERROR HANDLING
+// REDUCED MOTION
 // ===================================
-class ErrorHandler {
-  constructor() {
-    this.setupGlobalHandlers();
-  }
-
-  setupGlobalHandlers() {
-    window.addEventListener('error', (event) => {
-      console.error('Script error:', {
-        message: event.message,
-        filename: event.filename,
-        lineno: event.lineno,
-        colno: event.colno
-      });
-    });
-
-    window.addEventListener('unhandledrejection', (event) => {
-      console.error('Unhandled promise rejection:', event.reason);
-    });
-  }
-}
-
-// ===================================
-// PERFORMANCE OPTIMIZER
-// ===================================
-class PerformanceOptimizer {
-  constructor() {
-    this.respectReducedMotion();
-    this.optimizeScrolling();
-  }
-
-  respectReducedMotion() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    
-    if (prefersReducedMotion.matches) {
-      document.documentElement.style.setProperty('--animation-duration', '0.01ms');
-    }
-  }
-
-  optimizeScrolling() {
-    // Throttle scroll events if needed
-    let scrollTimer = null;
-    window.addEventListener('scroll', () => {
-      if (scrollTimer) return;
-      
-      scrollTimer = setTimeout(() => {
-        // Handle scroll-based animations here if needed
-        scrollTimer = null;
-      }, 16); // ~60fps
-    }, { passive: true });
-  }
-}
-
-// ===================================
-// SMOOTH SCROLLING
-// ===================================
-class SmoothScrolling {
-  constructor() {
-    this.setupSmoothScrolling();
-  }
-
-  setupSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  }
-}
-
-// ===================================
-// GLOBAL FUNCTIONS
-// ===================================
-
-/**
- * Opens an app URL safely
- * Used by onclick handlers in HTML (fallback)
- */
-function openApp(url) {
-  URLUtils.openSafely(url);
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.style.setProperty('--animation-duration', '0.01ms');
 }
 
 // ===================================
 // INITIALIZATION
 // ===================================
-class PortfolioApp {
-  constructor() {
-    this.initializeComponents();
-  }
-
-  initializeComponents() {
-    // Core functionality
-    new ThemeManager();
-    new CardManager();
-    new ErrorHandler();
-    new PerformanceOptimizer();
-    
-    // Enhancements
-    new ScrollAnimations();
-    new SmoothScrolling();
-    
-    console.log('Portfolio initialized successfully');
-  }
-}
-
-// ===================================
-// DOM READY
-// ===================================
 document.addEventListener('DOMContentLoaded', () => {
-  new PortfolioApp();
+  new ThemeManager();
+  new CardManager();
+  new ScrollAnimations();
 });
-
-// ===================================
-// SERVICE WORKER (for future use)
-// ===================================
-if ('serviceWorker' in navigator && location.protocol === 'https:') {
-  window.addEventListener('load', async () => {
-    try {
-      const registration = await navigator.serviceWorker.register('/sw.js');
-      console.log('Service Worker registered:', registration.scope);
-    } catch (error) {
-      console.log('Service Worker registration failed:', error);
-    }
-  });
-}

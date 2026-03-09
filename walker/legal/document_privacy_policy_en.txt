@@ -1,0 +1,192 @@
+<h>Privacy Policy</h>
+
+<b>Revision dated March 9, 2026
+
+We consider it our duty to protect and respect your privacy.
+
+This Privacy Policy describes the types of personal data we collect through mobile devices, the "Walker" mobile application (the "Application"), the website located at https://gaivoronskii.com/walker (the "Website"), and when providing related digital services and content on our own and third-party platforms.
+
+Please carefully review the information below to understand our stance, principles, and methods of processing your personal data. By continuing to use our Application and services, you confirm that you have read this Privacy Policy and understand all its provisions.
+
+We respect your right to privacy and will not request or collect more information than necessary to provide you with the services you request. Our primary goal is to ensure that the collection and use of personal data align with the services provided to you and comply with applicable data protection laws.
+
+About Us:
+The operator of the "Walker" mobile application and the Website is the sole proprietor Gaivoronskii Andrei Vyacheslavovich
+INN 260806349591 OGRNIP 319265100016961
+(referred to in this Privacy Policy as "Walker," "we," "us," or "our").
+
+The following sections of the privacy policy
+provide more detailed information on the following aspects:
+
+CONTENTS
+
+A. DATA COLLECTION
+B. USE OF PERSONAL DATA
+C. DISCLOSURE OF PERSONAL DATA
+D. RIGHTS REGARDING PERSONAL DATA
+E. MINORS
+F. SECURITY MEASURES
+G. CHANGES TO THIS PRIVACY POLICY
+H. CONTACT METHODS
+
+
+</b><t>A. DATA COLLECTION</t><b>
+
+The confidentiality of your private life is important to us, and we have taken measures to ensure that data is collected from you only to the extent necessary to provide our services and protect your account.
+
+The following data, including username and email address, will be collected during registration in the Application.
+
+With the user's permission, the Application processes health data and other medical data provided by the user for processing by the Application through access permissions granted to the Apple Health service and other similar services upon the Application's request with the user's consent.
+
+The Application's access to health data and other medical data is regulated by the user's privacy settings on their device.
+
+When the Application requires access to health data and other medical data, the user will receive a request for access. The user can view and revoke granted permissions for access to health data and other medical data.
+
+Certain information we collect may be classified as personal data under applicable data protection laws (hereinafter "personal data").
+
+
+</b><t>B. USE OF PERSONAL DATA</t><b>
+
+We collect your personal data and use it for the following purposes:
+
+Verifying your identity;
+Confirming your right to register as a user of the Application;
+Processing your registration as a user, providing you with a login ID for the Application, maintaining and managing your registration;
+Providing you with customer service, responding to your questions, feedback, requests, and claims;
+Identifying, developing, and promoting products and services that we believe will be valuable to you, including for various browsers and devices, in accordance with applicable laws. Cookies and similar technologies may be used to show you ads based on your search queries and interests. Where required by applicable law, we will seek your consent before sending you promotional messages.
+
+The information we collect helps keep you informed about news, Application software updates, and upcoming events. If you do not wish to receive our newsletters, you can unsubscribe at any time.
+
+We also use personal information to create, develop, operate, distribute, and improve our products, services, materials, and advertising, as well as to prevent losses and combat fraud.
+
+Periodically, we use collected personal information to send important notices. You cannot opt out of receiving these messages as this information is necessary for interacting with us.
+
+We may use personal information for internal purposes, such as conducting audits, data analysis, and research to improve products and services, as well as communication methods with customers.
+
+We may also use your personal data for other purposes not related to the purposes disclosed to you (e.g., archiving in the public interest, conducting scientific or historical research, statistical research) where permitted under applicable data protection laws.
+
+We also collect data that is not directly related to a specific individual. We may collect, use, transfer, and disclose such information for any purpose.
+
+
+</b><t>C. DISCLOSURE OF PERSONAL DATA</t><b>
+
+We may disclose or transfer your personal data, except for your health and other medical data, to our partners and service providers hired by us to assist in providing you with services or who otherwise process personal data for the purposes set out in this Privacy Policy or disclosed to you during the collection of your personal data. Such partners or service providers may include, for example:
+
+Such service providers are required to comply with our data confidentiality and security requirements and are entitled to use your Personal Data only for the purposes stated above, but not for their personal purposes.
+
+If we deem it necessary to comply with applicable laws or to enforce, establish, or protect our legal rights, or to protect your fundamental interests or the fundamental interests of any other person, we may also disclose or transfer your personal data, except for your health and other medical data, to our professional advisors, agencies, insurers, the state, and regulatory authorities, as well as other organizations or otherwise, to the extent permitted or required by applicable law.
+
+We may disclose your personal data, except for your health and other medical data, to an actual or potential buyer of the Application (its agents or advisors) in connection with any actual or proposed acquisition, merger, or purchase of any part of our business, provided that the buyer is notified of the obligation to use your personal data solely for the purposes set out in this Privacy Policy.
+
+We may also disclose your personal data to any other person with your consent for disclosure.
+
+We store your personal data for as long as we have a legitimate business need to store such data to provide you with services or products, or for as long as required or permitted by applicable law, particularly tax and accounting laws.
+
+Information you submit for publication in the Application is available exclusively to you and is not publicly accessible to any other user of the Application unless otherwise provided by the terms of the Bonus Program Rules and the terms of the User Contest Rules.
+
+We may provide aggregated or anonymized data to third parties, with the information transmitted in a non-personally identifiable format.
+
+
+</b><t>D. RIGHTS REGARDING PERSONAL DATA</t><b>
+
+Visitors from the European Union
+
+This section of the Privacy Policy supplements this Privacy Policy and applies only if you use our Application or services covered by this Privacy Policy from a country that is a member state of the European Union.
+
+Legal Basis for Data Processing
+
+We process personal data for the purposes set out in this Privacy Policy as described above. The legal basis for our processing of personal data will depend on the relevant personal data and the circumstances under which we collect it. However, generally, we will collect and process your personal data only when it is: necessary to fulfill any agreements between you and us (e.g., to provide the services you request, to identify and authenticate you so that you can use the Application); information necessary to comply with legal requirements (e.g., applicable accounting rules and mandatory disclosure requirements to law enforcement agencies); necessary to protect our legitimate interests, provided that this does not conflict with your rights; and/or based on your consent.
+
+When we collect and use your personal data in our legitimate interests (or the interests of any other third party), such interests typically include our interests related to the operation of our Application and services, relationships, and interactions with you as necessary to provide you with our services, our legitimate commercial interests, such as responding to your requests, improving our Application and services, conducting marketing activities, or for the purposes of ensuring the security of our Application and services, detecting and preventing illegal activities. We may have other legitimate interests, and when appropriate, we will notify you of such interests in a timely manner.
+
+If we request you to provide personal data to comply with legal requirements or to enter into a contract with you, we will clearly indicate this and inform you whether the provision of your personal data is mandatory or not (and also inform you of the possible consequences of not providing personal data). In some cases, you may be required to provide us with Personal Data for processing, as described above, to ensure that you receive all our services and can use all the features of our Application.
+
+If you have any questions or need further information regarding the legal basis for our collection and use of your personal data, please contact us using the contact details provided in Section H. CONTACT METHODS below.
+
+Cross-Border Transfer of Personal Data
+
+Due to the nature of our business, it may be necessary to transfer your personal data to countries outside the European Economic Area ("EEA"), including countries that may not provide the same level of data protection as the countries in which you reside. We take appropriate steps to ensure that recipients of your personal data are bound by confidentiality obligations and take appropriate measures to ensure the security of your personal data in accordance with this Privacy Policy.
+
+Your Rights
+
+If you are a resident of the European Economic Area, you have the following data protection rights, which you can exercise at any time using the contact details provided in Section H. CONTACT METHODS below:
+
+The right to access, correct, update, or request the deletion of your personal data.
+The right to object to the processing of your personal information when it is based on your legitimate interests, and separately, the right to opt out of direct marketing.
+The right to request us, in some cases, to restrict the processing of your personal data or to request the transfer of your personal information.
+The right to opt out of marketing materials sent by us at any time.
+
+If we have collected and are processing your personal information with your consent, you have the right to withdraw your consent at any time. The withdrawal will not affect the lawfulness of processing based on consent before its withdrawal, nor the lawfulness of processing based on other legal grounds.
+
+If you become aware of any changes or inaccuracies in your information, you must inform us of such changes to update and correct our records.
+
+Visitors from Other Countries
+
+This section of the Privacy Policy supplements this Privacy Policy and applies only if you use our Application or services covered by this Privacy Policy from a country that is not a member state of the European Union.
+
+Under California Civil Code Section 1798.83 (California, USA), the owner of the Application, as the person who owns or licenses personal computer data, is required to notify all California residents of a breach or potential breach of their unencrypted personal data. In the event of a breach, this will be done immediately—as soon as the breach is detected.
+
+Under the Data Protection Act (UK), Schedule 1, Part 1, Principle 7, the owner of the Application takes reasonable technical and organizational measures against unauthorized or unlawful processing and accidental loss, destruction, or damage to personal data.
+
+Under the Data Protection Act (UK), Schedule 1, Part 2, Clause 9, the owner of the Application implements reasonable technical measures to prevent harm to its customers resulting from unauthorized or unlawful processing of personal data, as well as their loss, destruction, or damage. Additionally, the owner of the Application takes all reasonable steps to ensure the reliability of any employee with access to personal data.
+
+Under the Federal Law "On Personal Data" (Russia), Article 19, Part 1, the owner of the Application, as the Operator of personal data, takes necessary organizational and technical measures, including the use of encryption (cryptographic) means, to protect personal data from a range of threats, such as unlawful or accidental access, destruction, alteration, blocking, copying, distribution, and other unlawful actions.
+
+Under the Federal Law "On Personal Data" (Russia), Article 19, Part 4, the owner of the Application, as the Operator of personal data, uses and stores biometric personal data outside personal data information systems only on such material media and using such storage technology that ensures the protection of these data from unlawful or accidental access, destruction, alteration, blocking, copying, distribution.
+
+Under the Personal Information Protection Act 2003 (Japan), Article 20, the owner of the Application, who is responsible for personal information, takes necessary and adequate measures to prevent leakage, loss, or damage to personal data, as well as to implement other controls over the security of this information.
+
+Under the Personal Information Protection Act 2003 (Japan), Article 21, the owner of the Application, who is responsible for personal information, uses employees to process this data and implements necessary and adequate monitoring and control measures to ensure the security of personal information.
+
+Under the Federal Privacy Act 1988 (Australia), Principle 4, the owner of the Application, who is responsible for personal information of citizens, creates all necessary conditions to ensure that this information is protected from leakage, loss, unauthorized access, use, modification, and other misuse. Additionally, the owner of the Application provides controls to ensure that only those employees who need access to the information for their job duties have access and authority to use it.
+
+Under the Personal Information Protection and Electronic Documents Act (Canada), Schedule 1, Principle 4, the owner of the Application, as the person responsible for personal data of citizens, appoints a responsible person who will oversee the security of this information and compliance with privacy provisions.
+
+Under the Personal Information Protection and Electronic Documents Act (Canada), Clause 4.1.4(a), the owner of the Application develops and implements this policy and procedures for the protection of personal data of citizens.
+
+Under the Personal Information Protection and Electronic Documents Act (Canada), Clause 4.7, the owner of the Application takes security measures to protect personal information in accordance with the nature of its sensitivity.
+
+Under the Personal Information Protection and Electronic Documents Act (Canada), Clause 4.7.1, the security measures specified in this Policy protect the User's personal data from leakage, loss, or theft, unauthorized access, copying, use, or modification.
+
+Your Rights
+
+If you are not a resident of the European Economic Area, you have the following data protection rights, which you can exercise at any time using the contact details provided in Section H. CONTACT METHODS below:
+
+The right to access, correct, update, or request the deletion of your personal data.
+The right to object to the processing of your personal information when it is based on your legitimate interests, and separately, the right to opt out of direct marketing.
+The right to request us, in some cases, to restrict the processing of your personal data or to request the transfer of your personal information.
+The right to opt out of marketing materials sent by us at any time.
+
+If we have collected and are processing your personal information with your consent, you have the right to withdraw your consent at any time. The withdrawal will not affect the lawfulness of processing based on consent before its withdrawal, nor the lawfulness of processing based on other legal grounds.
+
+If you become aware of any changes or inaccuracies in your information, you must inform us of such changes to update and correct our records.
+
+Under applicable laws, you may have the right to access personal data stored by us and other rights.
+
+If you have any questions regarding this Privacy Policy or if you wish to access or correct your personal data, you may send your request to: andrei@gaivoronskii.com
+
+
+</b><t>E. MINORS</t><b>
+
+The Application and the Website are not intended for children under the age of 16. We do not knowingly collect personal data directly from children under 16 without an appropriate legal basis or the consent required under applicable law. If you believe that a child under 16 has provided personal data to us, please contact us at andrei@gaivoronskii.com so we can review and, where appropriate, delete that information.
+
+
+</b><t>F. SECURITY MEASURES</t><b>
+
+We use commercially reasonable security measures to prevent unauthorized access to the Application, maintain the accuracy of stored data, and ensure the correct use of the information stored with us.
+
+Registered users of the Application can view and edit some of their information through a password-protected account. We strongly recommend that you do not disclose your password to anyone. Our employees will never ask you to provide your password through an unsolicited call or email. If you share a mobile device with another person, you should not save your login information (e.g., username and password) on that mobile device.
+
+No data transmission over the internet or wireless networks can be completely secure. Therefore, while we strive to protect the information stored for you, we cannot guarantee the security of data transmitted to us, and you accept the risk of such transmission.
+
+
+</b><t>G. CHANGES TO THIS PRIVACY POLICY</t><b>
+
+From time to time, we may update this Privacy Policy due to changes in legal, technical, or commercial nature. When updating our Privacy Policy, we will take appropriate measures to inform you, considering the significance of the changes we make. We will obtain your consent for any material changes to the Privacy Policy, where and when required by applicable data protection laws.
+
+Any changes to this Privacy Policy will be communicated by posting updated versions of this Privacy Policy in the Application and on the Website. The updated Privacy Policy takes effect upon publication unless a different effective date is stated. You can find the date of the last update by referring to the "Revision dated ..." line at the beginning of this Privacy Policy.
+
+
+</b><t>H. CONTACT METHODS</t><b>
+
+If you have any requests, questions, or complaints regarding our use of your personal data and this Privacy Policy, please contact us at: andrei@gaivoronskii.com</b>

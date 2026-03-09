@@ -1,0 +1,140 @@
+<h>Terms of Use</h>
+
+<b>Revision dated March 9, 2026
+
+These Terms of Use ("Terms of Use") are a legal agreement between you and the sole proprietor Gaivoronskii Andrei Vyacheslavovich (INN 260806349591, OGRNIP 319265100016961), an individual entrepreneur registered in the Russian Federation (hereinafter referred to as "Walker," "we," "our," or "us"), governing your use of the Walker mobile application and the website available at https://gaivoronskii.com/walker (the "Website").
+
+These Terms of Use contain important information about your rights and obligations related to the Walker application. Please read them carefully.
+
+By downloading, installing, or using the Walker application, you agree to these Terms of Use. If you do not agree to these Terms of Use, do not download, install, or use the Walker application.
+
+We allow you to use the Walker application and the Website solely in accordance with these Terms of Use. We retain ownership of the Walker application and the Website.
+
+These Terms of Use apply to the use of any updates or changes to the Walker application and the Website that we may release from time to time.
+
+1. Licenses Granted to You for Using the Walker Application and the Website
+
+We grant you a non-exclusive, non-transferable, revocable license to perform the following actions in accordance with these Terms of Use ("Licenses"):
+
+(i) download, install, and use the Walker application, as well as any updates provided by us from time to time, in object code form for personal use only on a compatible mobile device owned or controlled by you; and
+
+(ii) access and view the Website, available at https://gaivoronskii.com/walker, for personal use only.
+
+We may terminate the Licenses granted under these Terms of Use at any time at our discretion, with or without notice. If you violate any provision of these Terms of Use, such Licenses will automatically be revoked. Upon termination of any License, you agree to immediately cease using and accessing the Website and the Walker application and to delete any copies of the Walker application in your possession.
+
+2. User Age Restrictions
+
+The Walker application and the Website are not intended for use by children under the age of 16. If you are under 16 years old, you should not use the Walker application or the Website. If we discover any such use, we will immediately delete all relevant user accounts contributing to such use. If you are under 16 years old, you must obtain the consent of your parent or legal guardian for your use of the Walker application and the Website.
+
+3. Rights to the Walker Application, the Website, and Their Content
+
+All intellectual property rights and other rights in the Walker application and the Website, as well as any content provided by us or our licensors or on our behalf, belong to and remain the property of Walker and its licensors. Except as expressly stated in these Terms of Use, you will not obtain (i) any rights to our intellectual property rights or the rights of our affiliates, or (ii) any intellectual property rights or other rights to the Walker application, the Website, or any other content.
+
+The Walker application and the Website are licensed, not sold, under these Terms of Use. The only rights granted to you regarding the Walker application and the Website under these Terms of Use are the licenses described in Section 1 of these Terms of Use, and no transfer of ownership or rights to access or use any source code related to the Walker application or the Website is permitted.
+
+If you submit any content ("Content") to the Walker application or the Website, including but not limited to any image, text, or data, you retain all intellectual property rights you hold in such Content. You grant us a non-exclusive, worldwide, royalty-free, transferable, sublicensable license to use, reproduce, publish, distribute, perform, adapt, modify, enhance, and disseminate such Content from time to time for any purposes related to the Walker application and the Website.
+
+We welcome any feedback or suggestions for improvement related to the Walker application, the Website, and/or any related products and services offered by us from time to time ("Feedback"). When you provide us with Feedback, you agree that we and our affiliates have the right to use such Feedback royalty-free for such purposes as we deem appropriate from time to time, including but not limited to creating new or improving existing products or services offered by us, as well as for communicating with consumers or promoting products, and we are not obligated to compensate you financially for any Feedback provided, regardless of how we or our affiliates use it.
+
+Except as expressly permitted by us in these Terms of Use, you may not use the content of the Walker application or the Website (other than content submitted by you to the Walker application) for any commercial purposes without obtaining our written permission.
+
+4. Use of the Walker Application
+
+To fully use the Walker application, you must create a user account ("Walker Account"). You are responsible for any use of your Walker Account, whether by you or a third party. You must ensure that you use your iCloud account to register your Walker Account. To the maximum extent permitted by applicable law, we are not liable to you for any unauthorized use of your Walker Account resulting from your failure to maintain restricted access to your mobile device or your mobile SIM card, or the privacy or security of your user data. Access to your account may be restricted or impossible in the event of loss of control over your iCloud account to which your Walker Account is registered.
+
+5. Acceptable Use
+
+You agree that you shall not:
+
+(a) copy, adapt, transfer, reverse engineer, decompile, disassemble, modify, sell the Walker application, the Website, or any content available on either of them, except as expressly provided in these Terms of Use or applicable law;
+
+(b) use more than one Walker Account;
+
+(c) use the Walker application or the Website in any unlawful manner, for any unlawful purpose, or in any way inconsistent with these Terms of Use, or act fraudulently or maliciously, such as by hacking or inserting malicious code, including viruses or harmful data, into the Walker application or the Website;
+
+(d) reproduce, create, display, or exhibit the Walker application or the Website unless it is a necessary consequence of their normal operation;
+
+(e) infringe intellectual property rights or the rights of third parties in connection with your use of the Walker application or the Website;
+
+(f) transmit any materials that are defamatory, explicit, offensive, or otherwise undesirable in the Walker application or on the Website;
+
+(g) use the Walker application or the Website in a way that could damage, disable, overload, harm, or compromise our systems or security or interfere with other users;
+
+(h) use any technology that in any way interferes with the normal operation of the Walker application or the Website, including by blocking any advertisements or promotions displayed on it;
+
+(i) collect any information or data from the Walker application or the Website for any commercial purposes unless otherwise agreed by us in writing.
+
+If we discover any violation of this Section 5 by you, we may immediately suspend or terminate your access to the Walker application and remove any content from the Walker application or the Website that violates this Section 5.
+
+6. Changes and Updates to the Walker Application and the Website
+
+We reserve the right at any time, without any liability, at our sole discretion (i) to modify, suspend, restrict, or disable your access to the Walker application and/or the Website, and/or (ii) to modify the functionality or content of the Walker application and/or the Website with or without notice.
+
+From time to time, we may release updates for the Walker application. Depending on the nature of the update, you may not be able to continue using the Walker application until you download the latest version.
+
+7. Contact Us
+
+For any questions related to the Walker application and the Website, including any feedback, questions, complaints, or claims, contact us at andrei@gaivoronskii.com or through the Walker app -> Settings -> Help.
+
+We welcome any feedback and suggestions regarding the Walker application.
+
+8. No Warranty
+
+The Walker application and the Website are provided "as is" and "as available" without any warranties, guarantees, or obligations of any kind regarding the availability, performance, accuracy, or completeness of the Walker application, the Website, or the content of either. We do not guarantee that the use and availability of the Walker application and the Website will be uninterrupted or error-free.
+
+9. Third-Party Content
+
+For your convenience, we may include links to other websites on the internet that are owned or operated by third parties ("Third-Party Websites") in the Walker application or the Website. You also agree that we do not control the content of Third-Party Websites and are not responsible for any material available on such Third-Party Websites, nor for any use of such Third-Party Websites by you or the use of such materials.
+
+The Walker application and the Website may contain content provided by other users of the Walker application and other websites ("Third-Party Content"). You acknowledge that you use this content entirely at your own risk, and we are not responsible for such Third-Party Content.
+
+The fact that we may link to a Third-Party Website or display Third-Party Content does not mean that we endorse the site or the products or services on such Third-Party Website, or that we have reviewed, approved, or verified the Third-Party Content.
+
+10. Changes and Updates to the Terms of Use
+
+We may change or update these Terms of Use from time to time. If we decide to do so, we will publish such changes or updates in the Walker application and on the Website so that you are always aware of the current terms. If we make significant changes to these Terms of Use, we may notify registered users by email, but we are not obligated to do so. Therefore, you agree to periodically review these Terms of Use in the Walker application or on the Website to stay informed of any such updates and changes. In the event of any such change or update to the Terms of Use, by continuing to use the Walker application or the Website, you agree to such changes or updates.
+
+From time to time, we may provide additional terms or guidelines regarding the use of the Walker application, and in such cases, you agree to comply with such additional terms or guidelines that we provide by continuing to use the Walker application.
+
+11. Limitation of Liability
+
+You acknowledge that the Walker application was not developed to meet your individual requirements, and therefore you are responsible for ensuring that the features of the Walker application meet your requirements. To the maximum extent permitted by applicable law, we are not liable, whether in contract or otherwise, for any (i) loss of profit, loss of business, business interruption, or loss of business opportunity arising from or in connection with the Walker application, the Website, and/or this Agreement; or (ii) loss, damage, or other liability arising from the unavailability or malfunction or other deprivation of access to the Walker application or the Website or any inaccurate or incomplete content.
+
+We are only liable for losses or damages you suffer if they result from our breach of these Terms of Use or our negligence.
+
+12. Apple Requirements
+
+As users of the App Store managed by Apple Inc., we are required to include certain legal terms in our Terms of Use, and they are set out in Appendix 1 to these Terms of Use.
+
+13. General
+
+We may assign or transfer our rights and obligations under these Terms of Use to third parties. You may not assign or otherwise transfer these Terms of Use without our prior written consent. Any attempt to do so without our consent will be invalid.
+
+We will not be liable for any failure or delay in performing any of our obligations under these Terms of Use caused by any action or event beyond our control.
+
+If we do not insist that you perform any of your obligations under these Terms of Use, or if we do not enforce our rights against you, or if we delay in doing so, it will not mean that we have waived our rights against you and will not mean that you do not have to perform those obligations. If we waive your obligations by default, we will do so only in writing, and it will not mean that we will automatically waive any subsequent defaults by you.
+Each of the provisions of these Terms of Use operates separately. If any court or competent authority decides that any of them is unlawful or unenforceable, the remaining provisions will remain in full force and effect.
+
+These Terms of Use, as well as their subject matter and form, are governed by the laws of the Russian Federation. Both parties agree that the courts of the Russian Federation will have non-exclusive jurisdiction to resolve any disputes under these Terms of Use or in connection with them.
+
+Appendix 1
+
+App Store Terms of Use
+
+1. The Terms of Use are between you and us, not with Apple Inc. ("Apple"). We, our licensors, and users of the Walker application (to the extent that such users create, submit, or distribute any content through the Walker application) are responsible for the Walker application and its content, but not Apple.
+
+2. The license to use the Walker application granted under these Terms of Use is a non-transferable license for you to use the Walker application on an Apple product that you own or control, in accordance with the usage rules set forth in the Apple App Store Terms of Service, except that the Walker application may be accessed, acquired, and used by other accounts associated with you under any family sharing arrangements with Apple.
+
+3. We acknowledge that Apple has no obligation to provide any maintenance or support services for the Walker application.
+
+4. Apple will have no warranty obligations for the Walker application, nor any claims, losses, liabilities, costs, or expenses related to the Walker application's failure to comply with any warranties set forth in these Terms of Use.
+
+5. We, not Apple, are responsible for addressing any claims by you or a third party relating to the Walker application or your possession or use of the Walker application, including but not limited to: (i) product liability claims; (ii) any claim that the Walker application fails to comply with any applicable legal or regulatory requirement; (iii) claims arising under consumer protection or similar legislation.
+
+6. In the event of any third-party claims that the Walker application or your possession or use of the Walker application infringes a third party's intellectual property rights, we, not Apple, will be responsible for investigating, defending, settling, and discharging any such intellectual property infringement claims.
+
+7. You represent and warrant that (i) you are not located in a country that is subject to a U.S. government embargo or that has been designated by the U.S. government as a "terrorist-supporting" country; and (ii) you are not listed on any U.S. government list of prohibited or restricted parties.
+
+7. You must comply with any applicable third-party terms from time to time when using the Walker application.
+
+8. Apple and Apple's subsidiaries are third-party beneficiaries of these Terms of Use, and upon your acceptance of these Terms of Use, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms of Use against you as a third-party beneficiary.</b>
