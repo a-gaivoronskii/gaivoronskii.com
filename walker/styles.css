@@ -15,6 +15,7 @@ body {
 
 body {
   background:
+    linear-gradient(to bottom, #1e1e1e 60px, transparent 200px),
     radial-gradient(ellipse at 20% 20%, rgba(242, 160, 183, 0.22), transparent 50%),
     radial-gradient(ellipse at 80% 20%, rgba(160, 140, 255, 0.18), transparent 50%),
     #1e1e1e;
