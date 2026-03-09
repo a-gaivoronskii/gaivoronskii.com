@@ -1,68 +1,5 @@
 /* ===================================
-   VARIABLES
-   =================================== */
-:root {
-  --color-bg: #f5f3eb;
-  --color-bg-secondary: #e3f1db;
-  --color-ink: #17332d;
-  --color-muted: #58726c;
-  --color-line: rgba(23, 51, 45, 0.12);
-  --color-card: rgba(255, 255, 255, 0.7);
-  --color-card-solid: #fffdf7;
-  --color-button: #17332d;
-  --color-button-text: #f6fff6;
-  --font-sans: "Space Grotesk", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-  --shadow-card: 0 18px 40px rgba(22, 40, 35, 0.1);
-  --border-radius-xl: 32px;
-  --border-radius-lg: 24px;
-  --border-radius-sm: 999px;
-  --transition-fast: 0.2s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #101716;
-    --color-bg-secondary: #1a2622;
-    --color-ink: #ecf6ef;
-    --color-muted: #adbbb5;
-    --color-line: rgba(236, 246, 239, 0.12);
-    --color-card: rgba(20, 33, 29, 0.82);
-    --color-card-solid: #16211e;
-    --color-button: #ecf6ef;
-    --color-button-text: #101716;
-    --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.24);
-  }
-}
-
-:root[data-theme="light"] {
-  --color-bg: #f5f3eb;
-  --color-bg-secondary: #e3f1db;
-  --color-ink: #17332d;
-  --color-muted: #58726c;
-  --color-line: rgba(23, 51, 45, 0.12);
-  --color-card: rgba(255, 255, 255, 0.7);
-  --color-card-solid: #fffdf7;
-  --color-button: #17332d;
-  --color-button-text: #f6fff6;
-  --shadow-card: 0 18px 40px rgba(22, 40, 35, 0.1);
-}
-
-:root[data-theme="dark"] {
-  --color-bg: #101716;
-  --color-bg-secondary: #1a2622;
-  --color-ink: #ecf6ef;
-  --color-muted: #adbbb5;
-  --color-line: rgba(236, 246, 239, 0.12);
-  --color-card: rgba(20, 33, 29, 0.82);
-  --color-card-solid: #16211e;
-  --color-button: #ecf6ef;
-  --color-button-text: #101716;
-  --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.24);
-}
-
-/* ===================================
-   RESET & BASE
+   BASE
    =================================== */
 *,
 *::before,
@@ -77,9 +14,9 @@ body {
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
+  background: #1e1e1e;
+  color: #fff;
+  font-family: "Nunito", system-ui, sans-serif;
   line-height: 1.6;
 }
 
@@ -97,10 +34,9 @@ img {
 button,
 a {
   transition:
-    transform var(--transition-fast),
-    border-color var(--transition-fast),
-    background-color var(--transition-fast),
-    color var(--transition-fast);
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .container {
@@ -110,42 +46,65 @@ a {
 }
 
 /* ===================================
-   WALKER HOME PAGE
+   TOPBAR (shared)
    =================================== */
-.walker-home {
-  background: #2d2d2d;
-  color: #fff;
-  font-family: "Nunito", system-ui, sans-serif;
-  min-height: 100vh;
-}
-
-.walker-home .topbar {
+.topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
 
-.walker-home .brand-link {
+.brand-link {
   display: inline-flex;
   align-items: center;
 }
 
-.walker-home .brand-link img {
+.brand-link img {
   width: clamp(160px, 22vw, 210px);
   height: auto;
 }
 
-.walker-home .topbar__email {
+.topbar__email,
+.topbar__link {
   color: #f2a0b7;
   font-size: 0.95rem;
   text-decoration: none;
 }
 
-.walker-home .topbar__email:hover {
+.topbar__email:hover,
+.topbar__link:hover {
   text-decoration: underline;
 }
 
+/* ===================================
+   FOOTER (shared)
+   =================================== */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #666;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.82rem;
+}
+
+.footer a {
+  color: #888;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #b0b0c0;
+}
+
+/* ===================================
+   WALKER HOME PAGE
+   =================================== */
 .walker-home .hero {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -174,30 +133,30 @@ a {
   margin-top: 40px;
 }
 
-.walker-home .button-appstore {
+.button-appstore {
   display: inline-flex;
   align-items: center;
   padding: 16px 32px;
-  border-radius: var(--border-radius-sm);
+  border-radius: 999px;
   background: #f2a0b7;
-  color: #2d2d2d;
+  color: #1e1e1e;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
 }
 
-.walker-home .button-appstore:hover {
+.button-appstore:hover {
   transform: translateY(-1px);
   background: #f7b5c7;
 }
 
-.walker-home .link-secondary {
+.link-secondary {
   color: #b0b0c0;
   font-size: 1rem;
   text-decoration: none;
 }
 
-.walker-home .link-secondary:hover {
+.link-secondary:hover {
   color: #fff;
 }
 
@@ -206,28 +165,6 @@ a {
   height: auto;
   max-width: 580px;
   margin: 0 auto;
-}
-
-.walker-home .footer {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-top: 80px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #666;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-}
-
-.walker-home .footer a {
-  color: #888;
-  text-decoration: none;
-}
-
-.walker-home .footer a:hover {
-  color: #b0b0c0;
 }
 
 @media (max-width: 768px) {
@@ -248,207 +185,36 @@ a {
     max-width: 320px;
   }
 
-  .walker-home .topbar {
+  .topbar {
     flex-direction: column;
     align-items: start;
   }
 
-  .walker-home .footer {
+  .footer {
     justify-content: center;
   }
 }
 
 /* ===================================
-   LEGAL PAGES (shared)
+   LEGAL PAGES
    =================================== */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.brand-link {
-  display: inline-flex;
-  align-items: center;
-}
-
-.brand-link img {
-  width: clamp(160px, 22vw, 210px);
-  height: auto;
-}
-
-.topbar__actions,
-.footer__left,
-.footer__right,
-.status-row,
-.legal-callout__actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.72rem 1rem;
-  border: 1px solid var(--color-line);
-  border-radius: var(--border-radius-sm);
-  background: rgba(255, 255, 255, 0.35);
-  color: var(--color-ink);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-}
-
-.chip--button {
-  cursor: pointer;
-  font: inherit;
-}
-
-.chip--ghost {
-  background: transparent;
-}
-
-.chip:hover,
-.language-switcher__button:hover {
-  transform: translateY(-1px);
-}
-
-.highlight {
-  display: inline;
-  padding: 0 0.22em;
-  border-radius: 0.3em;
-  background: var(--color-ink);
-  color: var(--color-bg);
-  box-decoration-break: clone;
-}
-
-.section__title {
-  margin: 10px 0 0;
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-.hero__eyebrow,
-.section__eyebrow {
-  margin: 0;
-  color: var(--color-muted);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.legal-hero__description {
-  max-width: 36rem;
-  margin: 22px 0 0;
-  color: var(--color-muted);
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-top: 64px;
-  padding-top: 22px;
-  border-top: 1px solid var(--color-line);
-  color: var(--color-muted);
-  font-family: var(--font-mono);
-  font-size: 0.84rem;
-}
-
-.footer__dot {
-  opacity: 0.5;
-}
-
-.footer__right a {
-  text-decoration: none;
-}
-
-/* ===================================
-   LEGAL PAGE SPECIFICS
-   =================================== */
-.legal-page {
-  background:
-    radial-gradient(circle at top left, rgba(255, 109, 143, 0.18), transparent 28%),
-    radial-gradient(circle at top right, rgba(108, 84, 255, 0.18), transparent 26%),
-    linear-gradient(180deg, var(--color-bg-secondary), var(--color-bg));
-}
-
-.legal-page .topbar {
-  align-items: start;
-}
-
 .legal-main {
-  margin-top: 34px;
+  margin-top: 48px;
 }
 
-.legal-hero {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.legal-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.language-switcher {
-  display: inline-flex;
-  gap: 4px;
-  padding: 4px;
-  border: 1px solid var(--color-line);
-  border-radius: var(--border-radius-sm);
-  background: rgba(255, 255, 255, 0.24);
-}
-
-.language-switcher__button {
-  min-width: 96px;
-  padding: 0.72rem 0.96rem;
-  border: 0;
-  border-radius: var(--border-radius-sm);
-  background: transparent;
-  color: var(--color-muted);
-  cursor: pointer;
-  font: inherit;
-  font-family: var(--font-mono);
-}
-
-.language-switcher__button.is-active {
-  background: var(--color-button);
-  color: var(--color-button-text);
-}
-
-.status-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.62rem 0.88rem;
-  border-radius: var(--border-radius-sm);
-  border: 1px solid var(--color-line);
-  background: rgba(201, 242, 119, 0.18);
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
+.legal-heading {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .legal-card {
-  margin-top: 24px;
+  margin-top: 32px;
   padding: clamp(24px, 4vw, 42px);
-  border: 1px solid var(--color-line);
-  border-radius: var(--border-radius-xl);
-  background: var(--color-card);
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .legal-content {
@@ -457,23 +223,24 @@ a {
 
 .legal-title {
   margin: 0;
-  font-size: clamp(2.3rem, 5vw, 4.6rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .legal-section-title {
   margin: 34px 0 0;
-  font-size: 1rem;
-  font-family: var(--font-mono);
-  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #f2a0b7;
 }
 
 .legal-copy {
   margin-top: 14px;
   white-space: pre-line;
-  color: var(--color-muted);
+  color: #b0b0c0;
 }
 
 .legal-copy:first-of-type {
@@ -483,19 +250,5 @@ a {
 @media (max-width: 720px) {
   .container {
     width: min(100% - 28px, 1200px);
-  }
-
-  .legal-page .topbar {
-    flex-direction: column;
-    align-items: start;
-  }
-
-  .legal-page .topbar__actions {
-    width: 100%;
-  }
-
-  .legal-toolbar,
-  .status-row {
-    width: 100%;
   }
 }

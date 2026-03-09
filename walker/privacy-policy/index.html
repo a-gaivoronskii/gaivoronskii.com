@@ -10,7 +10,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -21,49 +21,21 @@
       <a class="brand-link" href="/walker/" aria-label="Back to Walker home">
         <img src="../assets/logo.png" width="274" height="90" alt="Walker">
       </a>
-      <div class="topbar__actions">
-        <a class="chip chip--ghost" href="../terms-of-use/">Terms_of_Use</a>
-        <button id="themeToggle" class="chip chip--button" aria-label="Toggle between light and dark themes">
-          Toggle_Theme
-        </button>
-      </div>
+      <a class="topbar__link" href="../terms-of-use/">Terms of Use</a>
     </header>
 
     <main class="legal-main">
-      <section class="legal-hero">
-        <p class="hero__eyebrow">Walker legal</p>
-        <h1 class="section__title" data-legal-heading>Privacy Policy</h1>
-        <p class="legal-hero__description">
-          Updated on March 9, 2026. This page is the current Walker privacy policy location under
-          <span class="highlight">gaivoronskii.com/walker</span>.
-        </p>
-
-        <div class="legal-toolbar">
-          <div class="language-switcher" role="tablist" aria-label="Document language">
-            <button class="language-switcher__button is-active" type="button" data-language="en">English</button>
-            <button class="language-switcher__button" type="button" data-language="ru">Русский</button>
-          </div>
-          <div class="status-row">
-            <span id="documentStatus" class="status-pill">English version</span>
-            <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a>
-          </div>
-        </div>
-      </section>
+      <h1 class="legal-heading" data-legal-heading>Privacy Policy</h1>
 
       <article class="legal-card">
         <div id="legalContent" class="legal-content" aria-live="polite"></div>
       </article>
     </main>
 
-    <footer class="footer footer--legal">
-      <div class="footer__left">
-        <span>&copy; <span data-current-year></span> Walker</span>
-        <span class="footer__dot">·</span>
-        <a href="/walker/">walker home</a>
-      </div>
-      <div class="footer__right">
-        <a href="../terms-of-use/">Terms of Use</a>
-      </div>
+    <footer class="footer">
+      <span>&copy; <span data-current-year></span> Walker</span>
+      <a href="/walker/">Walker home</a>
+      <a href="../terms-of-use/">Terms of Use</a>
     </footer>
   </div>
 
