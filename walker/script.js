@@ -17,7 +17,6 @@ class LegalDocumentPage {
     }
 
     this.documentType = document.body.dataset.document;
-    this.headingNode = document.querySelector("[data-legal-heading]");
     this.language = navigator.language.toLowerCase().startsWith("ru") ? "ru" : "en";
 
     this.loadDocument();
@@ -40,13 +39,11 @@ class LegalDocumentPage {
       const text = await response.text();
       this.contentNode.innerHTML = this.renderDocument(text);
 
-      if (this.headingNode) {
-        this.headingNode.textContent =
-          this.language === "ru" ? document.body.dataset.titleRu : document.body.dataset.titleEn;
-      }
+      const title =
+        this.language === "ru" ? document.body.dataset.titleRu : document.body.dataset.titleEn;
 
       document.documentElement.lang = this.language;
-      document.title = `${this.headingNode?.textContent || "Walker"} — Walker`;
+      document.title = `${title || "Walker"} — Walker`;
     } catch (error) {
       console.error(error);
       this.contentNode.innerHTML = '<p class="legal-copy">Unable to load the requested document right now.</p>';
