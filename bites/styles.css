@@ -14,8 +14,8 @@
   --color-fat: #3373d9;
   --color-button-ink: #002b4f;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "SF Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --font-sans: var(--font-mono);
   --container-width: 1120px;
   --transition-fast: 180ms ease;
   --transition-medium: 320ms ease;
