@@ -85,8 +85,8 @@ button {
 
 .topbar,
 .hero,
+.ticker,
 .section,
-.cta-panel,
 .footer {
   position: relative;
   z-index: 1;
@@ -257,10 +257,32 @@ button {
   justify-content: center;
 }
 
+.ticker {
+  overflow: hidden;
+  margin-top: 18px;
+  padding: 12px 0;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: tickerSlide 30s linear infinite;
+}
+
+.ticker__track span {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .terminal-window,
 .feature-card,
-.console-card,
-.cta-panel {
+.console-card {
   border: 1px solid var(--color-line);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
   box-shadow: var(--shadow);
@@ -583,28 +605,6 @@ button {
   color: var(--color-carbs);
 }
 
-.cta-panel {
-  margin-top: 96px;
-  padding: 32px;
-  border-radius: 30px;
-  background:
-    radial-gradient(circle at top right, rgba(107, 199, 224, 0.1), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
-}
-
-.cta-panel__title {
-  margin: 0;
-  font-size: clamp(2rem, 2.6vw + 1rem, 3.2rem);
-  line-height: 1.04;
-}
-
-.cta-panel__copy {
-  max-width: 54ch;
-  margin: 16px 0 0;
-  color: var(--color-muted);
-  font-size: 1.02rem;
-}
-
 .footer {
   display: flex;
   align-items: center;
@@ -646,6 +646,16 @@ button {
   }
 }
 
+@keyframes tickerSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (max-width: 980px) {
   .hero,
   .feature-grid,
@@ -679,8 +689,7 @@ button {
 
   .terminal-window__body,
   .feature-card,
-  .console-card,
-  .cta-panel {
+  .console-card {
     padding: 18px;
   }
 
