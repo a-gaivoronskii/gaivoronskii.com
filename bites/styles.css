@@ -270,10 +270,13 @@ button {
 .ticker__track {
   display: flex;
   width: max-content;
-  animation: tickerSlide 30s linear infinite;
+  will-change: transform;
+  animation: tickerSlide 22s linear infinite;
 }
 
 .ticker__track span {
+  flex: 0 0 auto;
+  padding-right: 2.5rem;
   color: var(--color-muted);
   font-family: var(--font-mono);
   font-size: 0.78rem;
