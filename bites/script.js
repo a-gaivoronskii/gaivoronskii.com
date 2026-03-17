@@ -1,52 +1,7 @@
-class ThemeManager {
-  constructor() {
-    this.root = document.documentElement;
-    this.toggleButton = document.getElementById("themeToggle");
-    this.theme = localStorage.getItem("bites-theme") || "dark";
-
-    this.applyTheme();
-    this.bindEvents();
-    this.updateYear();
-  }
-
-  bindEvents() {
-    if (!this.toggleButton) {
-      return;
-    }
-
-    this.toggleButton.addEventListener("click", () => {
-      this.theme = this.theme === "dark" ? "light" : "dark";
-      localStorage.setItem("bites-theme", this.theme);
-      this.applyTheme();
-      this.toggleButton.blur();
-    });
-  }
-
-  applyTheme() {
-    this.root.setAttribute("data-theme", this.theme);
-    this.updateThemeColor();
-
-    if (this.toggleButton) {
-      const isDark = this.theme === "dark";
-      this.toggleButton.textContent = isDark ? "Ocean_Mode" : "Mist_Mode";
-      this.toggleButton.setAttribute("aria-pressed", String(!isDark));
-    }
-  }
-
-  updateYear() {
-    const year = document.getElementById("currentYear");
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
-  }
-
-  updateThemeColor() {
-    const themeColor = document.querySelector('meta[name="theme-color"]');
-    if (!themeColor) {
-      return;
-    }
-
-    themeColor.setAttribute("content", this.theme === "dark" ? "#041a24" : "#ecfbff");
+function updateYear() {
+  const year = document.getElementById("currentYear");
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
 }
 
@@ -76,6 +31,6 @@ class RevealManager {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  new ThemeManager();
+  updateYear();
   new RevealManager();
 });
