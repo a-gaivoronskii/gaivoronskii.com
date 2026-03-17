@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#041a24">
+  <meta name="description" content="Bites Terminal is a calorie counter and macro tracker with terminal-inspired design, Apple Health sync, widgets, and AI-assisted food search.">
+
+  <title>Bites Terminal - Calories &amp; Macro Tracker</title>
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("reveal-ready");</script>
+</head>
+<body>
+  <div class="container">
+    <header class="topbar" data-reveal>
+      <a class="back-link" href="/">andrei_gaivoronskii</a>
+      <button id="themeToggle" class="mode-toggle" type="button" aria-label="Toggle between ocean and mist themes">
+        Ocean_Mode
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow">&gt; bites_terminal/init</p>
+          <h1 class="hero__title">Bites Terminal<span class="cursor">_</span></h1>
+          <p class="hero__subtitle">Calories &amp; Macro Tracker</p>
+          <p class="hero__description">
+            A calorie counter with terminal soul. Search foods fast, scan barcodes, log meals, track macros,
+            sync with Apple Health, and keep the whole day visible at a glance.
+          </p>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="mailto:andrei@gaivoronskii.com?subject=Bites%20Terminal%20early%20access">
+              Request Early Access ↗
+            </a>
+            <a class="button button--secondary" href="#feature-grid">
+              Inspect Features
+            </a>
+          </div>
+
+          <ul class="hero__badges" aria-label="Bites Terminal capabilities">
+            <li>[ iPhone ]</li>
+            <li>[ Apple_Health ]</li>
+            <li>[ Widgets ]</li>
+            <li>[ AI_Search ]</li>
+            <li>[ Ocean_Theme ]</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" data-reveal>
+          <div class="terminal-window">
+            <div class="terminal-window__chrome">
+              <div class="terminal-window__lights" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p class="terminal-window__title">macro://session/live</p>
+            </div>
+
+            <div class="terminal-window__body">
+              <p class="line line--command">&gt; search "greek yogurt berries granola"</p>
+
+              <div class="result-list">
+                <div class="result-item">
+                  <span class="result-item__name">Greek Yogurt Bowl</span>
+                  <span class="result-item__meta">420 kcal</span>
+                </div>
+                <div class="result-item">
+                  <span class="result-item__name">Protein Yogurt + Blueberries</span>
+                  <span class="result-item__meta">31P / 36C / 9F</span>
+                </div>
+                <div class="result-item">
+                  <span class="result-item__name">Barcode hit: Strawberry Granola</span>
+                  <span class="result-item__meta">scan://ready</span>
+                </div>
+              </div>
+
+              <div class="stats-grid" aria-label="Daily macro stats preview">
+                <article class="stat-card">
+                  <span class="stat-card__label">CALORIES</span>
+                  <strong class="stat-card__value">1,842</strong>
+                  <span class="stat-card__hint">84% target</span>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-card__label">PROTEIN</span>
+                  <strong class="stat-card__value">148g</strong>
+                  <span class="stat-card__hint">on target</span>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-card__label">CARBS</span>
+                  <strong class="stat-card__value">171g</strong>
+                  <span class="stat-card__hint">smooth day</span>
+                </article>
+                <article class="stat-card">
+                  <span class="stat-card__label">FAT</span>
+                  <strong class="stat-card__value">58g</strong>
+                  <span class="stat-card__hint">balanced</span>
+                </article>
+              </div>
+
+              <div class="widget-panel">
+                <div class="widget-panel__header">
+                  <span class="widget-panel__tag">widget.live</span>
+                  <span class="widget-panel__clock">07:42</span>
+                </div>
+                <div class="widget-panel__meters">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <p class="widget-panel__caption">floating header + widgets keep the day compiled.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker" aria-label="Bites Terminal capabilities">
+        <div class="ticker__track">
+          <span>Search - Scan - Log - Apple Health - Widgets - AI Search - Daily Macros - Meal Types - Goal Signals - Ocean Theme - Search - Scan - Log - Apple Health - Widgets - AI Search - Daily Macros - Meal Types - Goal Signals - Ocean Theme</span>
+        </div>
+      </section>
+
+      <section id="feature-grid" class="section">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">&gt; feature_map</p>
+          <h2 class="section-title">Built to make food logging feel calm, fast, and quietly addictive.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card" data-reveal>
+            <p class="feature-card__meta">01 / input</p>
+            <h3>Source-backed search, with AI when needed</h3>
+            <p>Use fast food search first, then fall back to AI-assisted queries when product names get messy or incomplete.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <p class="feature-card__meta">02 / capture</p>
+            <h3>Barcode scan straight into the log</h3>
+            <p>Point, scan, confirm, and keep moving. Logging should feel closer to terminal shortcuts than form filling.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <p class="feature-card__meta">03 / dashboard</p>
+            <h3>Calories and macros in one readable stack</h3>
+            <p>See calories, protein, carbs, and fat together with a floating summary instead of hunting across screens.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <p class="feature-card__meta">04 / sync</p>
+            <h3>Apple Health as the nutrition backbone</h3>
+            <p>Import dietary data, write meals back, and keep goals grounded in the health data you already trust.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <p class="feature-card__meta">05 / glance</p>
+            <h3>Widgets that keep the day visible</h3>
+            <p>Macros should not disappear when the app closes. Widgets keep the current state one swipe away.</p>
+          </article>
+
+          <article class="feature-card" data-reveal>
+            <p class="feature-card__meta">06 / texture</p>
+            <h3>Terminal mood, ocean palette</h3>
+            <p>Monospaced rhythm, dark water gradients, phosphor-like accents, and a calmer alternative to generic health UI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--split">
+        <article class="console-card" data-reveal>
+          <p class="section-kicker">&gt; system_profile</p>
+          <dl class="spec-list">
+            <div class="spec-list__row">
+              <dt>platform</dt>
+              <dd>iPhone</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>requires</dt>
+              <dd>iOS 26.0+</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>health</dt>
+              <dd>Apple Health read/write support</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>search stack</dt>
+              <dd>Food databases + AI assist</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>privacy</dt>
+              <dd>Nutrition data stays on device and in Apple Health</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>status</dt>
+              <dd>Active build, early access by request</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="console-card" data-reveal>
+          <p class="section-kicker">&gt; roadmap</p>
+          <ul class="roadmap-list">
+            <li><span class="status-pill status-pill--live">LIVE</span> AI-assisted food search</li>
+            <li><span class="status-pill status-pill--live">LIVE</span> Home screen widgets for nutrition totals</li>
+            <li><span class="status-pill status-pill--live">LIVE</span> Apple Health syncing for dietary data</li>
+            <li><span class="status-pill status-pill--next">NEXT</span> PDF analysis to tune calorie and macro goals</li>
+          </ul>
+          <p class="roadmap-note">
+            The first public page leans into the ocean terminal look: deep water surfaces, monospaced details, and a much calmer pace than most fitness apps.
+          </p>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">&gt; why_it_hits</p>
+          <h2 class="section-title">Built like a tool, not a feed.</h2>
+        </div>
+
+        <div class="principles-grid">
+          <article class="principle-card" data-reveal>
+            <h3>Clarity first</h3>
+            <p>Less noise, fewer decorative health cliches, and more room for the numbers that actually guide decisions.</p>
+          </article>
+          <article class="principle-card" data-reveal>
+            <h3>Speed as a feature</h3>
+            <p>Search, scan, and recent entries are all tuned around repeat logging, not one-time setup screens.</p>
+          </article>
+          <article class="principle-card" data-reveal>
+            <h3>Smarter goals</h3>
+            <p>Health data informs the baseline now, and PDF-based goal refinement is queued up as the next smart layer.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-panel" data-reveal>
+        <p class="section-kicker">&gt; launch_sequence</p>
+        <h2 class="cta-panel__title">Search. Scan. Log. Stay on target.</h2>
+        <p class="cta-panel__copy">
+          Want the first public build, or just want a note when Bites Terminal lands? Send me a message and I will loop you in.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="mailto:andrei@gaivoronskii.com?subject=Bites%20Terminal%20launch">
+            Contact Andrei ↗
+          </a>
+          <a class="button button--secondary" href="/">
+            Back to Portfolio
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>&copy; <span id="currentYear">2026</span> Andrei Gaivoronskii</span>
+      <span class="footer__separator">/</span>
+      <span>bites_terminal.ocean</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
