@@ -9,7 +9,7 @@
   <title>Bites Terminal - Calories &amp; Macro Tracker</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="stylesheet" href="styles.css?v=20260318b">
+  <link rel="stylesheet" href="styles.css?v=20260318c">
   <script>document.documentElement.classList.add("reveal-ready");</script>
 </head>
 <body>
@@ -34,8 +34,8 @@
             <a class="button button--primary" href="#feature-grid">
               Inspect Features
             </a>
-            <a class="button button--secondary" href="#build-status">
-              View Build Status
+            <a class="button button--secondary" href="/">
+              Back to Portfolio
             </a>
           </div>
 
@@ -44,63 +44,6 @@
           </p>
         </div>
 
-        <div class="hero__visual" data-reveal>
-          <div class="terminal-flow">
-            <div class="terminal-window__chrome">
-              <div class="terminal-window__lights" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <p class="terminal-window__title">macro://session/live</p>
-            </div>
-
-            <div class="terminal-window__body">
-              <p class="line line--command">&gt; log meal --query "salmon rice avocado"</p>
-
-              <div class="terminal-panel">
-                <div class="terminal-row">
-                  <span class="terminal-row__label">result</span>
-                  <strong class="terminal-row__value">Salmon Bowl</strong>
-                </div>
-                <div class="terminal-row">
-                  <span class="terminal-row__label">source</span>
-                  <span class="terminal-row__meta">search + barcode</span>
-                </div>
-                <div class="terminal-row">
-                  <span class="terminal-row__label">save</span>
-                  <span class="terminal-row__meta">sync://apple_health</span>
-                </div>
-              </div>
-
-              <div class="daily-panel">
-                <div class="daily-panel__header">
-                  <span class="daily-panel__label">daily.total</span>
-                  <span class="daily-panel__status">compiled</span>
-                </div>
-
-                <strong class="daily-panel__value">1,842 kcal</strong>
-
-                <ul class="macro-list" aria-label="Daily macro stats preview">
-                  <li>
-                    <span>PROTEIN</span>
-                    <strong>148g</strong>
-                  </li>
-                  <li>
-                    <span>CARBS</span>
-                    <strong>171g</strong>
-                  </li>
-                  <li>
-                    <span>FAT</span>
-                    <strong>58g</strong>
-                  </li>
-                </ul>
-              </div>
-
-              <p class="terminal-note">Widgets and Apple Health keep the day visible without turning nutrition tracking into a feed.</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section class="ticker" aria-label="Bites Terminal signal line">
@@ -150,47 +93,6 @@
         </div>
       </section>
 
-      <section class="section section--tight">
-        <div class="detail-flow detail-flow--split">
-          <article id="build-status" class="detail-column" data-reveal>
-            <p class="section-kicker">&gt; build_status</p>
-            <h2 class="detail-column__title">A calmer nutrition tool.</h2>
-            <ul class="console-list">
-              <li><span class="status-pill status-pill--live">LIVE</span> Apple Health read and write support for dietary data</li>
-              <li><span class="status-pill status-pill--live">LIVE</span> Home Screen widgets for quick totals</li>
-              <li><span class="status-pill status-pill--live">LIVE</span> Terminal-inspired UI built for focus</li>
-              <li><span class="status-pill status-pill--next">NEXT</span> PDF analysis for better goal setup</li>
-            </ul>
-          </article>
-
-          <article class="detail-column" data-reveal>
-            <p class="section-kicker">&gt; system_profile</p>
-            <dl class="spec-list">
-              <div class="spec-list__row">
-                <dt>platform</dt>
-                <dd>iPhone</dd>
-              </div>
-              <div class="spec-list__row">
-                <dt>requires</dt>
-                <dd>iOS 26.0+</dd>
-              </div>
-              <div class="spec-list__row">
-                <dt>health</dt>
-                <dd>Apple Health sync for calories and macros</dd>
-              </div>
-              <div class="spec-list__row">
-                <dt>search stack</dt>
-                <dd>Food databases, barcode scan, and AI assist</dd>
-              </div>
-              <div class="spec-list__row">
-                <dt>status</dt>
-                <dd>Independent iOS app in active development</dd>
-              </div>
-            </dl>
-          </article>
-        </div>
-      </section>
-
     </main>
 
     <footer class="footer">
@@ -200,6 +102,6 @@
     </footer>
   </div>
 
-  <script src="script.js?v=20260318b"></script>
+  <script src="script.js?v=20260318c"></script>
 </body>
 </html>
