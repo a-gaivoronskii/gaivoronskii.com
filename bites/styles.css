@@ -278,16 +278,14 @@ button {
 
 .terminal-window,
 .detail-panel {
-  border: 1px solid var(--color-line);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.012));
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
+  border: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .terminal-window {
-  width: min(490px, 100%);
-  border-radius: 22px;
-  overflow: hidden;
+  width: min(520px, 100%);
 }
 
 .terminal-window__chrome {
@@ -295,9 +293,8 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 16px;
+  padding: 0 0 14px;
   border-bottom: 1px solid var(--color-line);
-  background: rgba(255, 255, 255, 0.018);
 }
 
 .terminal-window__lights {
@@ -332,8 +329,8 @@ button {
 
 .terminal-window__body {
   display: grid;
-  gap: 12px;
-  padding: 18px;
+  gap: 16px;
+  padding: 16px 0 0;
 }
 
 .line {
@@ -381,7 +378,7 @@ button {
 }
 
 .daily-panel {
-  padding-top: 12px;
+  padding-top: 16px;
   border-top: 1px solid var(--color-line);
 }
 
@@ -466,23 +463,22 @@ button {
 }
 
 .detail-panel {
-  margin-top: 18px;
-  border-radius: 18px;
-  padding: 0 18px;
+  margin-top: 26px;
+  padding: 0;
 }
 
 .detail-panel--split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  padding: 18px;
+  gap: 44px;
+  padding: 0;
 }
 
 .detail-row {
   display: grid;
   grid-template-columns: 110px minmax(0, 1fr);
-  gap: 18px;
-  padding: 16px 0;
+  gap: 24px;
+  padding: 18px 0;
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -516,9 +512,9 @@ button {
 
 .console-list {
   display: grid;
-  gap: 10px;
+  gap: 14px;
   padding: 0;
-  margin: 10px 0 0;
+  margin: 16px 0 0;
   list-style: none;
 }
 
@@ -526,7 +522,7 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--color-line);
   color: var(--color-muted);
   font-size: 0.84rem;
@@ -539,15 +535,15 @@ button {
 
 .spec-list {
   display: grid;
-  gap: 10px;
-  margin: 10px 0 0;
+  gap: 14px;
+  margin: 16px 0 0;
 }
 
 .spec-list__row {
   display: grid;
   grid-template-columns: 108px minmax(0, 1fr);
   gap: 12px;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -689,7 +685,7 @@ button {
   .terminal-window__body,
   .detail-panel,
   .detail-panel--split {
-    padding: 16px;
+    padding: 0;
   }
 
   .macro-list,
