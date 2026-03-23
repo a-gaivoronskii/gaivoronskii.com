@@ -38,8 +38,8 @@ body {
   position: relative;
   overflow-x: hidden;
   background:
-    linear-gradient(0deg, transparent 23px, rgba(255, 255, 255, 0.06) 24px),
-    linear-gradient(90deg, transparent 23px, rgba(255, 255, 255, 0.06) 24px),
+    linear-gradient(0deg, transparent 23px, rgba(107, 199, 224, 0.12) 24px),
+    linear-gradient(90deg, transparent 23px, rgba(107, 199, 224, 0.12) 24px),
     radial-gradient(circle at top left, rgba(107, 199, 224, 0.16), transparent 28%),
     radial-gradient(circle at 82% 16%, rgba(77, 153, 230, 0.1), transparent 24%),
     linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-deep) 100%);
