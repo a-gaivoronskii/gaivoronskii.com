@@ -77,7 +77,7 @@ class CardManager {
 
       card.addEventListener('click', (e) => {
         if (!e.target.closest('.card__store-link')) {
-          window.open(new URL(url, window.location.href).toString(), '_blank', 'noopener,noreferrer');
+          this.openCardUrl(url);
           card.blur();
         }
       });
@@ -85,10 +85,21 @@ class CardManager {
       card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          window.open(new URL(url, window.location.href).toString(), '_blank', 'noopener,noreferrer');
+          this.openCardUrl(url);
         }
       });
     });
+  }
+
+  openCardUrl(url) {
+    const destination = new URL(url, window.location.href);
+
+    if (destination.origin === window.location.origin) {
+      window.location.href = destination.toString();
+      return;
+    }
+
+    window.open(destination.toString(), '_blank', 'noopener,noreferrer');
   }
 
   getCardLabel(card) {
