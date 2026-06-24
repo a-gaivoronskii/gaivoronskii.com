@@ -49,7 +49,7 @@ A clean, fast-loading portfolio website for iOS engineering work and personal pr
 - **365 Workouts** — Daily fitness routines
 - **Fitness** — Comprehensive wellness app
 - **Wallet** — Digital card organizer
-- **QR Code** — Scanner and generator
+- **QRoo** — Scanner and generator
 
 ## 🚀 Quick Start
 
