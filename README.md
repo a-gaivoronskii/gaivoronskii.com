@@ -188,7 +188,7 @@ Modify grid size:
 
 ---
 
-*Built between workouts, runs, and long walks.*
+*Built between workouts and runs.*
 
 ## 📄 License
 
