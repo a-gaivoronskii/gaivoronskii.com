@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Smeta is a clear, private personal finance tracker for iPhone. Import transaction files, understand spending, and keep every account in view.">
-  <meta name="theme-color" content="#f7f7f3">
+  <meta name="theme-color" content="#f7f7f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111310" media="(prefers-color-scheme: dark)">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gaivoronskii.com/smeta/">
@@ -60,8 +61,43 @@
       </div>
 
       <div class="hero__visual">
-        <div class="phone">
-          <img src="assets/dashboard.jpg" alt="Smeta dashboard showing total balance, account balances, and recent transactions" width="506" height="1100">
+        <div class="app-preview" aria-label="Example Smeta balance and recent transactions">
+          <div class="balance-card">
+            <span class="preview-label">Total</span>
+            <strong>$40,744.71</strong>
+          </div>
+
+          <div class="summary-row">
+            <div class="summary-card">
+              <span class="money-icon money-icon--income" aria-hidden="true">↗</span>
+              <small>Earned</small>
+              <strong>$6,050</strong>
+            </div>
+            <div class="summary-card">
+              <span class="money-icon money-icon--expense" aria-hidden="true">↙</span>
+              <small>Spent</small>
+              <strong>$2,366.59</strong>
+            </div>
+          </div>
+
+          <span class="preview-label preview-label--section">Recent</span>
+          <div class="transaction-list">
+            <div class="transaction-row">
+              <span class="transaction-icon">☕</span>
+              <span><strong>Blue Bottle Coffee</strong><small>Dining · Today</small></span>
+              <strong class="expense">−$8.75</strong>
+            </div>
+            <div class="transaction-row">
+              <span class="transaction-icon">🛒</span>
+              <span><strong>Whole Foods Market</strong><small>Groceries · Yesterday</small></span>
+              <strong class="expense">−$96.50</strong>
+            </div>
+            <div class="transaction-row">
+              <span class="transaction-icon">✈</span>
+              <span><strong>Travel fund</strong><small>Transfer · Jul 25</small></span>
+              <strong>$420</strong>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -88,8 +124,19 @@
 
     <section class="showcase">
       <div class="showcase__screen">
-        <div class="phone phone--small">
-          <img src="assets/import.jpg" alt="Smeta import sheet listing CSV, TSV, TXT, OFX, QFX, QBO, and QIF formats" width="506" height="1100" loading="lazy">
+        <div class="import-panel" aria-label="Smeta supported import formats">
+          <span class="import-panel__icon" aria-hidden="true">↓</span>
+          <h3>Import file</h3>
+          <p>Choose the currency used when one is not included.</p>
+          <div class="import-formats">
+            <span>CSV</span><span>TSV</span><span>TXT</span><span>OFX</span>
+            <span>QFX</span><span>QBO</span><span>QIF</span>
+          </div>
+          <div class="import-option">
+            <span class="money-icon money-icon--income" aria-hidden="true">✦</span>
+            <span><strong>AI Import</strong><small>On-device when available</small></span>
+          </div>
+          <div class="import-action">Choose a file</div>
         </div>
       </div>
 
@@ -116,14 +163,37 @@
       </div>
 
       <div class="screen-pair">
-        <figure class="screen-card">
-          <img src="assets/spending.jpg" alt="Smeta spending report with a category chart" width="506" height="1100" loading="lazy">
-          <figcaption>Spending by category</figcaption>
-        </figure>
-        <figure class="screen-card">
-          <img src="assets/trends.jpg" alt="Smeta income and expenses chart over time" width="506" height="1100" loading="lazy">
-          <figcaption>Income and expenses</figcaption>
-        </figure>
+        <article class="report-card">
+          <div class="report-card__header">
+            <span>Spending</span>
+            <strong>$2,366.59</strong>
+          </div>
+          <div class="spending-chart" aria-label="Example spending by category chart"></div>
+          <div class="legend">
+            <span><i class="legend__dot legend__dot--green"></i>Groceries</span>
+            <span><i class="legend__dot legend__dot--yellow"></i>Dining</span>
+            <span><i class="legend__dot legend__dot--red"></i>Travel</span>
+          </div>
+        </article>
+
+        <article class="report-card">
+          <div class="report-card__header">
+            <span>Income &amp; expenses</span>
+            <strong>6 months</strong>
+          </div>
+          <div class="trend-chart" aria-label="Example six month income and expenses chart">
+            <span style="--income-height: 54%; --expense-height: 32%"><i></i><b></b></span>
+            <span style="--income-height: 68%; --expense-height: 46%"><i></i><b></b></span>
+            <span style="--income-height: 60%; --expense-height: 38%"><i></i><b></b></span>
+            <span style="--income-height: 76%; --expense-height: 51%"><i></i><b></b></span>
+            <span style="--income-height: 64%; --expense-height: 42%"><i></i><b></b></span>
+            <span style="--income-height: 88%; --expense-height: 57%"><i></i><b></b></span>
+          </div>
+          <div class="legend">
+            <span><i class="legend__dot legend__dot--green"></i>Income</span>
+            <span><i class="legend__dot legend__dot--red"></i>Expenses</span>
+          </div>
+        </article>
       </div>
     </section>
 
