@@ -637,6 +637,97 @@ h2 {
   text-underline-offset: 3px;
 }
 
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 22px;
+}
+
+.legal-page {
+  background-size: 52px 52px, 52px 52px, 100% 520px, 100% 520px;
+}
+
+.legal-hero {
+  max-width: 900px;
+  padding: clamp(70px, 11vw, 130px) clamp(10px, 4vw, 46px) clamp(58px, 9vw, 100px);
+}
+
+.legal-hero h1 {
+  margin-bottom: 30px;
+  font-size: clamp(52px, 8vw, 92px);
+}
+
+.legal-hero__description {
+  max-width: 680px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 600;
+}
+
+.privacy-principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.privacy-principle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  color: #101510;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.privacy-principle--green {
+  background: var(--green);
+}
+
+.privacy-principle--yellow {
+  background: var(--yellow);
+}
+
+.privacy-principle--red {
+  background: var(--red);
+}
+
+.legal-content {
+  display: grid;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.policy-card {
+  padding: clamp(25px, 4vw, 42px);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-solid);
+}
+
+.policy-card h2 {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.policy-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.policy-card a {
+  color: var(--ink);
+  font-weight: 800;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 820px) {
   .hero {
     grid-template-columns: 1fr;
@@ -667,6 +758,10 @@ h2 {
   .closing {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .legal-hero {
+    padding-top: 64px;
   }
 }
 
@@ -778,6 +873,26 @@ h2 {
 
   .footer {
     flex-direction: column;
+  }
+
+  .footer__links {
+    justify-content: flex-start;
+  }
+
+  .legal-page {
+    background-size: 38px 38px, 38px 38px, 100% 620px, 100% 620px;
+  }
+
+  .legal-hero {
+    padding: 54px 18px 58px;
+  }
+
+  .legal-hero h1 {
+    font-size: clamp(48px, 15vw, 68px);
+  }
+
+  .policy-card {
+    border-radius: 24px;
   }
 }
 
