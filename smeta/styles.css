@@ -1,7 +1,7 @@
 :root {
   --ink: #121412;
   --muted: #676b67;
-  --surface: rgba(255, 255, 252, 0.9);
+  --surface: #fffffc;
   --surface-solid: #fffffc;
   --background: #f7f7f3;
   --border: #d6d9d4;
@@ -11,7 +11,7 @@
   --red: #ff766b;
   --radius: 30px;
   --page-width: 1120px;
-  --font-rounded: "Nunito Sans", ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-rounded: "Nunito", ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 *,
@@ -98,19 +98,7 @@ a {
   border: 1.5px solid var(--border);
   border-radius: 42px;
   background:
-    linear-gradient(135deg, rgba(91, 234, 123, 0.28), rgba(255, 216, 77, 0.2) 46%, rgba(255, 118, 107, 0.22)),
-    var(--surface);
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 52px 52px;
+    linear-gradient(135deg, #d9f8dc 0%, #fff7cf 54%, #ffe2dd 100%);
 }
 
 .hero__copy,
@@ -137,16 +125,16 @@ p {
 h1 {
   margin-bottom: 26px;
   font-size: clamp(58px, 8vw, 104px);
-  font-weight: 900;
-  letter-spacing: -0.06em;
-  line-height: 0.92;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.94;
 }
 
 h2 {
   margin-bottom: 12px;
   font-size: clamp(32px, 4vw, 54px);
-  font-weight: 900;
-  letter-spacing: -0.045em;
+  font-weight: 800;
+  letter-spacing: -0.035em;
   line-height: 1.02;
 }
 
@@ -155,7 +143,7 @@ h2 {
   margin-bottom: 26px;
   color: #363936;
   font-size: clamp(19px, 2.2vw, 24px);
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .format-list {
@@ -166,7 +154,7 @@ h2 {
 }
 
 .format-list span {
-  background: rgba(255, 255, 252, 0.78);
+  background: var(--surface-solid);
 }
 
 .button {
@@ -267,7 +255,7 @@ h2 {
 .section-heading > p {
   margin-bottom: 0;
   color: var(--muted);
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .showcase {
