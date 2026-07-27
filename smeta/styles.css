@@ -392,7 +392,7 @@ h2 {
   max-width: 380px;
   margin-inline: auto;
   padding: 26px;
-  border-radius: 28px;
+  border-radius: 24px;
 }
 
 .import-panel__icon {
@@ -499,7 +499,7 @@ h2 {
 .report-card {
   min-height: 430px;
   padding: 24px;
-  border-radius: 28px;
+  border-radius: 24px;
 }
 
 .report-card__header {
@@ -704,6 +704,18 @@ h2 {
     border-radius: 28px;
   }
 
+  .balance-card {
+    border-radius: 20px;
+  }
+
+  .summary-card {
+    border-radius: 16px;
+  }
+
+  .transaction-list {
+    border-radius: 18px;
+  }
+
   .transaction-row {
     grid-template-columns: 36px minmax(0, 1fr) auto;
     gap: 8px;
@@ -738,7 +750,17 @@ h2 {
 
   .showcase {
     gap: 34px;
-    padding-bottom: 38px;
+    padding-bottom: 22px;
+  }
+
+  .import-panel,
+  .report-card {
+    border-radius: 20px;
+  }
+
+  .import-option,
+  .import-action {
+    border-radius: 14px;
   }
 
   .insights {
