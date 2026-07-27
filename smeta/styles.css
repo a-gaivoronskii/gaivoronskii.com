@@ -11,6 +11,9 @@
   --green: #5bea7b;
   --yellow: #ffd84d;
   --red: #ff766b;
+  --top-green: #79ee90;
+  --top-yellow: #ffe163;
+  --top-red: #ff8b7d;
   --radius: 30px;
   --page-width: 1120px;
   --font-rounded: "Nunito", ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -31,6 +34,9 @@
     --green: #53df73;
     --yellow: #f5cb3e;
     --red: #ff776d;
+    --top-green: #1b4627;
+    --top-yellow: #484019;
+    --top-red: #4b2522;
   }
 }
 
@@ -50,8 +56,12 @@ body {
   background-color: var(--background);
   background-image:
     linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 52px 52px;
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, transparent 0%, transparent 48%, var(--background) 100%),
+    linear-gradient(90deg, var(--top-green) 0%, var(--top-yellow) 52%, var(--top-red) 100%);
+  background-repeat: repeat, repeat, no-repeat, no-repeat;
+  background-size: 52px 52px, 52px 52px, 100% 620px, 100% 620px;
+  background-position: 0 0, 0 0, top, top;
   font-family: var(--font-rounded);
   font-size: 18px;
   line-height: 1.55;
@@ -60,14 +70,6 @@ body {
 
 a {
   color: inherit;
-}
-
-.spectrum {
-  position: fixed;
-  z-index: 10;
-  inset: 0 0 auto;
-  height: 12px;
-  background: linear-gradient(90deg, var(--green) 0%, var(--yellow) 52%, var(--red) 100%);
 }
 
 .page {
@@ -107,24 +109,17 @@ a {
 }
 
 .hero {
-  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
   align-items: center;
   gap: clamp(42px, 8vw, 100px);
   min-height: 760px;
-  padding: 56px clamp(28px, 6vw, 74px);
-  overflow: hidden;
-  border: 1.5px solid var(--border);
-  border-radius: 42px;
-  background:
-    linear-gradient(135deg, #d9f8dc 0%, #fff7cf 54%, #ffe2dd 100%);
+  padding: 56px clamp(10px, 4vw, 46px) 76px;
 }
 
 .hero__copy,
 .hero__visual {
-  position: relative;
-  z-index: 1;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -677,7 +672,7 @@ h2 {
 
 @media (max-width: 560px) {
   body {
-    background-size: 38px 38px;
+    background-size: 38px 38px, 38px 38px, 100% 700px, 100% 700px;
     font-size: 17px;
   }
 
@@ -697,8 +692,7 @@ h2 {
 
   .hero {
     gap: 34px;
-    padding: 42px 22px 0;
-    border-radius: 30px;
+    padding: 42px 18px 54px;
   }
 
   h1 {
@@ -765,10 +759,6 @@ h2 {
 }
 
 @media (prefers-color-scheme: dark) {
-  .hero {
-    background: linear-gradient(135deg, #173a21 0%, #3a3518 54%, #3c211f 100%);
-  }
-
   .app-preview {
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
   }
