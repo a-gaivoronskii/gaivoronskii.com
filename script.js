@@ -60,56 +60,6 @@ class ThemeManager {
 }
 
 // ===================================
-// CARD INTERACTIONS
-// ===================================
-class CardManager {
-  constructor() {
-    this.setupCards();
-  }
-
-  setupCards() {
-    document.querySelectorAll('.card[data-url]').forEach(card => {
-      const url = card.dataset.url;
-
-      card.setAttribute('tabindex', '0');
-      card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', this.getCardLabel(card));
-
-      card.addEventListener('click', (e) => {
-        if (!e.target.closest('.card__store-link')) {
-          this.openCardUrl(url);
-          card.blur();
-        }
-      });
-
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          this.openCardUrl(url);
-        }
-      });
-    });
-  }
-
-  openCardUrl(url) {
-    const destination = new URL(url, window.location.href);
-
-    if (destination.origin === window.location.origin) {
-      window.location.href = destination.toString();
-      return;
-    }
-
-    window.open(destination.toString(), '_blank', 'noopener,noreferrer');
-  }
-
-  getCardLabel(card) {
-    const title = card.querySelector('.card__title')?.textContent || '';
-    const description = card.querySelector('.card__description')?.textContent || '';
-    return `${title}. ${description}. Press Enter to open.`;
-  }
-}
-
-// ===================================
 // SCROLL ANIMATIONS
 // ===================================
 class ScrollAnimations {
@@ -138,6 +88,5 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 // ===================================
 document.addEventListener('DOMContentLoaded', () => {
   new ThemeManager();
-  new CardManager();
   new ScrollAnimations();
 });

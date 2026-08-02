@@ -87,8 +87,9 @@ Three-state theme system (auto → light → dark → auto) with:
 - Media query listening for system changes
 
 ### Card Interactions
-- Click-to-open App Store links
-- Keyboard navigation support
+- Card body opens the dedicated project page when one exists, with an App Store fallback
+- Independent App Store links on every card
+- Native pointer and keyboard navigation
 - Hover effects with CSS transforms
 - Accessible ARIA labels
 
@@ -118,8 +119,6 @@ Three-state theme system (auto → light → dark → auto) with:
 ```javascript
 // Core Classes
 ThemeManager     // Theme switching logic
-CardManager      // Project card interactions
-URLUtils         // Safe URL handling
 
 // Enhancements
 ScrollAnimations // Intersection Observer

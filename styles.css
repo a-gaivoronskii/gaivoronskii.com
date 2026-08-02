@@ -404,7 +404,6 @@ a:hover {
   background: var(--color-surface);
   color: var(--color-surface-ink);
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--color-ink);
-  overflow: hidden;
   min-height: 140px;
   cursor: pointer;
   transition: all var(--transition-fast);
@@ -417,10 +416,22 @@ a:hover {
   box-shadow: 10px 10px 0 0 var(--color-ink);
 }
 
+.card__primary-link {
+  position: absolute;
+  inset: calc(-1 * var(--border-width));
+  z-index: 1;
+}
+
+.card__primary-link:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -5px;
+}
+
 .card__tag {
   position: absolute;
   top: 8px;
   left: 8px;
+  pointer-events: none;
   background: var(--color-tape);
   border: var(--border-width) solid var(--color-ink);
   padding: 2px 6px;
@@ -458,6 +469,8 @@ a:hover {
 
 .card__store-link {
   display: inline-block;
+  position: relative;
+  z-index: 2;
   align-self: flex-start;
   background: var(--color-ink);
   color: var(--color-bg);
@@ -547,8 +560,8 @@ a:hover {
 }
 
 /* Focus states */
-.card:focus,
-.chip:focus {
+.card__store-link:focus-visible,
+.chip:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
