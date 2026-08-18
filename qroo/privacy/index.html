@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QRoo Privacy Policy for the iOS, iPadOS, watchOS, and Android apps.">
+  <link rel="canonical" href="https://www.gaivoronskii.com/qroo/privacy/">
+  <title>Privacy Policy - QRoo</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/qroo/styles.css">
+  <link rel="stylesheet" href="/qroo/legal.css">
+</head>
+<body>
+  <div class="container">
+    <header class="legal-header">
+      <a class="legal-header__brand" href="/qroo/" aria-label="QRoo home">QR<span class="legal-header__accent">_</span>oo</a>
+      <button id="themeToggle" class="chip chip--button" aria-label="Toggle between light and dark themes">Toggle_Theme</button>
+    </header>
+
+    <main class="legal-main">
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="legal-effective-date">Effective August 18, 2026</p>
+      <p class="legal-summary">QRoo helps you create, save, organize, and share QR codes. Most QRoo data stays on your device or in a backup or sync service you control.</p>
+
+      <section class="legal-section">
+        <h2>Who is responsible</h2>
+        <p>QRoo is provided by Andrei Gaivoronskii, an independent developer. Questions and deletion requests can be sent to <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a>.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Data stored on your devices</h2>
+        <p>QR code contents, titles, colors, favorite status, optional validity dates, and app preferences are stored locally. Widgets and the Apple Watch companion use the same data where available.</p>
+        <h3>Apple devices</h3>
+        <p>If you enable iCloud, QRoo syncs your QR codes across your Apple devices through your iCloud account. QRoo does not have access to your iCloud account or synced data.</p>
+        <h3>Android devices</h3>
+        <p>If Android backup is enabled, Android may copy QRoo's local data to the backup account configured on your device. QRoo cannot access that backup.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Wallet passes</h2>
+        <p>QRoo sends no QR code data to our server unless you choose to add a QR code to Apple Wallet or Google Wallet and confirm the transfer notice.</p>
+        <ul>
+          <li>QRoo sends the selected QR code contents, title, colors, optional validity date, card identifier, and relevant language over HTTPS to the QRoo pass service hosted by Fly.io.</li>
+          <li>The service signs and returns an Apple Wallet pass or a Google Wallet save request. It does not store the QR code request in its application database.</li>
+          <li>Apple or Google creates and stores the pass only after you confirm it. Wallet pass data is then handled under your Apple or Google account settings and the provider's privacy policy.</li>
+          <li>Removing a Google Wallet pass may not immediately remove the issuer-side pass object. Contact us if you want an identifiable Wallet issuer record deleted.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>App verification and abuse prevention</h2>
+        <p>Wallet requests use Apple App Attest or Google Play Integrity to confirm that they come from a genuine QRoo installation. Apple or Google processes app, account, and device integrity signals and returns a verification result to the QRoo pass service.</p>
+        <p>The service temporarily stores one-time challenges, rate-limit counters associated with a one-way hash of the network address, and security verification records. Challenges expire after 2 minutes, rate-limit records after their active window plus up to 24 hours, and inactive verification keys after 180 days.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Permissions</h2>
+        <ul>
+          <li><strong>Camera:</strong> used only when you scan a QR code.</li>
+          <li><strong>Photos, images, or files:</strong> used only for an image you choose to scan or a file you choose to import or export.</li>
+          <li><strong>Notifications:</strong> used on Android to remind you before a QR code expires, if you enable reminders.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>Data we do not collect</h2>
+        <p>We do not collect your name, email address, phone number, precise location, contacts, advertising identifiers, or payment information. QRoo contains no advertising and does not use third-party analytics SDKs.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Diagnostics and service providers</h2>
+        <p>Apple or Google may provide anonymous, aggregated app and device information, such as app version, operating system version, device type, and reliability information. Fly.io, Apple, and Google may process technical request information according to their own privacy policies when their services are used.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Retention and deletion</h2>
+        <ul>
+          <li>Delete a QR code in QRoo to remove it from the device. iCloud deletions may take up to 7 days to fully sync.</li>
+          <li>Delete QRoo to remove its locally stored data. Existing device backups and Wallet passes are managed through your platform and Wallet account.</li>
+          <li>Email us to request deletion of identifiable Wallet issuer records or pass-service security records. We may need information that allows us to identify the applicable record.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>Children</h2>
+        <p>QRoo is a general-purpose utility and is not directed to children. We do not knowingly collect personal information from children.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Changes</h2>
+        <p>We may update this policy when QRoo or its services change. The effective date above identifies the latest version.</p>
+      </section>
+
+      <div class="legal-callout">Contact: <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__copyright">&copy; <span id="currentYear">2026</span> <a href="/">Andrei Gaivoronskii</a></div>
+      <nav class="footer__links" aria-label="Legal"><a href="/qroo/">QRoo</a><a href="/qroo/terms/">Terms of Use</a></nav>
+    </footer>
+  </div>
+  <script src="/qroo/script.js"></script>
+</body>
+</html>
