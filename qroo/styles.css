@@ -166,6 +166,10 @@ a:hover {
 
 .hero__cta {
   margin: 24px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 /* ===================================
@@ -272,6 +276,20 @@ a:hover {
   color: var(--color-bg) !important;
 }
 
+.release-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: var(--border-width) dashed var(--color-ink);
+  border-radius: var(--border-radius);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
 /* CTA Card */
 .cta-card {
   border: var(--border-width) solid var(--color-ink);
@@ -292,6 +310,14 @@ a:hover {
   font-family: var(--font-mono);
   font-size: 14px;
   margin: 0 0 24px;
+}
+
+.platform-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 /* Tape */
@@ -363,6 +389,78 @@ a:hover {
   animation: arrowFadeRight 2s ease-in-out infinite !important;
 }
 
+.platform-intro {
+  max-width: 76ch;
+  font-size: 17px;
+}
+
+.platform-intro p {
+  margin: 0 0 12px;
+}
+
+.platform-intro__status {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 28px 0 36px;
+}
+
+.screenshot {
+  margin: 0;
+  min-width: 0;
+}
+
+.screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: var(--border-width) solid var(--color-ink);
+  border-radius: 28px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--color-ink);
+}
+
+.screenshot figcaption {
+  margin-top: 14px;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.wallet-explainer {
+  border-left: 8px solid var(--color-accent);
+  padding: 8px 0 8px 24px;
+  max-width: 82ch;
+}
+
+.wallet-explainer__lead {
+  margin: 0 0 18px;
+  font-size: 20px;
+}
+
+.wallet-steps {
+  margin: 0;
+  padding-left: 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.wallet-steps li {
+  padding: 5px 0 5px 8px;
+}
+
+.wallet-explainer__note {
+  margin: 20px 0 0;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
 @keyframes arrowFadeRight {
   0% {
     opacity: 0;
@@ -392,6 +490,7 @@ a:hover {
 
 .definition-list__term,
 .definition-list__description {
+  margin: 0;
   padding: 4px 0;
 }
 
@@ -433,6 +532,15 @@ a:hover {
   .definition-list {
     grid-template-columns: 120px 1fr;
   }
+
+  .screenshot-gallery {
+    gap: 14px;
+  }
+
+  .screenshot img {
+    border-radius: 20px;
+    box-shadow: 4px 4px 0 0 var(--color-ink);
+  }
 }
 
 @media (max-width: 600px) {
@@ -460,6 +568,22 @@ a:hover {
   .cta-button {
     font-size: 14px;
     padding: 10px 20px;
+  }
+
+  .screenshot-gallery {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .wallet-explainer {
+    padding-left: 16px;
+  }
+
+  .wallet-explainer__lead {
+    font-size: 18px;
   }
 }
 

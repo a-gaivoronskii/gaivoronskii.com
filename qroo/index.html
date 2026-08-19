@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="QRoo — QR code scanner, generator, and widget for iPhone, iPad, and Apple Watch. Scan, create, save, and sync QR codes across all your devices.">
+  <meta name="description" content="QRoo is a privacy-first QR code scanner, generator, organizer, and widget for Android, iPhone, iPad, and Apple Watch, with Google Wallet and Apple Wallet support.">
+  <link rel="canonical" href="https://www.gaivoronskii.com/qroo/">
 
   <title>QRoo — Scanner & Generator</title>
 
@@ -34,8 +35,8 @@
          =================================== -->
     <section class="hero">
       <div class="hero__chips">
-        <span class="chip" aria-label="Platform">iOS_iPadOS_watchOS</span>
-        <span class="chip" aria-label="Category">Utilities</span>
+        <span class="chip" aria-label="Platforms">Android_iOS_iPadOS_watchOS</span>
+        <span class="chip" aria-label="Category">Productivity</span>
         <span class="chip-spacer"> 🦘 </span>
         <button id="themeToggle" class="chip chip--button" aria-label="Toggle between light and dark themes">
           Toggle_Theme
@@ -43,11 +44,11 @@
       </div>
 
       <p class="hero__description">
-        <span class="highlight">Scan</span> and
-        <span class="highlight">generate</span> QR codes.
-        Add them to <span class="highlight">Apple Wallet</span>,
-        put <span class="highlight">widgets</span> on your home screen, and
-        <span class="highlight">sync across devices</span> via iCloud.
+        <span class="highlight">Scan</span>,
+        <span class="highlight">create</span>, and organize QR codes.
+        Keep them available in <span class="highlight">home screen widgets</span>
+        or save a selected code to
+        <span class="highlight">Google Wallet or Apple Wallet</span>.
       </p>
 
       <div class="hero__cta">
@@ -58,6 +59,9 @@
            aria-label="Download QRoo from the App Store">
           Download on the App Store ↗
         </a>
+        <span class="release-status" aria-label="Android release status">
+          Android · closed testing
+        </span>
       </div>
     </section>
 
@@ -66,7 +70,7 @@
          =================================== -->
     <div class="tape" role="marquee" aria-label="App features">
       <div class="tape__content">
-        <span>QR Scanner • QR Generator • Home Screen Widgets • Apple Wallet • Control Center • iCloud Sync • Expiration Dates • Beautiful Designs • Apple Watch • iPhone • iPad • Dark Mode • Fast & Lightweight • Privacy First • No Ads • Offline Support • Share QR Codes • History • Favorites • QR Scanner • QR Generator • Home Screen Widgets • Apple Wallet • Control Center • iCloud Sync • Expiration Dates • Beautiful Designs • Apple Watch • iPhone • iPad • Dark Mode • Fast & Lightweight • Privacy First • No Ads • Offline Support • Share QR Codes • History • Favorites</span>
+        <span>Android • iPhone • iPad • Apple Watch • QR Scanner • QR Generator • Home Screen Widgets • Google Wallet • Apple Wallet • Expiration Dates • Custom Colors • Dark Mode • Privacy First • No Ads • Import & Export • Share QR Codes • Favorites • Android • iPhone • iPad • Apple Watch • QR Scanner • QR Generator • Home Screen Widgets • Google Wallet • Apple Wallet • Expiration Dates • Custom Colors • Dark Mode • Privacy First • No Ads • Import & Export • Share QR Codes • Favorites</span>
       </div>
     </div>
 
@@ -88,16 +92,75 @@
         <dt class="definition-list__term">customize</dt>
         <dd class="definition-list__description">Give your QR codes unique look with beautiful designs and gradients</dd>
         <dt class="definition-list__term">wallet</dt>
-        <dd class="definition-list__description">Add QR codes to Apple Wallet for instant access</dd>
+        <dd class="definition-list__description">Save a selected QR code as a Generic Pass in Google Wallet or as a pass in Apple Wallet</dd>
         <dt class="definition-list__term">sync</dt>
-        <dd class="definition-list__description">All your QR codes synced between devices via iCloud</dd>
+        <dd class="definition-list__description">Sync QR codes between Apple devices through your iCloud account</dd>
         <dt class="definition-list__term">watch</dt>
         <dd class="definition-list__description">Access your saved QR codes right from your Apple Watch</dd>
         <dt class="definition-list__term">expiration</dt>
         <dd class="definition-list__description">Set expiration dates on your QR codes</dd>
         <dt class="definition-list__term">control center</dt>
         <dd class="definition-list__description">Quick access from iOS 18 Control Center</dd>
+        <dt class="definition-list__term">transfer</dt>
+        <dd class="definition-list__description">Move your collection between iOS and Android with CSV import and export</dd>
       </dl>
+    </section>
+
+    <!-- ===================================
+         ANDROID APP
+         =================================== -->
+    <section class="section" id="android">
+      <h2 class="section__title">QRoo for Android</h2>
+      <div class="platform-intro">
+        <p>
+          QRoo for Android is a native Kotlin and Jetpack Compose app. It can scan,
+          create, customize, organize, import, export, and share QR codes. A selected
+          QR code can also be placed in a home screen widget or saved to Google Wallet.
+        </p>
+        <p class="platform-intro__status"><strong>Status:</strong> closed testing before the Google Play release.</p>
+      </div>
+
+      <div class="screenshot-gallery" aria-label="QRoo Android screenshots">
+        <figure class="screenshot">
+          <img src="assets/android/library.png" alt="QRoo Android library showing a saved QR code" width="630" height="1400" loading="lazy">
+          <figcaption>Organize and open saved QR codes</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="assets/android/google-wallet.png" alt="QRoo Android QR viewer with the official Add to Google Wallet button" width="630" height="1400" loading="lazy">
+          <figcaption>Save a selected code to Google Wallet</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="assets/android/create.png" alt="QRoo Android creation sheet with scan, image, and text options" width="630" height="1400" loading="lazy">
+          <figcaption>Scan, import, or create a QR code</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================================
+         GOOGLE WALLET
+         =================================== -->
+    <section class="section" id="google-wallet">
+      <h2 class="section__title section__title--highlighted">
+        <span class="section__title-text">Google Wallet integration</span>
+        <span class="section__arrows section__arrows--right">↓ ↓ ↓</span>
+      </h2>
+      <div class="wallet-explainer">
+        <p class="wallet-explainer__lead">
+          QRoo lets a user save a QR code they created or scanned as a
+          <strong>Generic Pass</strong> in their own Google Wallet.
+        </p>
+        <ol class="wallet-steps">
+          <li>The user opens a saved QR code and taps the official Add to Google Wallet button.</li>
+          <li>QRoo explains which QR code and visual details will be sent, and asks for confirmation.</li>
+          <li>The QRoo pass service securely prepares the Generic Pass over HTTPS.</li>
+          <li>Google Wallet shows its native preview; the pass is saved only when the user confirms in Google Wallet.</li>
+        </ol>
+        <p class="wallet-explainer__note">
+          QRoo does not issue payment cards, identity documents, tickets, loyalty cards,
+          or third-party credentials. It does not send QR content to the pass service unless
+          the user explicitly starts and confirms this optional Wallet flow.
+        </p>
+      </div>
     </section>
 
     <!-- ===================================
@@ -108,14 +171,16 @@
       <dl class="definition-list">
         <dt class="definition-list__term">price</dt>
         <dd class="definition-list__description">Free</dd>
-        <dt class="definition-list__term">size</dt>
-        <dd class="definition-list__description">6.8 MB</dd>
+        <dt class="definition-list__term">platforms</dt>
+        <dd class="definition-list__description">Android · iOS · iPadOS · watchOS</dd>
         <dt class="definition-list__term">requires</dt>
-        <dd class="definition-list__description">iOS 15.0+ · iPadOS 15.0+ · watchOS 7.0+</dd>
+        <dd class="definition-list__description">Android 8.0+ · iOS 15.0+ · iPadOS 15.0+ · watchOS 8.0+</dd>
         <dt class="definition-list__term">languages</dt>
         <dd class="definition-list__description">English, Russian</dd>
-        <dt class="definition-list__term">rating</dt>
-        <dd class="definition-list__description">4.4 ★ on the App Store</dd>
+        <dt class="definition-list__term">developer</dt>
+        <dd class="definition-list__description">Andrei Gaivoronskii · independent developer</dd>
+        <dt class="definition-list__term">support</dt>
+        <dd class="definition-list__description"><a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a></dd>
       </dl>
     </section>
 
@@ -125,14 +190,17 @@
     <section class="section section--cta">
       <div class="cta-card">
         <h2 class="cta-card__title">Get QRoo</h2>
-        <p class="cta-card__description">Free on iPhone, iPad, and Apple Watch.</p>
-        <a class="cta-button"
-           href="https://apps.apple.com/app/id1604886331"
-           target="_blank"
-           rel="noopener"
-           aria-label="Download QRoo from the App Store">
-          App Store ↗
-        </a>
+        <p class="cta-card__description">Free. Available for Apple platforms; Android is currently in closed testing.</p>
+        <div class="platform-actions">
+          <a class="cta-button"
+             href="https://apps.apple.com/app/id1604886331"
+             target="_blank"
+             rel="noopener"
+             aria-label="Download QRoo from the App Store">
+            App Store ↗
+          </a>
+          <span class="release-status">Google Play · closed testing</span>
+        </div>
       </div>
     </section>
 
