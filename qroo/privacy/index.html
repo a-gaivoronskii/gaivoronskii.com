@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/qroo/styles.css">
   <link rel="stylesheet" href="/qroo/legal.css">
 </head>
@@ -22,7 +22,7 @@
 
     <main class="legal-main">
       <h1 class="legal-title">Privacy Policy</h1>
-      <p class="legal-effective-date">Effective August 18, 2026</p>
+      <p class="legal-effective-date">Effective August 21, 2026</p>
       <p class="legal-summary">QRoo helps you create, save, organize, and share QR codes. Most QRoo data stays on your device or in a backup or sync service you control.</p>
 
       <section class="legal-section">
@@ -37,6 +37,18 @@
         <p>If you enable iCloud, QRoo syncs your QR codes across your Apple devices through your iCloud account. QRoo does not have access to your iCloud account or synced data.</p>
         <h3>Android devices</h3>
         <p>If Android backup is enabled, Android may copy QRoo's local data to the backup account configured on your device. QRoo cannot access that backup.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Optional Google Drive sync</h2>
+        <p>If you enable Google Drive sync, QRoo stores QR code contents and metadata in the private application-data folder of the Google account you choose. This lets you synchronize QR codes between QRoo on iPhone and Android.</p>
+        <ul>
+          <li>Sync is optional and starts only after you choose a Google account and grant QRoo access.</li>
+          <li>QRoo requests access only to files it creates in the hidden Google Drive application-data folder. It cannot read your other Google Drive files.</li>
+          <li>Synced QR code data is not end-to-end encrypted by QRoo. Do not use QRoo Drive sync for passwords, access tokens, identity documents, private tickets, or other sensitive information.</li>
+          <li>Google processes the account authorization and stores synchronized data under your Google account settings and Google's privacy policy.</li>
+          <li>You can disconnect the account or delete QRoo's synchronized data from the Google Drive sync screen in the app.</li>
+        </ul>
       </section>
 
       <section class="legal-section">
@@ -89,7 +101,7 @@
         <h2>Retention and deletion</h2>
         <ul>
           <li>Delete a QR code in QRoo to remove it from the device. iCloud deletions may take up to 7 days to fully sync.</li>
-          <li>Delete QRoo to remove its locally stored data. Existing device backups and Wallet passes are managed through your platform and Wallet account.</li>
+          <li>Delete QRoo to remove its locally stored data. Existing device backups, Google Drive app data, and Wallet passes remain managed through the applicable platform account until you delete them there or through QRoo's sync controls.</li>
           <li>Email us to request deletion of identifiable Wallet issuer records or pass-service security records. We may need information that allows us to identify the applicable record.</li>
         </ul>
       </section>
