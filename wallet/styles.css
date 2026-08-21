@@ -419,6 +419,13 @@ a:hover {
   font-size: 12px;
 }
 
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+}
+
 /* ===================================
    RESPONSIVE DESIGN
    =================================== */

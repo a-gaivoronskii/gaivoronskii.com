@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy Policy for MyCards on iOS, iPadOS, watchOS, Android, and Wear OS.">
+  <link rel="canonical" href="https://www.gaivoronskii.com/wallet/privacy/">
+  <title>Privacy Policy - MyCards</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/wallet/styles.css">
+  <link rel="stylesheet" href="/wallet/legal.css">
+</head>
+<body>
+  <div class="container">
+    <header class="legal-header">
+      <a class="legal-header__brand" href="/wallet/" aria-label="MyCards home">MyCards<span class="legal-header__accent">_</span></a>
+      <button id="themeToggle" class="chip chip--button" aria-label="Toggle between light and dark themes">Toggle_Theme</button>
+    </header>
+
+    <main class="legal-main">
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="legal-effective-date">Effective August 21, 2026</p>
+      <p class="legal-summary">MyCards stores payment card information for your reference. Card data stays on devices and services you control; the developer does not operate a card-data backend.</p>
+
+      <section class="legal-section">
+        <h2>Who is responsible</h2>
+        <p>MyCards is provided by Andrei Gaivoronskii, an independent developer. Privacy questions and deletion requests can be sent to <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a>.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Data stored on your devices</h2>
+        <p>Card fields, presentation settings, card order, favorite status, reminders, and app preferences are stored locally. Sensitive fields such as card numbers, CVC, PIN, login details, passwords, and security questions are encrypted before local storage.</p>
+        <p>Deleting the app removes its local data, subject to device backups and synchronized copies managed by Apple or Google.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Optional iCloud sync</h2>
+        <p>On Apple devices, you can enable iCloud sync to synchronize card data through your personal iCloud account. Sensitive card fields remain encrypted. The developer does not receive your iCloud credentials or synchronized card data.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Optional Google Drive sync</h2>
+        <p>If you connect Google Drive, MyCards stores an end-to-end encrypted vault in the private application-data folder of the Google account you choose. This supports synchronization between MyCards on iPhone and Android.</p>
+        <ul>
+          <li>Sync is optional and starts only after you choose a Google account and grant access.</li>
+          <li>MyCards requests the <code>drive.appdata</code> scope, which allows access only to hidden app data created for MyCards, not your other Drive files.</li>
+          <li>The vault is encrypted on your device before upload. Google and the developer do not have the vault key and cannot read its card data.</li>
+          <li>A recovery code is required to decrypt the vault on another device. MyCards and Google cannot recover a lost recovery code.</li>
+          <li>The vault includes card fields, card order, favorite status, presentation settings, and available bank icons. Custom card background images remain local to the device.</li>
+          <li>Disconnecting revokes app access and stops synchronization. Existing hidden app data may remain in your Google account until you remove it through your Google account settings.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>Google account authorization</h2>
+        <p>When you connect Google Drive, Google Sign-In authenticates the account and returns authorization credentials to the app. MyCards displays and stores the selected account email locally so it can restore the connection. The developer does not receive the credentials or account email through a server.</p>
+        <p>Google Sign-In and Google Play services may process account, contact, approximate location, device identifier, and usage information for authentication, security, fraud prevention, app functionality, and service diagnostics under Google's privacy policy. MyCards does not use this information for advertising or tracking.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Bank and card identification</h2>
+        <p>Payment-system detection primarily runs locally. For unresolved cards, MyCards may send only the first six digits of the card number to HandyAPI to identify an issuer. A bank domain may be sent to Google's favicon service to retrieve a bank icon. Full card numbers, CVC, PIN, passwords, and other card fields are not sent to these lookup services.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Companion devices and widgets</h2>
+        <p>Apple Watch, Wear OS, widgets, and system shortcuts receive the card data needed for the feature you configure. Apple or Google may relay wearable transfers through their protected device services when a direct connection is unavailable. Local wearable copies use platform-provided storage protection.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Permissions</h2>
+        <ul>
+          <li><strong>Camera:</strong> used only when you scan a physical card. Text recognition runs on-device, and scan frames are not stored or uploaded.</li>
+          <li><strong>Photos or images:</strong> used only when you choose a custom card image or share an image. Custom background images are not included in Google Drive sync.</li>
+          <li><strong>Biometrics:</strong> Face ID, Touch ID, and Android biometric checks are handled by the operating system. MyCards cannot access biometric templates.</li>
+          <li><strong>Notifications:</strong> used for card-expiry reminders you configure.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>Analytics, advertising, and tracking</h2>
+        <p>MyCards contains no advertising SDK and does not use developer-operated analytics or cross-app tracking. Apple and Google may provide aggregated store, reliability, or service information and may process technical data when their platform services are used.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Support messages</h2>
+        <p>If you contact support, we receive your email address and the information you include. It is used only to answer the request, provide support, or process a deletion request and is retained only as long as reasonably necessary for those purposes or legal obligations.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Security</h2>
+        <p>MyCards uses platform key stores, authenticated encryption, HTTPS, and limited service permissions. No storage or transmission method is completely secure. You are responsible for protecting device access, backups, and the Google Drive recovery code.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Retention and deletion</h2>
+        <ul>
+          <li>Delete a card in MyCards to remove it locally and propagate a deletion through enabled sync services.</li>
+          <li>Disable iCloud or Google Drive sync to stop future synchronization.</li>
+          <li>Remove hidden MyCards app data from your Google account settings to delete the Drive copy.</li>
+          <li>Contact us to request deletion of support correspondence. We cannot access or delete card vaults stored in your personal iCloud or Google account.</li>
+        </ul>
+      </section>
+
+      <section class="legal-section">
+        <h2>Children</h2>
+        <p>MyCards is a general-purpose finance utility and is not directed to children. We do not knowingly collect personal information from children.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Changes</h2>
+        <p>We may update this policy when MyCards, platform requirements, or connected services change. The effective date above identifies the latest version.</p>
+      </section>
+
+      <div class="legal-callout">Contact: <a href="mailto:andrei@gaivoronskii.com">andrei@gaivoronskii.com</a></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__copyright">&copy; <span id="currentYear">2026</span> <a href="/">Andrei Gaivoronskii</a></div>
+      <nav class="footer__links" aria-label="Legal"><a href="/wallet/">MyCards</a><a href="/wallet/terms/">Terms of Use</a></nav>
+    </footer>
+  </div>
+  <script src="/wallet/script.js"></script>
+</body>
+</html>

@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Wallet — store your credit and debit cards securely on iPhone, iPad, and Apple Watch. Offline-first, encrypted, and beautifully designed.">
+  <meta name="description" content="MyCards securely stores payment card details on iPhone, iPad, Apple Watch, Android, and Wear OS, with optional encrypted Google Drive sync.">
+  <link rel="canonical" href="https://www.gaivoronskii.com/wallet/">
 
-  <title>Wallet — Card Storage for iPhone & Apple Watch</title>
+  <title>MyCards Wallet - Secure Card Storage for Apple and Android</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -24,7 +25,7 @@
     <header class="header">
       <div class="header__spacer"></div>
       <div class="header__title">
-        <h1>Wallet<span class="header__accent">_</span>App</h1>
+        <h1>MyCards<span class="header__accent">_</span></h1>
       </div>
       <div class="header__spacer"></div>
     </header>
@@ -34,7 +35,7 @@
          =================================== -->
     <section class="hero">
       <div class="hero__chips">
-        <span class="chip" aria-label="Platform">iOS_iPadOS_watchOS</span>
+        <span class="chip" aria-label="Platform">iOS_iPadOS_watchOS_Android_WearOS</span>
         <span class="chip" aria-label="Category">Finance</span>
         <span class="chip-spacer"> 💳 </span>
         <button id="themeToggle" class="chip chip--button" aria-label="Toggle between light and dark themes">
@@ -43,11 +44,11 @@
       </div>
 
       <p class="hero__description">
-        <span class="highlight">Store</span> your credit and debit cards
-        securely on your device.
-        <span class="highlight">Encrypted</span> and offline-first.
-        <span class="highlight">Customize</span> with colors and gradients,
-        and access from your <span class="highlight">Apple&nbsp;Watch</span>.
+        <span class="highlight">Store</span> your payment card details securely
+        on Apple and Android devices.
+        <span class="highlight">Encrypt</span> sensitive fields locally.
+        <span class="highlight">Sync</span> between iPhone and Android through
+        your private Google Drive app data, protected by a recovery code only you know.
       </p>
 
       <div class="hero__cta">
@@ -66,7 +67,7 @@
          =================================== -->
     <div class="tape" role="marquee" aria-label="App features">
       <div class="tape__content">
-        <span>Card Storage • Face ID & Touch ID • Custom Card Designs • Gradients & Images • Apple Watch • Home Screen Widgets • Control Center • iCloud Sync • Card Scanner • Expiry Reminders • Card Nicknames • Share Card Data • Dark Mode • Offline First • Privacy First • No Ads • No Tracking • Card Storage • Face ID & Touch ID • Custom Card Designs • Gradients & Images • Apple Watch • Home Screen Widgets • Control Center • iCloud Sync • Card Scanner • Expiry Reminders • Card Nicknames • Share Card Data • Dark Mode • Offline First • Privacy First • No Ads • No Tracking</span>
+        <span>Apple &amp; Android • Encrypted Google Drive Sync • iCloud Sync • Face ID &amp; Biometrics • Card Scanner • Apple Watch &amp; Wear OS • Home Screen Widgets • Expiry Reminders • Custom Card Designs • Bank Detection • Offline First • No Ads • No Tracking • Apple &amp; Android • Encrypted Google Drive Sync • iCloud Sync • Face ID &amp; Biometrics • Card Scanner • Apple Watch &amp; Wear OS • Home Screen Widgets • Expiry Reminders • Custom Card Designs • Bank Detection • Offline First • No Ads • No Tracking</span>
       </div>
     </div>
 
@@ -80,9 +81,9 @@
       </h2>
       <dl class="definition-list">
         <dt class="definition-list__term">secure storage</dt>
-        <dd class="definition-list__description">All card data is encrypted, whether stored locally or synced via iCloud</dd>
+        <dd class="definition-list__description">Sensitive card fields are encrypted before local storage on iOS and Android</dd>
         <dt class="definition-list__term">biometric lock</dt>
-        <dd class="definition-list__description">Protect your cards with Face ID or Touch ID</dd>
+        <dd class="definition-list__description">Protect access with Face ID, Touch ID, or Android biometric authentication</dd>
         <dt class="definition-list__term">card scanner</dt>
         <dd class="definition-list__description">Scan physical cards with your camera to add them instantly</dd>
         <dt class="definition-list__term">custom designs</dt>
@@ -93,16 +94,18 @@
         <dd class="definition-list__description">Access your favorite card from the home screen or lock screen</dd>
         <dt class="definition-list__term">control center</dt>
         <dd class="definition-list__description">Open your wallet or favorite card straight from Control Center</dd>
-        <dt class="definition-list__term">watch</dt>
-        <dd class="definition-list__description">View card details and sensitive data right from your Apple Watch</dd>
+        <dt class="definition-list__term">wearables</dt>
+        <dd class="definition-list__description">Keep selected card information available on Apple Watch and Wear OS</dd>
         <dt class="definition-list__term">icloud sync</dt>
         <dd class="definition-list__description">Keep your cards in sync across all your Apple devices</dd>
+        <dt class="definition-list__term">google drive sync</dt>
+        <dd class="definition-list__description">Optionally sync an end-to-end encrypted vault between iPhone and Android through private app data in your Google Drive</dd>
         <dt class="definition-list__term">expiry reminders</dt>
         <dd class="definition-list__description">Get notified before your cards expire so you're never caught off guard</dd>
         <dt class="definition-list__term">share</dt>
         <dd class="definition-list__description">Quickly copy or share card details when you need them</dd>
         <dt class="definition-list__term">auto-detection</dt>
-        <dd class="definition-list__description">Payment system and bank are detected automatically from the card number</dd>
+        <dd class="definition-list__description">Payment system and bank can be detected automatically from the card number</dd>
       </dl>
     </section>
 
@@ -112,16 +115,14 @@
     <section class="section">
       <h2 class="section__title">details</h2>
       <dl class="definition-list">
-        <dt class="definition-list__term">price</dt>
-        <dd class="definition-list__description">$2.99</dd>
-        <dt class="definition-list__term">size</dt>
-        <dd class="definition-list__description">9.6 MB</dd>
+        <dt class="definition-list__term">platforms</dt>
+        <dd class="definition-list__description">iPhone, iPad, Apple Watch, Android, and Wear OS</dd>
         <dt class="definition-list__term">requires</dt>
-        <dd class="definition-list__description">iOS 17.0+ · iPadOS 17.0+ · watchOS 8.0+</dd>
+        <dd class="definition-list__description">iOS 17.0+ · iPadOS 17.0+ · watchOS 8.0+ · Android 9.0+ · Wear OS 3.0+</dd>
         <dt class="definition-list__term">languages</dt>
         <dd class="definition-list__description">English, Russian</dd>
-        <dt class="definition-list__term">rating</dt>
-        <dd class="definition-list__description">4.2 ★ on the App Store</dd>
+        <dt class="definition-list__term">privacy</dt>
+        <dd class="definition-list__description">No advertising, no tracking, and no MyCards account or developer-operated card backend</dd>
       </dl>
     </section>
 
@@ -130,8 +131,8 @@
          =================================== -->
     <section class="section section--cta">
       <div class="cta-card">
-        <h2 class="cta-card__title">Get Wallet</h2>
-        <p class="cta-card__description">Your cards, always with you.</p>
+        <h2 class="cta-card__title">Get MyCards</h2>
+        <p class="cta-card__description">Your cards on Apple and Android, with sync you control.</p>
         <a class="cta-button"
            href="https://apps.apple.com/app/id1038175626"
            target="_blank"
@@ -147,12 +148,14 @@
          =================================== -->
     <footer class="footer">
       <div class="footer__copyright">
-        &copy; <span id="currentYear">2025</span>
+        &copy; <span id="currentYear">2026</span>
         <a href="/" aria-label="Visit developer portfolio">Andrei Gaivoronskii</a>
       </div>
-      <div class="footer__tagline">
-        Your cards, always with you.
-      </div>
+      <nav class="footer__links" aria-label="Legal">
+        <a href="/wallet/privacy/">Privacy Policy</a>
+        <a href="/wallet/terms/">Terms of Use</a>
+        <a href="mailto:andrei@gaivoronskii.com">Support</a>
+      </nav>
     </footer>
 
   </div>
