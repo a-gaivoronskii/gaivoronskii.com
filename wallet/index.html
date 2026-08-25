@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MyCards securely stores payment card details on iPhone, iPad, Apple Watch, Android, and Wear OS, with optional encrypted Google Drive sync.">
+  <meta name="description" content="WalletApp securely stores payment card details on iPhone, iPad, Apple Watch, Android, and Wear OS, with optional encrypted Google Drive sync.">
   <link rel="canonical" href="https://www.gaivoronskii.com/wallet/">
 
-  <title>MyCards Wallet - Secure Card Storage for Apple and Android</title>
+  <title>WalletApp - Secure Card Storage for Apple and Android</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "WalletApp",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS, iPadOS, watchOS, Android, Wear OS",
+      "description": "Private payment-card information storage with optional end-to-end encrypted Google Drive sync.",
+      "url": "https://www.gaivoronskii.com/wallet/",
+      "downloadUrl": [
+        "https://apps.apple.com/app/id1038175626",
+        "https://play.google.com/store/apps/details?id=com.ag.mycards"
+      ],
+      "author": {
+        "@type": "Person",
+        "name": "Andrei Gaivoronskii"
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -25,7 +44,7 @@
     <header class="header">
       <div class="header__spacer"></div>
       <div class="header__title">
-        <h1>MyCards<span class="header__accent">_</span></h1>
+        <h1>Wallet<span class="header__accent">_</span>App</h1>
       </div>
       <div class="header__spacer"></div>
     </header>
@@ -51,13 +70,20 @@
         your private Google Drive app data, protected by a recovery code only you know.
       </p>
 
-      <div class="hero__cta">
+      <div class="hero__cta cta-actions">
         <a class="cta-button"
            href="https://apps.apple.com/app/id1038175626"
            target="_blank"
            rel="noopener"
-           aria-label="Download Wallet from the App Store">
+           aria-label="Download WalletApp from the App Store">
           Download on the App Store ↗
+        </a>
+        <a class="cta-button"
+           href="https://play.google.com/store/apps/details?id=com.ag.mycards"
+           target="_blank"
+           rel="noopener"
+           aria-label="Get WalletApp on Google Play">
+          Get it on Google Play ↗
         </a>
       </div>
     </section>
@@ -87,13 +113,13 @@
         <dt class="definition-list__term">card scanner</dt>
         <dd class="definition-list__description">Scan physical cards with your camera to add them instantly</dd>
         <dt class="definition-list__term">custom designs</dt>
-        <dd class="definition-list__description">Personalize cards with colors, gradients, and background images</dd>
+        <dd class="definition-list__description">Personalize cards with colors, gradients, background images, and custom bank icons</dd>
         <dt class="definition-list__term">card nicknames</dt>
         <dd class="definition-list__description">Name your cards for quick identification at a glance</dd>
         <dt class="definition-list__term">widgets</dt>
         <dd class="definition-list__description">Access your favorite card from the home screen or lock screen</dd>
         <dt class="definition-list__term">control center</dt>
-        <dd class="definition-list__description">Open your wallet or favorite card straight from Control Center</dd>
+        <dd class="definition-list__description">Open your wallet or favorite card from Control Center on Apple devices or Quick Settings on Android</dd>
         <dt class="definition-list__term">wearables</dt>
         <dd class="definition-list__description">Keep selected card information available on Apple Watch and Wear OS</dd>
         <dt class="definition-list__term">icloud sync</dt>
@@ -122,7 +148,9 @@
         <dt class="definition-list__term">languages</dt>
         <dd class="definition-list__description">English, Russian</dd>
         <dt class="definition-list__term">privacy</dt>
-        <dd class="definition-list__description">No advertising, no tracking, and no MyCards account or developer-operated card backend</dd>
+        <dd class="definition-list__description">No advertising, no tracking, and no WalletApp account or developer-operated card backend</dd>
+        <dt class="definition-list__term">android release</dt>
+        <dd class="definition-list__description">Native Kotlin and Jetpack Compose app with Material 3, Android widgets, Quick Settings, and Wear OS support</dd>
       </dl>
     </section>
 
@@ -131,15 +159,24 @@
          =================================== -->
     <section class="section section--cta">
       <div class="cta-card">
-        <h2 class="cta-card__title">Get MyCards</h2>
+        <h2 class="cta-card__title">Get WalletApp</h2>
         <p class="cta-card__description">Your cards on Apple and Android, with sync you control.</p>
-        <a class="cta-button"
-           href="https://apps.apple.com/app/id1038175626"
-           target="_blank"
-           rel="noopener"
-           aria-label="Download Wallet from the App Store">
-          App Store ↗
-        </a>
+        <div class="cta-actions cta-actions--centered">
+          <a class="cta-button"
+             href="https://apps.apple.com/app/id1038175626"
+             target="_blank"
+             rel="noopener"
+             aria-label="Download WalletApp from the App Store">
+            App Store ↗
+          </a>
+          <a class="cta-button"
+             href="https://play.google.com/store/apps/details?id=com.ag.mycards"
+             target="_blank"
+             rel="noopener"
+             aria-label="Get WalletApp on Google Play">
+            Google Play ↗
+          </a>
+        </div>
       </div>
     </section>
 

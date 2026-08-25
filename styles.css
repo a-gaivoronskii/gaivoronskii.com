@@ -484,6 +484,19 @@ a:hover {
   margin-top: auto;
 }
 
+.card__store-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.card__store-links .card__store-link {
+  margin-top: 0;
+}
+
 .card__store-link:hover {
   background: var(--color-accent);
   border-color: var(--color-accent);

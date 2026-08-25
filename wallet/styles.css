@@ -168,6 +168,17 @@ a:hover {
   margin: 24px 0;
 }
 
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+
+.cta-actions--centered {
+  justify-content: center;
+}
+
 /* ===================================
    UI COMPONENTS
    =================================== */
@@ -460,6 +471,15 @@ a:hover {
   .cta-button {
     font-size: 14px;
     padding: 10px 20px;
+  }
+
+  .cta-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cta-actions .cta-button {
+    text-align: center;
   }
 }
 
