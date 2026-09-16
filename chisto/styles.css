@@ -25,3 +25,6 @@
 }
 .faq details[open] summary::before { transform: rotate(90deg); }
 .faq details[data-expanding="false"] summary::before { transform: rotate(0deg); }
+
+/* Use the published app icon instead of a platform-dependent symbol. */
+.nav .brand{display:inline-flex;align-items:center;gap:10px;flex-shrink:0}.brand-icon{display:block;width:36px;height:36px;flex-shrink:0;border-radius:22%;object-fit:cover}
