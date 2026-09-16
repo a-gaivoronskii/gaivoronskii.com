@@ -193,7 +193,7 @@ Modify grid size:
 
 MIT License - feel free to use this code for your own portfolio.
 
-## Chisto
+## chisto
 
 `chisto/` is a standalone, responsive landing page matching the app's Fresh Linen palette and Fraunces
 headings. It includes an interactive preview of the three included styles, support contact, and legal pages.
@@ -202,6 +202,6 @@ Artwork, fonts, and font notices are copied from the app. No external scripts, a
 - Local preview: serve the repository and open `/chisto/`.
 - Production route: `https://www.gaivoronskii.com/chisto/`.
 - Privacy and terms mirror `Tidy/Resources/PrivacyPolicy.txt` and `TermsOfUse.txt`; update both copies together.
-- Release status is **Coming soon**. Replace this with a verified App Store link when the app is public.
+- Released on the [App Store](https://apps.apple.com/app/id6766283668); listing verified September 16, 2026.
 - Respect reduced motion when previewing styles; all controls work with a keyboard.
 - Deployment: push to `main` for GitHub Pages, then verify the public page and legal links.
