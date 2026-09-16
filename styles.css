@@ -589,17 +589,3 @@ a:hover {
     break-inside: avoid;
   }
 }
-
-.card__title--with-icon {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.card__icon {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: 22%;
-  object-fit: cover;
-}
